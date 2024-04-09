@@ -24,6 +24,7 @@ source ./env.sh  #SDK各种环境变量
 make menuconfig
 make build -j4 2>&1  | tee -a buildlog.txt
 ```
+
 制成功后，在out/hi3798mv100可以找到编译好的fastboot-burn.bin、bootargs.bin、hi_kernel.bin，分别是uboot引导文件、uboot引导参数配置和linux内核。
 ## 使用HiTool烧录到eMMC
 具体烧录方案可以搜索hitool教程。

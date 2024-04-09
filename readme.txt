@@ -7,9 +7,8 @@
 SDK: HiSTBLinuxV100R005C00SPC060
 
 ## 环境准备
-
-```
 https://github.com/zjkanjie/HiSTBLinuxV100R005C00SPC060
+```
 #切换到工作目录
 cd HiSTBLinuxV100R005C00SPC060  #$SDK_path
 #安装需要的编译工具，可以使用SDK带的shell脚本，也可以自己安装

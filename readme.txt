@@ -1,93 +1,63 @@
-Term:
-	$sdk_path: SDK code path
-	$chip_type: chip type
-	$out_dir: the path of output files after building the SDK
+# Hi3798mv100 （Huawei ec6108v9 IPTV）Linux的编译 烧录 blog
+本文记录了为华为机顶盒EC6108v9c（海思Hi3798mv100芯片）编译内核、烧录uboot以及刷入Ubuntu 22.04 rootfs的过程。
+## 基本环境
+目标板：IPTV退役的华为机顶盒EC6108v9c（ hisilicon Hi3798mv100 1G 8G emmc）
+编译环境：Ubuntu 22.04
+海思linux内核：HiSTBLinux 适用于hi3798mv100 mv200 
+SDK: HiSTBLinuxV100R005C00SPC060
 
-1. For  SDK usage and development environment building,please refer <Linux Development Environment User Guide> for detail.
+## 环境准备
 
-2. Compile SDK
-	2.1 "source $sdk_path/env.sh" must be executed before compiling the SDK.
-	2.2 "cp configs/$chip_type/xx_cfg.mak cfg.mak" can use to config the SDK before compile it. customer can customize the SDK configuration by "make menuconfig".
-	2.3 Customer can get usage information of compiling command by execute "make help" .
-    Notes: SDKs support multi-threaded compilation, but when compiling SDKs on virtual machines or servers with lower performance, it is recommended that single-threaded compilation be conducted or the number of compilation threads be designated. Single-threaded compilation: make $target; two-threaded compilation: make $target -j 2.
+```
+https://github.com/zjkanjie/HiSTBLinuxV100R005C00SPC060
+#切换到工作目录
+cd HiSTBLinuxV100R005C00SPC060  #$SDK_path
+#安装需要的编译工具，可以使用SDK带的shell脚本，也可以自己安装
+sh server_install.sh
+#or
+apt-get install gcc make gettext bison flex bc zlib1g-dev libncurses5-dev lzma
+#拷贝SDK中预先定义的
+cp configs/hi3798mv100/hi3798mdmo1g_hi3798mv100_cfg.mak ./cfg.mak
 
-3. Burn the board
-	3.1 Use the "HiTool" to burn the board is recommended.
-	
-	3.2 Command in boot console also be supported to burn the board. below gives the demonstration .
-		NAND flash:
-	        For example(the value should be modified according to chipset and board): 
-	        mw.b 1000000 ff 80000                       
-	        tftp 1000000 fastboot-burn.bin              
-	        nand erase 0 100000                         
-	        nand write 1000000 0 80000                  
-	        
-	        SPI flash:
-	        sf probe 0                         	
-	        mw.b 1000000 ff 80000             	
-	        tftp 1000000 fastboot-burn.bin    	
-	        nand erase 0 100000               	
-	        sf write 1000000 0 80000          	
-	        
-		eMMC flash:
-		The commands for the eMMC flash are as follows:
-		Help command: help mmc
-		Read command : mmc read 0 ddroffset startblock blockcount
-		Write command: mmc write 0 ddroffset startblock blockcount
-		[Note]
-		---The eMMC flash is read or written by block. A block has 512 bytes.
-		---The eMMC flash uses the ext4.
-		---Burning images by using the command line on the eMMC flash is too complex. The HiTool is recommended.
-	        
-4. Customize bootargs
+source ./env.sh  #SDK各种环境变量
+#按需修改编译的配置
+make menuconfig
+make build -j4 2>&1  | tee -a buildlog.txt
+```
+制成功后，在out/hi3798mv100可以找到编译好的fastboot-burn.bin、bootargs.bin、hi_kernel.bin，分别是uboot引导文件、uboot引导参数配置和linux内核。
+## 使用HiTool烧录到eMMC
+具体烧录方案可以搜索hitool教程。
 
-	4.1 The default bootargs.bin will be generate in $out_dir/image/ according to the bootargs_xx.txt .
-	    bootargs_xx.txt is in $sdk_path/configs/$chip_type/prebuilts (this path may change in future ,customer can execute "find . -name bootargs* " in $sdk_path/configs to search it) 
-	    
-	4.2 For bootargs customize, customer can directly modify the bootargs_xx.txt ,then use the command "mkbootargs" to generate the bootargs.bin. below gives a demonstration:
-	    mkbootargs  -s 128k -r bootargs.txt  -o bootargs.bin
-	    
-	4.3 Customer also can set bootargs directly in boot console. 
-	    such as(the parameter should be modified by customer):
-	    setenv bootcmd 'nand read 1000000 c00000 800000;bootm 1000000'
-      	    setenv bootargs 'mem=1G console=ttyAMA0,115200 root=/dev/mtdblock5 rootfstype=yaffs2 mtdparts=hi_sfc:1M(boot);hinand:4M(baseparam),4M(pqparam),4M(logo),8M(kernel),96M(rootfs),-(others) mmz=ddr,0,0,300M'
-      	    saveenv
-      	4.4 For more detail ,please refer to <Linux Development Environment User Guide>.
-      	    
-5. Mounting the NFS and Debugging Programs
-	5.1 Config the board network use command:
-		udhcpc  
-		or 
-		ifconfig eth0 hw ether 00:xx:xx:xx:xx:xx; ifconfig eth0 xxx.xxx.xxx.xxx netmask 255.255.xxx.0;route add default gw xxx.xxx.xxx.x;     
-		
-	5.2  Mount the NFS.  
-		mount -t nfs -o nolock -o tcp xxx.xxx.xxx.xxx:/xxx/$sdk_dir /mnt
-		
-	5.3  Add the path for searching dynamic library files: /mnt/$out_dir/lib/share/.
-   		export LD_LIBRARY_PATH="/mnt/$out_dir/lib/share/:$LD_LIBRARY_PATH"
-   		
-   		
-   	5.4. Replace the .ko file.
-   		cd /mnt/$out_dir/kmod
-   		rmmod xxx.ko
-   		insmod xxx.ko
+## 高级编译
+### 自定义linux内核
+ARM平台内核配置文件采用defconfig格式，正确使用和保存deconfig的流程如下：
 
-	5.5 Run the sample.
-   		cd /mnt/$out_dir/obj/sample/
-   		./sample_xxx
-  
-6. Mounting a USB device
-	6.1 Load the .ko files.
-	   insmod ehci-hcd.ko
-	   insmod ohci-hcd.ko
-	   If the NTFS is to be supported, load ufsd.ko.
-	   insmod ufsd.ko
-	6.2 Mount the USB device.
-	   If the FAT32 is used, run the following command:
-	   mount -t vfat /dev/sda /usb
-	   If the NTFS is used, run the following command:
-	   mount -t ufsd /dev/sda /usb
+source/kernel/linux-3.18.y/arch/arm/configs/hi3798mv100_defconfig 
+cd source/kernel/linux-3.18.y/
+可以使用本git库提供的hi3798mv100_defconfig-0812
+1. 先备份hi3798mv100_defconfig
+2. make ARCH=arm hi3798mv100_defconfig #从defconfig生成标准linux内核配置.config文件
+3. make ARCH=arm menuconfig #修改内核配置，并保存
+4. make ARCH=arm savedefconfig #重新生成defconfg文件
+5. cp defconfig arch/arm/configs/hi3798mv100_defconfig  #复制defconfig文件到正确的位置。
+6. make distclean #清理之前编译生产的文件
+7. cd $SDK_path;make linux  #重新编译kernel
 
-7. SDK developing and debug, please refer to <HMS Development Guide> and <HMS Debugging Guide>	  
-8. HiLoader: 	please refer to  <HiLoader Development Guide>
-9. CAS : 	please refer to <Advanced CA Development Guide>
+需关注的kernel编译参数 才能支持docker：
+
+    打开devtmpfs,/dev 文件系统
+
+    打开open by fhandle syscalls
+
+    打开cgroup功能
+    
+
+## 刷机包-二进制文件
+文件下载 release
+fastboot-bin.bin  uboot分区包
+bootargs.bin   uboot参数分区包
+hi_kernel.bin  kernel分区包
+rootfs_128m.ext  root根分区包
+emmc_partitions.xml  刷机分区配置文件
+如调整分区大小，需要重新生成bootargs.bin 和调整分区配置文件。
+使用华为hi-tool,emmc烧录

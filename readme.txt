@@ -58,10 +58,10 @@ fastboot-bin.bin  uboot分区包
 bootargs.bin   uboot参数分区包
 hi_kernel.bin  kernel分区包
 
-根目录下 hi3798mv100_defconfig 是我配置好的 hi3798mv100 芯片的 支持Docker 的配置 替换到 /source/kernel/linux-4.4.y.patch 编译即可!
-
-
 rootfs_128m.ext  root根分区包
 emmc_partitions.xml  刷机分区配置文件
 如调整分区大小，需要重新生成bootargs.bin 和调整分区配置文件。
 使用华为hi-tool,emmc烧录
+
+
+根目录下 hi3798mv100_defconfig 是我配置好的 hi3798mv100 芯片的 支持Docker 的配置 替换到 /source/kernel/linux-4.4.y.patch 编译即可!

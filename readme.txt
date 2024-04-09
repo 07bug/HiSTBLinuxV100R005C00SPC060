@@ -4,14 +4,14 @@
 目标板：IPTV退役的华为机顶盒EC6108v9（ hisilicon Hi3798mv100 2G 8G emmc）
 编译环境：Ubuntu 22.04
 海思linux内核：HiSTBLinux 适用于hi3798mv100 mv200 
-SDK: HiSTBLinuxV100R005C00SPC041B060
+SDK: HiSTBLinuxV100R005C00SPC060
 
 ## 环境准备
 
 ```
-git clone https://github.com/glinuz/hi3798mv100
+https://github.com/zjkanjie/HiSTBLinuxV100R005C00SPC060
 #切换到工作目录
-cd HiSTBLinuxV100R005C00SPC041B020  #$SDK_path
+cd HiSTBLinuxV100R005C00SPC060  #$SDK_path
 #安装需要的编译工具，可以使用SDK带的shell脚本，也可以自己安装
 sh server_install.sh
 #or

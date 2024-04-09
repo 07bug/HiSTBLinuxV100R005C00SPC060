@@ -1,0 +1,7 @@
+version.lo: version.c \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/stdc-predef.h \
+ ../include/netlink/version.h
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/stdc-predef.h:
+
+../include/netlink/version.h:

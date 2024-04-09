@@ -1,0 +1,7 @@
+menu "Peripherals Config"
+source "scripts/kconfig/Kconfig.ir"
+source "scripts/kconfig/Kconfig.keyled"
+source "scripts/kconfig/Kconfig.sci"
+source "scripts/kconfig/Kconfig.gpioi2c"
+source "scripts/kconfig/Kconfig.spi"
+endmenu

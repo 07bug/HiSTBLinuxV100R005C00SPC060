@@ -1,0 +1,25 @@
+mainmenu "Hisi SDK Configuration"
+
+menu "Base"
+source "scripts/kconfig/Kconfig.base"
+source "scripts/kconfig/Kconfig.debug"
+endmenu
+
+menu "Board"
+source "scripts/kconfig/Kconfig.board"
+endmenu
+
+menu "Boot System"
+source "scripts/kconfig/Kconfig.boot"
+endmenu
+
+menu "Linux(REE) System"
+source "scripts/kconfig/Kconfig.system"
+endmenu
+
+source "scripts/kconfig/Kconfig.tee"
+
+menu "Upgrade System"
+source "scripts/kconfig/Kconfig.loader"
+endmenu
+#--------------------------------

@@ -1,0 +1,101 @@
+cc_defaults {
+    name: "libhi-hal-jpeg-share",
+    cflags: [
+        "-O3",
+        "-fstrict-aliasing",
+        "-Wno-unused-parameter",
+        "-Werror",
+        "-DCONFIG_JPEG_ADD_GOOGLEFUNCTION",
+        "-DCONFIG_GFX_ANDROID_SDK",
+        "-DCONFIG_GFX_MEM_ION",
+        "-DCONFIG_GFX_MMU_SUPPORT",
+        "-DCONFIG_GFX_PROC_SUPPORT",
+        "-DHI_PROC_SUPPORT=0",
+        "-DCONFIG_GFX_PROPERTY_SUPPORT",
+        "-DCONFIG_GFX_ANDROID_VERSION_26",
+        "-DCONFIG_GFX_ONLY_HARD_DECOMPRESS",
+    ],
+
+    include_dirs: [
+                   "device/hisilicon/bigfish/HiSTBSDKV6R4/source/msp/api/jpeg/include",
+                   "device/hisilicon/bigfish/HiSTBSDKV6R4/source/msp/api/jpeg/grc_cmm_inc",
+                   "device/hisilicon/bigfish/HiSTBSDKV6R4/source/msp/api/jpeg/jpeg-hal/inc_hard",
+                   "device/hisilicon/bigfish/HiSTBSDKV6R4/source/msp/api/jpeg/jpeg-hal/src_hard",
+                   "device/hisilicon/bigfish/HiSTBSDKV6R4/source/msp/api/jpeg/jpeg-hal/src_soft",
+                   "device/hisilicon/bigfish/HiSTBSDKV6R4/source/msp/api/jpeg/jpeg-hal/src_comm",
+                   "device/hisilicon/bigfish/HiSTBSDKV6R4/source/msp/drv/jpeg/include",
+                   "device/hisilicon/bigfish/HiSTBSDKV6R4/source/msp/api/tde/include",
+                   "device/hisilicon/bigfish/HiSTBSDKV6R4/source/msp/drv/include",
+                   "device/hisilicon/bigfish/HiSTBSDKV6R4/source/common/include",
+                   "system/core/libutils/include",
+                   "system/core/liblog/include",
+                   "system/core/libcutils/include",
+                   ".",
+                  ],
+
+    srcs: [
+        "jpeg-hal/src_hard/jpeg_hal_dev.c",
+        "jpeg-hal/src_hard/jpeg_hal_dec.c",
+    ],
+}
+
+cc_defaults {
+    name: "libhi-jpeg-share",
+    cflags: [
+        "-O3",
+        "-fstrict-aliasing",
+        "-Wno-unused-parameter",
+        "-Werror",
+    ],
+
+    include_dirs: [
+                   "external/libjpeg-turbo",
+                   "device/hisilicon/bigfish/HiSTBSDKV6R4/source/msp/api/jpeg/include",
+                   "device/hisilicon/bigfish/HiSTBSDKV6R4/source/msp/api/jpeg/grc_cmm_inc",
+                   "device/hisilicon/bigfish/HiSTBSDKV6R4/source/msp/drv/jpeg/include",
+                   "device/hisilicon/bigfish/HiSTBSDKV6R4/source/common/include",
+                   "device/hisilicon/bigfish/HiSTBSDKV6R4/source/msp/drv/include",
+                   "system/core/libutils/include",
+                   "system/core/liblog/include",
+                   "system/core/libcutils/include",
+                   ".",
+                  ],
+
+    srcs: [
+        "src/hi_jpeg_api.c",
+    ],
+}
+
+cc_library {
+    name: "libhi_hal_jpeg",
+    defaults: ["libhi-hal-jpeg-share"],
+    proprietary: true,
+    export_include_dirs: [".",
+                          "jpeg-hal/src_soft",
+                          "./jpeg-hal/inc_hard"
+                         ],
+    
+    shared_libs: [
+        "libcutils",
+        "libutils",
+        "liblog"
+    ],
+}
+
+cc_library {
+    name: "libhi_jpeg",
+    defaults: ["libhi-jpeg-share"],
+    proprietary: true,
+    export_include_dirs: [".",
+                          "./include",
+                          "./jpeg-hal/inc_hard"
+                         ],
+
+    shared_libs: [
+        "libcutils",
+        "libutils",
+        "liblog",
+        "libhi_hal_jpeg",
+        "libjpeg"
+    ],
+}

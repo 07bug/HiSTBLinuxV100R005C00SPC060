@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Peach xmlns="http://peachfuzzer.com/2012/Peach"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://peachfuzzer.com/2012/Peach D:\peach-3.2.38\peach\peach.xsd"
+       author="WangHao"
+       description="Fuzz android c"
+       version="0.0.1">
+  
+  <StateModel name="Fuzzing_ModelA_State" initialState="call_func">
+        <State name="call_func">
+
+            <!-- <Action name="call_print" type="call" method="call_print">
+                <Param name="print_string">
+                    <DataModel name="print_string"> -->
+                        <!-- 这里必须要空格结尾 -->
+                        <!-- <String value="hello world!!!"  nullTerminated="true"/>
+                    </DataModel>
+                </Param>
+                
+                <Param name="print_num">
+                    <DataModel name="print_num">
+                        <Number size="32" value="8888" />
+                    </DataModel>
+                </Param> -->
+                
+                <!-- <Result>
+                    <DataModel name="Result">
+                        <Number size="32" signed="true" />
+                    </DataModel>
+                </Result> -->
+            <!-- </Action> -->
+
+			<Action name="call_setMacAlgorithm_func" type="call" method="call_setMacAlgorithm">
+				<Param name="func_str_setMacAlgorithm_name">
+					<DataModel name="func_str_setMacAlgorithm_name">
+						<String value="AmfjCTOPbEOl3WD/5mcecA==" nullTerminated="true" mutable="true"/>
+					</DataModel>
+				</Param>
+				
+				<Param name="func_str_setMacAlgorithm_algorithm">
+					<DataModel name="func_str_setMacAlgorithm_algorithm">
+						<String value="AmfjCTOPbEOl3WD/5mcecA==" nullTerminated="true" mutable="true"/>
+					</DataModel>
+				</Param>
+			</Action>
+			
+			<Action name="call_encrypt_func" type="call" method="call_encrypt">
+				<Param name="func_str_encrypt_sessionId1">
+					<DataModel name="func_str_encrypt_sessionId1">
+						<String value="AmfjCTOPbEOl3WD/5mcecA==" nullTerminated="true" mutable="true"/>
+					</DataModel>
+				</Param>
+				
+				<Param name="func_str_encrypt_keyId">
+					<DataModel name="func_str_encrypt_keyId">
+						<String value="AmfjCTOPbEOl3WD/5mcecA==" nullTerminated="true" mutable="true"/>
+					</DataModel>
+				</Param>
+				
+				<Param name="func_str_encrypt_input">
+					<DataModel name="func_str_encrypt_input">
+						<String value="AmfjCTOPbEOl3WD/5mcecA==" nullTerminated="true" mutable="true"/>
+					</DataModel>
+				</Param>
+				
+				<Param name="func_str_encrypt_iv">
+					<DataModel name="func_str_encrypt_iv">
+						<String value="AmfjCTOPbEOl3WD/5mcecA==" nullTerminated="true" mutable="true"/>
+					</DataModel>
+				</Param>
+			</Action>
+			
+			<Action name="call_decrypt_func" type="call" method="call_decrypt">
+				<Param name="func_str_decrypt_sessionId1">
+					<DataModel name="func_str_decrypt_sessionId1">
+						<String value="AmfjCTOPbEOl3WD/5mcecA==" nullTerminated="true" mutable="true"/>
+					</DataModel>
+				</Param>
+				
+				<Param name="func_str_decrypt_keyId">
+					<DataModel name="func_str_decrypt_keyId">
+						<String value="AmfjCTOPbEOl3WD/5mcecA==" nullTerminated="true" mutable="true"/>
+					</DataModel>
+				</Param>
+				
+				<Param name="func_str_decrypt_input">
+					<DataModel name="func_str_decrypt_input">
+						<String value="AmfjCTOPbEOl3WD/5mcecA==" nullTerminated="true" mutable="true"/>
+					</DataModel>
+				</Param>
+				
+				<Param name="func_str_decrypt_iv">
+					<DataModel name="func_str_decrypt_iv">
+						<String value="AmfjCTOPbEOl3WD/5mcecA==" nullTerminated="true" mutable="true"/>
+					</DataModel>
+				</Param>
+			</Action>
+			
+			<Action name="call_setPropertyString_func" type="call" method="call_setPropertyString">
+				<Param name="func_str_setPropertyString_name">
+					<DataModel name="func_str_setPropertyString_name">
+						<String value="AES/CBC/PKCS5Padding" nullTerminated="true" mutable="true"/>
+					</DataModel>
+				</Param>
+				
+				<Param name="func_str_setPropertyString_value">
+					<DataModel name="func_str_setPropertyString_value">
+						<String value="AES/CBC/PKCS5Padding" nullTerminated="true" mutable="true"/>
+					</DataModel>
+				</Param>
+			</Action>
+			
+			<Action name="call_setPropertyByteArray_func" type="call" method="call_setPropertyByteArray">
+				<Param name="func_str_setPropertyByteArray_name">
+					<DataModel name="func_str_setPropertyByteArray_name">
+						<String value="AmfjCTOPbEOl3WD/5mcecA==" nullTerminated="true" mutable="true"/>
+					</DataModel>
+				</Param>
+				
+				<Param name="func_str_setPropertyByteArray_value">
+					<DataModel name="func_str_setPropertyByteArray_value">
+						<String value="AmfjCTOPbEOl3WD/5mcecA==" nullTerminated="true" mutable="true"/>
+					</DataModel>
+				</Param>
+			</Action>
+			
+			<Action name="call_setCipherAlgorithm_func" type="call" method="call_setCipherAlgorithm">
+				<Param name="func_str_setCipherAlgorithm_name">
+					<DataModel name="func_str_setCipherAlgorithm_name">
+						<String value="AmfjCTOPbEOl3WD/5mcecA==" nullTerminated="true" mutable="true"/>
+					</DataModel>
+				</Param>
+				
+				<Param name="func_str_setCipherAlgorithm_algorithm">
+					<DataModel name="func_str_setCipherAlgorithm_algorithm">
+						<String value="AmfjCTOPbEOl3WD/5mcecA==" nullTerminated="true" mutable="true"/>
+					</DataModel>
+				</Param>
+			</Action>
+        </State>
+        
+
+
+	</StateModel>
+  
+  
+	
+	<!-- Only used for remote publisher -->
+	<Agent name="Remote" location="http://##TargetIPv4##:##port##">
+		<Monitor name="mmmmmmmmmmmmm" class="Caaaaaaa">
+			  <Param name="Pbbbbb" value="Pbvalue"/>
+			  <Param name="Pccccc" value="Pcvalue" />
+		</Monitor>
+	</Agent>
+	
+
+	<Test name="Default" >
+		<StateModel ref="Fuzzing_ModelA_State" />
+		<Agent ref="Remote"/>
+		<!-- <Agent ref="Local" /> -->
+        
+		<Publisher name="PPP" class="Remote">
+			<Param name="Agent" value="Remote"/>
+			<Param name="Class" value="Ioctl" />
+		</Publisher>
+        
+        <!-- 通过下面命令可以控制仅fuzzing某协议函数的某些字段-->
+        <!-- <Exclude />
+        <Include xpath="//msgID"/> -->
+		
+		<!-- 这个变异算法用来移除元素，在API fuzzing里不适用 -->
+		<Mutators mode="exclude">
+			<Mutator class="DataElementRemove" />
+		</Mutators>
+        
+        <!-- Sequential Random-->
+        <Strategy class="Random">
+		<!-- 设置可变异的最大字段数，提高变异的频率 -->
+		<Param name="MaxFieldsToMutate" value="1000" />
+		</Strategy>
+  
+		<Logger class="File" >
+		  <Param name="Path" value="D:\Logs"/>
+		</Logger>
+
+	</Test>
+</Peach>

@@ -1,0 +1,44 @@
+----------------KeyLadder test vectors-------------------
+3-level: 
+DSK->DCK->TSK->CW(a.k.a. K3->K2->K1->CW)
+Key Ladder Algorithm: 
+TDES-ABA
+Descrambler Algorithm: 
+CSA
+
+
+## OTP keys value
+OTP_ID     = 00000002
+OTP KeyA   = A5020202020202020202020202020202  //CSA2_RootKey(DSK)
+OTP KeyB   = 85AE623C5188D209DA1AC8C653A86411  //MISC_RootKey(DDSK)
+
+
+## Encrypted session keys for CA descrambling.  
+
+For KeyA:
+EK2 = 01000000000000000000000000000000
+EK1 = 7694A15850AA305D0213B8A020EAAB46
+
+For KeyB:
+EK2 = E75E3B85639E16ECEECCC980F3565BDC
+EK1 = DC1052F24B425B0992458A1181450A8D
+
+
+## Encrypted CWs:
+ECW_ODD=[3b91fdab27ac4073] ECW_EVEN=[482b4586eaec0080] //Program 2
+ECW_ODD=[761fcb4ecb005cd4] ECW_EVEN=[75faa64f0517a6cd] //Program 3
+ECW_ODD=[5eb91ca4e2868ecb] ECW_EVEN=[34558dd409b47e69] //Program 4
+ECW_ODD=[8406d6a24a8f02aa] ECW_EVEN=[666528b95ef75aeb] //Program 5
+
+
+======================================================================
+P.S.
+Fix CW stream (FixedCW_20080802.ts) Info
+
+Clear CW:
+CW_ODD=[FBACF39A422C2997] CW_EVEN=[02A537DE26977B38] //Program 2
+CW_ODD=[A007F79E8E7EADB9] CW_EVEN=[54A390870DE100EE] //Program 3
+CW_ODD=[024F63B49C1F520D] CW_EVEN=[2CE8849810AC7F3B] //Program 4
+CW_ODD=[9741A67E860F962B] CW_EVEN=[55BD0113BB8F1A64] //Program 5
+
+Note Program 1 is clear stream without scrambling.

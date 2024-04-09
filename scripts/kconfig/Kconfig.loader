@@ -1,0 +1,153 @@
+menuconfig HI_UPGRADE_SUPPORT
+    bool "Upgrade Support"
+    depends on !HI_NVR_SUPPORT
+    default n
+
+#------------------------------------------------
+choice
+    prompt "Loader Type"
+    default HI_RECOVERY_SUPPORT     if ANDROID_PRODUCT
+    default HI_APPLOADER_SUPPORT    if LINUX_PRODUCT
+    depends on HI_UPGRADE_SUPPORT
+
+config HI_RECOVERY_SUPPORT
+    bool "Recovery"
+    depends on ANDROID_PRODUCT
+
+config HI_APPLOADER_SUPPORT
+    bool "AppLoader"
+
+#config HI_BOOTLOADER_SUPPORT
+#    bool "BootLoader"
+
+endchoice
+
+config  HI_LOADER_SUPPORT
+    bool
+    default y
+    depends on HI_UPGRADE_SUPPORT && (HI_APPLOADER_SUPPORT || HI_BOOTLOADER_SUPPORT)
+
+#------------------------------------------------
+
+config HI_LOADER_APPLOADER
+    bool "Build AppLoader images"
+    default n
+    depends on HI_UPGRADE_SUPPORT && HI_APPLOADER_SUPPORT
+
+#------------------------------------------------
+
+choice
+    prompt "File Protocol"
+    default HI_LOADER_PROTOCOL_HISI_FILE
+    depends on HI_UPGRADE_SUPPORT && ((HI_APPLOADER_SUPPORT && HI_LOADER_APPLOADER) || (HI_BOOTLOADER_SUPPORT))
+config  HI_LOADER_PROTOCOL_HISI_FILE
+    bool "Hisi File Protocol"
+endchoice
+
+#------------------------------------------------
+choice
+    prompt "OTA Protocol"
+    default HI_LOADER_PROTOCOL_HISI_OTA
+    depends on HI_UPGRADE_SUPPORT && ((HI_APPLOADER_SUPPORT && HI_LOADER_APPLOADER) || (HI_BOOTLOADER_SUPPORT)) && HI_FRONTEND_SUPPORT
+
+config  HI_LOADER_PROTOCOL_HISI_OTA
+    bool "Hisi OTA Protocol"
+config  HI_LOADER_PROTOCOL_SSU_OTA
+    bool "SSU OTA Protocol"
+endchoice
+
+#------------------------------------------------
+choice
+    prompt "OSD Language"
+    default HI_APPLOADER_OSD_LANG_EN
+    depends on HI_UPGRADE_SUPPORT && ((HI_APPLOADER_SUPPORT && HI_LOADER_APPLOADER) || (HI_BOOTLOADER_SUPPORT))
+
+config  HI_APPLOADER_OSD_LANG_EN
+    bool "English"
+
+config  HI_APPLOADER_OSD_LANG_CN
+    bool "Chinese"
+    depends on HI_LOADER_APPLOADER
+endchoice
+
+#------------------------------------------------
+config  HI_APPLOADER_ANTI_ROLLBACK
+    bool "Anti-Rollback Support"
+    default y
+    depends on HI_UPGRADE_SUPPORT && ((HI_APPLOADER_SUPPORT && HI_LOADER_APPLOADER) || (HI_BOOTLOADER_SUPPORT))
+
+#------------------------------------------------
+config  HI_APPLOADER_MODE_USB
+    bool "USB Upgrade Support"
+    default y
+    depends on HI_UPGRADE_SUPPORT && ((HI_APPLOADER_SUPPORT && HI_LOADER_APPLOADER) || (HI_BOOTLOADER_SUPPORT))
+
+#------------------------------------------------
+config  HI_APPLOADER_MODE_FS
+    bool "FileSystem Upgrade Support"
+    default y if HI_APPLOADER_SUPPORT
+    default n if HI_BOOTLOADER_SUPPORT
+    depends on HI_UPGRADE_SUPPORT && ((HI_APPLOADER_SUPPORT && HI_LOADER_APPLOADER) || (HI_BOOTLOADER_SUPPORT))
+
+#------------------------------------------------
+config  HI_APPLOADER_MODE_IP
+    bool "IP Upgrade Support"
+    default y if HI_APPLOADER_SUPPORT
+    default n if HI_BOOTLOADER_SUPPORT
+    depends on HI_UPGRADE_SUPPORT && ((HI_APPLOADER_SUPPORT && HI_LOADER_APPLOADER) || (HI_BOOTLOADER_SUPPORT)) && !HI_ADVCA_SUPPORT
+    select HI_CURL_SUPPORT
+
+#------------------------------------------------
+
+menuconfig HI_APPLOADER_MODE_OTA
+    bool "OTA Upgrade Support"
+    default y if HI_APPLOADER_SUPPORT
+    default n if HI_BOOTLOADER_SUPPORT
+    depends on HI_UPGRADE_SUPPORT && ((HI_APPLOADER_SUPPORT && HI_LOADER_APPLOADER) || (HI_BOOTLOADER_SUPPORT)) && HI_FRONTEND_SUPPORT
+
+#------------------------------------------------
+choice
+    prompt "Tuner Type"
+    default HI_APPLOADER_TUNER_CAB
+    depends on HI_APPLOADER_MODE_OTA
+
+config  HI_APPLOADER_TUNER_CAB
+    bool "Cable"
+
+config  HI_APPLOADER_TUNER_SAT
+    bool "Satellite"
+
+config  HI_APPLOADER_TUNER_DVB_T
+  bool "Terrestrial DVB_T"
+
+config  HI_APPLOADER_TUNER_DVB_T2
+  bool "Terrestrial DVB_T2"
+endchoice
+
+#------------------------------------------------
+config HI_APPLOADER_TUNER_INDEX
+    int "Tuner Port Index (0,3)"
+    range 0 3
+    default 0
+    depends on HI_APPLOADER_MODE_OTA
+    ---help---
+        This option controls tuner port index, range from 0 to 3.
+          0-the cable tuner port index
+          1-the cable tuner port index
+          2-the cable tuner port index
+          3-the cable tuner port index
+          Default 0.
+        NOTICE: This value control the tuner port index, the default value always 0(cable).
+#------------------------------------------------
+
+
+#------------------------------------------------
+config  HI_APPLOADER_INITRD_BASE_ADDR
+    hex "Initrd filesystem base addr in mkbootimg tool"
+    default 0x3500000
+    depends on HI_UPGRADE_SUPPORT && (HI_APPLOADER_SUPPORT && HI_LOADER_APPLOADER) && ADVCA_CONAX
+    help
+    Initrd filesystem base addr in mkbootimg tool,if initrd=0x4500000 in bootargs,here need set it as 0x3500000
+    As mkbootimg will add 0x1000000 kernel space before fs position.
+
+source "scripts/kconfig/Kconfig.curl"

@@ -1,0 +1,54 @@
+menuconfig HI_TEE_SUPPORT
+    bool "TEE System"
+    depends on !(HI3716MV410 || HI3716MV420)
+    default n
+    help
+        when enabled, Trusted Execution Environment(TEE) can be supported
+        Please say n here as dedault, unless you really know what are you doing.
+
+choice
+    prompt "SecureOS Type"
+    depends on HI_TEE_SUPPORT
+    default HI_TRUSTEDCORE_SUPPORT
+
+config HI_TRUSTEDCORE_SUPPORT
+    bool "Trustedcore"
+    help
+        when enabled, secure os will be selected as Trustedcore
+
+config HI_OPTEE_SUPPORT
+    bool "Optee"
+    help
+        when enabled, secure os will be selected as OPTEE (Open TEE)
+    depends on (HI3796MV200 || HI3716MV450)
+endchoice
+
+config HI_TEE_LOG_SUPPORT
+    bool "Log Support"
+    help
+       when disabled, close the log of secure os
+    depends on HI_TEE_SUPPORT
+    default y
+
+choice
+    prompt "Board Memory Size"
+    depends on HI_TEE_SUPPORT && (HI3798MV100 || HI3796MV100 || HI3798CV200 || HI3798MV200 || HI3798MV300)
+    default 1G
+
+config TVP_MEM_1G
+    bool "1G"
+    help
+        select it when DDR size is 1G
+
+config TVP_MEM_2G
+    bool "2G"
+    help
+        select it when DDR size is 2G
+
+endchoice
+
+config HI_TVP_MEM_LAYOUT
+    string
+    depends on HI_TEE_SUPPORT && (HI3798MV100 || HI3796MV100 || HI3798CV200 || HI3798MV200 || HI3798MV300)
+    default 1G      if TVP_MEM_1G
+    default 2G      if TVP_MEM_2G

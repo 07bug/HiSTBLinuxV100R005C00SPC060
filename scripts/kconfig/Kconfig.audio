@@ -1,0 +1,124 @@
+menu "Audio Config"
+
+config HI_AENC_SUPPORT
+    bool "AENC Support"
+    help
+        when enabled, support audio encoder
+
+    default y
+
+config HI_ADEC_AUDSPECTRUM_SUPPORT
+    bool "Audio Spectrum Support"
+    help
+        when enabled, support audio spectrum
+
+    default n
+
+config HI_AI_SUPPORT
+    bool "AI Support"
+    help
+        when enabled, support audio input (for example, audio recorder)
+    default n
+
+config HI_SND_SMARTVOLUME_SUPPORT
+    bool "Auto Volume Control Support"
+    help
+        when enabled, adjust the audio volume automatically
+    default n
+
+config HI_SND_HBRA_PASSTHROUGH_SUPPORT
+    bool "SND HBRA passthrough support"
+    default n if (HI3716MV410 || HI3716MV420)
+    default y
+    help
+        when enabled, HBRA(TRUEHD DTSHD 7.1LPCM) passthrough is supported
+        when not enabled, the memory consuming can be reduced
+
+config HI_SND_PORT_DELAY_SUPPORT
+    bool "SND Port Delay Support"
+    help
+        when enabled, the audio can be delayed in audio port intentional to sync the audio and video in the case when audio comes faster than video
+    default n
+
+menuconfig HI_ADAC_SUPPORT
+    bool "ADAC Support"
+    help
+        when enabled, the default kernel driver of ADAC (Audio Digital Analog Converter) will be supported
+    default n
+
+choice
+    prompt "Codec Support"
+    depends on HI_ADAC_SUPPORT
+
+config HI_ADAC_SLIC_SUPPORT
+    bool "slic"
+    help
+        when enabled, telephone audio driver is supported
+
+config HI_ADAC_TVL320AIC31_SUPPORT
+    bool "tlv320"
+    help
+        when enabled, the driver of specific ADAC chip 'TVL320AIC31' can be supported
+
+endchoice
+
+config HI_ALSA_SUPPORT
+    bool "ALSA Support"
+    depends on !(HI_BLUETOOTH_SUPPORT)
+    help
+        when enabled, ALSA (Advanced Linux Sound Architecture) is supported
+    default n
+
+config HI_ALSA_LIB_SUPPORT
+    bool "ALSA Library Support"
+    help
+        when enabled, the ALSA related libraries will be generated
+    depends on LINUX_PRODUCT && HI_ALSA_SUPPORT
+    default n
+
+config HI_ALSA_DRIVER_SUPPORT
+    bool "ALSA Driver Support"
+    help
+        when enabled, ALSA related driver will be compiled (into kernel or independent kernel module)
+    depends on HI_ALSA_SUPPORT
+    default n
+
+config HI_SND_ALSA_AO_SUPPORT
+    bool "ALSA AO Support"
+    help
+        when enabled, audio can be output by ALSA
+    depends on HI_ALSA_DRIVER_SUPPORT
+    default n
+
+config HI_SND_ALSA_AI_SUPPORT
+    bool "ALSA AI Support"
+    help
+        when enabled, audio can be input by ALSA
+    depends on HI_ALSA_DRIVER_SUPPORT
+    default n
+    select HI_AI_SUPPORT
+
+config HI_AUDIO_RESAMPLER_SUPPORT
+    bool "Audio resampler Support"
+    help
+        when enabled, the resampler library will be generated
+    default n if LINUX_PRODUCT
+    default y if ANDROID_PRODUCT
+
+config HI_SONIC_SUPPORT
+    bool "SONIC SUPPORT"
+    help
+        when enabled, audio playback rate can be changed
+    default n
+
+config HI_KARAOKE_SUPPORT
+    bool "Karaoke Support"
+    help
+        when enabled, the KARAOKE related libraries will be generated
+    depends on ANDROID_PRODUCT
+    default y
+    select HI_AUDIO_RESAMPLER_SUPPORT
+
+source "scripts/kconfig/Kconfig.hacodec"
+
+endmenu

@@ -1,0 +1,33 @@
+cc_library_shared {
+    name: "libjpeg_hidl",
+    cflags: [
+        "-Wall",
+        "-Werror",
+        "-Wunused",
+        "-Wunreachable-code",
+    ],
+
+    srcs: ["jpeg_hidl_hal.cpp"],
+
+    include_dirs: [
+                    "device/hisilicon/bigfish/HiSTBSDKV6R4/source/common/include",
+                  ],
+    
+    local_include_dirs: [
+                          ".",
+                        ],
+
+    export_include_dirs: [
+                           "."
+                         ],
+
+    shared_libs: [
+        "libcutils",
+        "libutils",
+        "liblog",
+        "libhidlbase",
+        "libhidltransport",
+        "libhwbinder",
+        "vendor.hisilicon.hardware.hwjpeg@1.0",
+    ],
+}

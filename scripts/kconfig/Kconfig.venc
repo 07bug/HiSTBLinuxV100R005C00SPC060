@@ -1,0 +1,4 @@
+config HI_VENC_SUPPORT
+    bool
+    depends on !HI3716MV410
+    default y

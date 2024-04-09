@@ -1,0 +1,55 @@
+config  HI_VPSS_MAX_BUFFER_NUMB
+    int "Vpss Port OutBuffer Max Number(6~20)"
+    help
+        set max number of output buffer for each VPSS port
+    range 6 20
+    default 10
+
+config  HI_DISP_USE_QPLL_SOLELY
+    bool "QPLL Be Used By Display Solely"
+    help
+        when enabled, QPLL is only used by Display and display can suppport dobuble HD output with different pixel clock.
+    default n
+
+config  HI_DISP_TTX_INBUFFERSIZE
+    hex "TTX Input Buffer Size"
+    help
+        Adjust input buffer size of teletext
+    default 0x4000
+
+config  HI_DISP_CC_INBUFFERSIZE
+    hex "SD CC Input Buffer Size"
+    help
+        Adjust input buffer size of Closed Caption
+    default 0x4000
+
+config  HI_VDP_VIDEO_LINEDCMP
+    bool
+    help
+        when enabled, the specific compressed YUV data will be de-compressed, for Capture case
+    depends on (HI3716MV410 || HI3716MV420)
+    default y
+
+config  HI_PQ_V3_0
+    bool
+    depends on HI3798MV100 || HI3796MV100 || HI3716MV410 || HI3716MV420
+    default y
+
+config  HI_PQ_V4_0
+    bool
+    depends on HI3798CV200 || HI3798MV200 || HI3798MV300 || HI3798MV300H || HI3798MV310 || HI3796MV200 || HI3716MV450
+    default y
+
+config  HI_DISP_VIRT_OFFSET_EFFECT_WHEN_FULLSCREEN
+    bool "Disp Offset Take Effect When Window Full Screen."
+    default n if ANDROID_PRODUCT
+    default n if LINUX_PRODUCT
+    help
+        when enabled, the range of window size will also be affected by display offset even when window is in full screen
+
+config  HI_GFX_SDR2HDR_WEAK_PARA
+    bool "Low Saturation Color Para For Gfx Transfer To Hdr Output."
+    default n if ANDROID_PRODUCT
+    default n if LINUX_PRODUCT
+    help
+        when enabled, graphic will use low saturation color para when input SDR but output HDR signal.

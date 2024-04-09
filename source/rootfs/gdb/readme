@@ -1,0 +1,5 @@
+Attention:
+GDB software is released by GPL V3.0 License.
+If customers need to use it, they can download the source package by themselves.
+We have tested the software version is gdb-8.0.
+After downloading gdb-8.0.tar.gz to $SDK_ROOT/third_party/open_source, customer can run command 'make' in this directory to compile.

@@ -1,0 +1,4 @@
+config  HI_KEYPROVISION_SUPPORT
+    depends on (HI3796MV200 || HI3716MV450 || HI3798MV300 || HI3798MV300H || HI3798MV310)
+    bool "Keyprovision Support"
+    default n

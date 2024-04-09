@@ -1,0 +1,5 @@
+config  HI_VI_SUPPORT
+    bool "VI Support"
+    help
+        video input for video phone case
+    default n

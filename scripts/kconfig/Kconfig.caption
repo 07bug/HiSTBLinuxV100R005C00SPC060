@@ -1,0 +1,35 @@
+#+++++++++++++++++++++++++++++++++++++++++++++++++++
+menu "Caption Config"
+
+#------------------------------------------------
+config  HI_CAPTION_SUBT_SUPPORT
+    bool "Subtitle Support"
+    help
+        when enabled, subtitle can be supported
+    default n
+
+#------------------------------------------------
+config  HI_CAPTION_TTX_SUPPORT
+    bool "Teletext Support"
+    help
+        when enabled, teletext can be supported        
+    default n
+
+#------------------------------------------------
+config  HI_CAPTION_SO_SUPPORT
+    bool "Subtitle Output Support"
+    help
+        part of subtitle, 'Subtitle Output' can be used for other modules
+    default y
+
+#------------------------------------------------
+config  HI_CAPTION_CC_SUPPORT
+    bool "Closed Caption Support"
+    help
+        when enabled, 'Closed Caption' can be supported
+    default n
+
+#------------------------------------------------
+endmenu
+#+++++++++++++++++++++++++++++++++++++++++++++++++++
+

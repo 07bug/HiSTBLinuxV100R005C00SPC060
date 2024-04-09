@@ -1,0 +1,16 @@
+#!/bin/sh
+
+mount -t cgroup none /sys/fs/cgroup
+
+
+brctl addbr br1
+# brctl addbr br2
+
+ifconfig br1 192.168.1.1 up
+# ifconfig br2 192.168.2.1 up
+
+# ifconfig eth0 192.168.1.207 netmask 255.255.254.0;
+
+# lxc-start -n lxc1 -f /usr/var/lib/lxc/lxc1/config -d /home/launch_app 1000:1000 /home/lxc1_start.sh
+# lxc-start -n lxc0 -f /usr/var/lib/lxc/lxc0/config -d /home/launch_app 1000:1000 /home/lxc0_start.sh
+# lxc-start -n lxc2 -f /usr/var/lib/lxc/lxc2/config -F /home/launch_app 1000:1000 /home/lxc2_start.sh --share-ipc=lxc1

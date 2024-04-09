@@ -1,0 +1,6 @@
+menu "Video Config"
+source "scripts/kconfig/Kconfig.vdec"
+source "scripts/kconfig/Kconfig.venc"
+source "scripts/kconfig/Kconfig.vo"
+source "scripts/kconfig/Kconfig.vi"
+endmenu

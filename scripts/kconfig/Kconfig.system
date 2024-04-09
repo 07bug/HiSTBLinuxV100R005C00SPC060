@@ -1,0 +1,38 @@
+menu "Kernel"
+source "scripts/kconfig/Kconfig.kernel"
+endmenu
+
+menu "Filesystem"
+source "scripts/kconfig/Kconfig.filesystem"
+endmenu
+
+menu "Tools"
+source "scripts/kconfig/Kconfig.tools"
+endmenu
+
+menu "Features"
+source "scripts/kconfig/Kconfig.frontend"
+source "scripts/kconfig/Kconfig.demux"
+source "scripts/kconfig/Kconfig.tsio"
+source "scripts/kconfig/Kconfig.audio"
+source "scripts/kconfig/Kconfig.video"
+source "scripts/kconfig/Kconfig.graphics"
+source "scripts/kconfig/Kconfig.hdmi"
+source "scripts/kconfig/Kconfig.avplay"
+source "scripts/kconfig/Kconfig.gpu"
+source "scripts/kconfig/Kconfig.peripherals"
+source "scripts/kconfig/Kconfig.pm"
+source "scripts/kconfig/Kconfig.pvr"
+source "scripts/kconfig/Kconfig.caption"
+source "scripts/kconfig/Kconfig.crypto"
+source "scripts/kconfig/Kconfig.ci"
+source "scripts/kconfig/Kconfig.omx"
+source "scripts/kconfig/Kconfig.mce"
+source "scripts/kconfig/Kconfig.hiplayer"
+source "scripts/kconfig/Kconfig.gstreamer"
+source "scripts/kconfig/Kconfig.wifi"
+source "scripts/kconfig/Kconfig.bluetooth"
+source "scripts/kconfig/Kconfig.drm"
+source "scripts/kconfig/Kconfig.vp"
+source "scripts/kconfig/Kconfig.keyprovision"
+endmenu

@@ -1,0 +1,6 @@
+config HI_PLCIPHER_SUPPORT
+    bool "PLCipher support"
+    depends on HI3796MV200 || HI3716MV450 || ((HI3716MV410 || HI3716MV420) && ADVCA_NAGRA)
+    default y
+    help
+        PLCipher is used to decrypt payload-mode data

@@ -1,0 +1,25 @@
+#!/bin/sh
+
+TELNETD=$(type -p telnetd)
+if [ -f "${TELNETD}" ] ; then
+    ${TELNETD} &
+else
+    echo "Not find telnetd"
+fi
+
+TEE_SUPPLICANT=$(type -p tee-supplicant)
+if [ -f "${TEE_SUPPLICANT}" ] ; then
+    test -e /dev/tee0 && test -e /dev/teepriv0 || udevadm settle
+    ${TEE_SUPPLICANT}&
+fi
+
+if [ -f "/kmod/load" ] ; then
+    (cd /kmod && ./load && cd -)
+fi
+
+TEECD=$(type -p teecd)
+if [ -f "${TEECD}" ] ; then
+    ${TEECD}&
+else
+    echo "Not find teecd"
+fi

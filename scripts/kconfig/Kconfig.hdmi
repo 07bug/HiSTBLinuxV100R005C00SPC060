@@ -1,0 +1,53 @@
+#+++++++++++++++++++++++++++++++++++++++++++++++++++
+menu "HDMI Config"
+
+config  HI_HDMI_SUPPORT_1_4
+    bool
+    depends on HI3798MV100 || HI3796MV100 || HI3716MV410 || HI3716MV420
+    default y
+
+config  HI_HDMI_SUPPORT_2_0
+    bool
+    depends on HI3798CV200 || HI3798MV200 || HI3798MV300 || HI3798MV300H || HI3798MV310 || HI3796MV200 || HI3716MV450
+    default y
+
+config  HI_HDMI_SUPPORT_HDCP
+    bool "HDCP Support"
+    help
+      If you want to enable HDCP, say y.
+    default n
+
+config  HI_HDMI_SUPPORT_CEC
+    bool "CEC Support"
+    help
+      If you want to enable CEC, say y.
+    default n
+
+config  HI_HDMI_CEC_FORCE_RAWDATA
+    bool "CEC OPERAND FORCE RAWDATA"
+    depends on HI_HDMI_SUPPORT_CEC
+    help
+      If you just want to use RAWDATA for cec message, say y; or you can use RAWDATA and UICommand for cec message.
+    default n
+
+config  HI_HDMI_SUPPORT_DEBUG
+    bool "DEBUG Support"
+    help
+        enable debug messages
+    default n
+
+config  HI_HDMI_DEBUG_MEM_SIZE
+    hex "DEBUG Memory Size (BYTE)"
+    help
+      set debug memory size inside SDK, note that this debug memory is only used in development stage and is used for storing debug messages.
+    default 0x80000
+
+config  HI_HDMI_START_SUPPORT
+    bool "HDMI Start Support"
+    help
+        If you want to control HDMI START only by HI_UNF_HDMI_Start(), say y;or it will start automatically in some case,such as CHANGE DISP FORMAT,etc.
+    default n
+
+endmenu
+#+++++++++++++++++++++++++++++++++++++++++++++++++++
+

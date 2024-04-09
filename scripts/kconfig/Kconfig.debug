@@ -1,0 +1,67 @@
+menu "Debug Config"
+
+config HI_LOG_SUPPORT
+    bool "Log Support"
+    help
+        this flag is used to enable/disable debug messages of some specific modules, see detail inside 
+    default n if FUNCTION_RELEASE
+    default y
+
+choice
+    prompt "Log Level"
+    default HI_LOG_LEVEL_DEBUG
+    depends on HI_LOG_SUPPORT
+
+config HI_LOG_LEVEL_FATAL
+    bool "FATAL"
+config HI_LOG_LEVEL_ERROR
+    bool "ERROR"
+config HI_LOG_LEVEL_WARNING
+    bool "WARNING"
+config HI_LOG_LEVEL_INFO
+    bool "INFO"
+config HI_LOG_LEVEL_DEBUG
+    bool "DEBUG"
+endchoice
+
+config HI_LOG_LEVEL
+    int
+    depends on HI_LOG_SUPPORT
+    default 0       if HI_LOG_LEVEL_FATAL
+    default 1       if HI_LOG_LEVEL_ERROR
+    default 2       if HI_LOG_LEVEL_WARNING
+    default 3       if HI_LOG_LEVEL_INFO
+    default 4       if HI_LOG_LEVEL_DEBUG
+
+config HI_LOG_NETWORK_SUPPORT
+    bool "Network Log Support"
+    default n
+    depends on HI_LOG_SUPPORT
+    help
+        This option controls the network log output, disabled by default.
+
+config HI_LOG_UDISK_SUPPORT
+    bool "UDisk Log Support"
+    default n
+    depends on HI_LOG_SUPPORT
+    help
+        This option controls the u-disk log, disabled by default.
+        when enabled, the log will be written into u-disk.
+
+config HI_PROC_SUPPORT
+    bool "Proc Support"
+    default n if FUNCTION_RELEASE
+    default y
+    help
+        when enabled, proc system is supported.
+        this is not allowed in some specific security (CAS) release case, enabled by default.
+
+config HI_PROC_WRITE_SUPPORT
+    bool "Proc Write Support"
+    help
+        when enabled, the proc system have write-permission.
+    depends on HI_PROC_SUPPORT
+    default n if FUNCTION_RELEASE
+    default y
+
+endmenu

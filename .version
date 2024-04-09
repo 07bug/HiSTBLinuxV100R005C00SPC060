@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <remote fetch="http://szxgit10-rd.huawei.com:8080" name="HiSTBLinux" review="http://szxgit10-rd.huawei.com:8080"/>
+  <remote fetch="http://szxgit10-rd.huawei.com:8080" name="TC_HiDolphin_GIT/Android/androidn" review="http://szxgit10-rd.huawei.com:8080"/>
+  
+  <default remote="HiSTBLinux" revision="master" sync-j="4"/>
+  
+  <project name="HIS/HIS_STB_GIT/HiSTBLinux/Build" path="Build" revision="70f0bbedc011f401b669080a279705d5563cbdbc" upstream="master"/>
+  <project name="HIS/HIS_STB_GIT/HiSTBLinux/CI" path="CI" revision="cd9bbc6e4f6dc8a63c816fc5584e8774d4bd831e" upstream="master"/>
+  <project name="HIS/HIS_STB_GIT/HiSTBLinux/Code" path="Code" revision="94c7f8f237a0341b8bd32806abc019a1cc6b918c" upstream="master"/>
+  <project name="HIS/HIS_STB_GIT/HiSTBLinux/Code/platform" path="Code/platform" revision="a4c8e2ba0dfda3824bf419eaf9b24d0653d6b8b6" upstream="master"/>
+  <project name="HIS/HIS_STB_GIT/HiSTBLinux/Code/source/component/advca" path="Code/source/component/advca" revision="3c4c27164e1f2626cfba4ef79b26b6a7beb9a6c3" upstream="master"/>
+  <project name="HIS/HIS_STB_GIT/HiSTBLinux/Code/source/component/wifi" path="Code/source/component/wifi" revision="ff11414f095fcbd2a274541876c8c04a3435373a" upstream="master"/>
+  <project name="HIS/HIS_STB_GIT/HiSTBLinux/Code/source/kernel" path="Code/source/kernel" revision="eacfb148b086a6a2b8b6f525cb20df6d06b72491" upstream="master"/>
+  <project name="HIS/HIS_STB_GIT/HiSTBLinux/Code/source/kernel/linux-4.9.y" path="Code/source/kernel/linux-4.9.y" revision="43b19524e410882fec36deed390582b5704f4307" upstream="master"/>
+  <project name="HIS/HIS_STB_GIT/HiSTBLinux/Code/source/tee/core" path="Code/source/tee/core" revision="56cf3bcae67f84e3fde3d271ed5f95c63d9f5e61" upstream="master"/>
+  <project name="HIS/HIS_STB_GIT/HiSTBLinux/Code/tools/linux/toolchains" path="Code/tools/linux/toolchains" revision="46cc14d9a838a43e30d4b034628df8365fc823f5" upstream="master"/>
+  <project name="HIS/HIS_STB_GIT/HiSTBLinux/Code/tools/windows" path="Code/tools/windows" revision="67f6e12bc491108e1492328bf1ffe431d59047dd" upstream="master"/>
+  <project name="HIS/HIS_STB_GIT/HiSTBLinux/TestCode" path="TestCode" revision="b8fe4e1d2d0d76cbac8c95521b0c8d933a7c5578" upstream="master"/>
+  <project name="HIS/HIS_STB_GIT/HiSTBLinux/optee" path="Code/source/tee/core/optee" revision="35b062ebb6f836b51e2aed6175da8ec3fd5e6428" upstream="master"/>
+  <project name="HIS/HIS_STB_GIT/middleware/opentv5" path="Code/middleware/opentv5" revision="f30fcdebeb92cb6198468705be8c23b69fce9438" upstream="master"/>
+  <project name="TC_HiDolphin_GIT/Android/androidn/device/hal" path="Code/hisilicon_hal" revision="98f37ab91968c36bd99fa0264d1bc836b80c385e" upstream="HAL_DEV">
+    <linkfile dest="Code/source/component/hal/include" src="include"/>
+  </project>
+</manifest>

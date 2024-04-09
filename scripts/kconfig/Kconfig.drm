@@ -1,0 +1,65 @@
+menuconfig HI_DRM_SUPPORT
+    bool "DRM Support"
+    help
+        when enabled, Digital Right Management(DRM) is supported, such as Playready, Widevine.
+    default n
+
+config SINGLE_PROCESS_ENABLE
+    bool "DRM Single Process"
+    help
+        when enabled, player and drm framwork will run in one process, not Client-Server (multiple processes) architecture.
+    depends on (HI_DRM_SUPPORT && LINUX_PRODUCT)
+    default n
+
+config HI_PLAYREADY_SUPPORT
+    bool "PlayReady Support"
+    depends on HI_DRM_SUPPORT && LINUX_PRODUCT && (HI3798CV200 || HI3798MV200 || HI3798MV300 || HI3798MV300H || HI3798MV310 || HI3796MV200 || HI3716MV450 || HI3716MV410 || HI3716MV420)
+    default n
+
+choice
+    prompt "PlayReady Type"
+    default HI_PLAYREADY_3_0
+    depends on HI_PLAYREADY_SUPPORT
+
+config  HI_PLAYREADY_2_0
+    bool "PlayReady 2.0"
+    depends on ANDROID_PRODUCT
+
+config  HI_PLAYREADY_3_0
+    bool "PlayReady 3.0"
+    depends on (HI3798CV200 || HI3798MV200 || HI3798MV300 || HI3798MV300H || HI3798MV310 || HI3796MV200 || HI3716MV450)
+
+endchoice
+
+config HI_WIDEVINE_SUPPORT
+    bool "Widevine Support"
+    depends on HI_DRM_SUPPORT && LINUX_PRODUCT && (HI3798CV200 || HI3798MV200 || HI3798MV300 || HI3798MV300H || HI3798MV310 || HI3796MV200 || HI3716MV450 || HI3796MV100 || HI3798MV100)
+    default n
+
+choice
+    prompt "Widevine Type"
+    default HI_WIDEVINE_L1
+    depends on HI_WIDEVINE_SUPPORT
+
+config  HI_WIDEVINE_L1
+    bool "Widevine L1"
+    depends on (HI3798CV200 || HI3798MV200 || HI3798MV300 || HI3798MV300H || HI3798MV310 || HI3796MV200 || HI3716MV450 || HI3798MV100 || HI3796MV100)
+
+endchoice
+
+config HI_MARLIN_SUPPORT
+    bool "Marlin Support"
+    depends on HI_DRM_SUPPORT && LINUX_PRODUCT && (HI3798CV200 || HI3798MV200 || HI3796MV200)
+    default n
+
+choice
+    prompt "Marlin Type"
+    default HI_MARLIN_BBTS
+    depends on HI_MARLIN_SUPPORT
+
+config  HI_MARLIN_BBTS
+    bool "Marlin BBTS"
+    depends on (HI3798CV200 || HI3798MV200 || HI3796MV200)
+
+endchoice
+

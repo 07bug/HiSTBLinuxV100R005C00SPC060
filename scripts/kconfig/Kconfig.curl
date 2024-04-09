@@ -1,0 +1,6 @@
+config HI_CURL_SUPPORT
+    bool "Curl Support"
+    depends on HI_APPLOADER_MODE_IP || HI_PLAYER_SUPPORT
+    default n
+    help
+      If you wan't to support curl, say y here.

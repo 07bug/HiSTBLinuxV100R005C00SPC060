@@ -1,0 +1,34 @@
+config HI_VIDEO_MAX_REF_FRAME_NUM
+    int "Max reference frame number(3-16)"
+    depends on (HI3716MV410 || HI3716MV420 || HI3798MV100 || HI3796MV100)
+    range 3 16
+    default 6
+    help
+        set Max reference frame number which ranges from 3 to 16
+
+config HI_VIDEO_MAX_DISP_FRAME_NUM
+    int "Extra frame number for schedule(2-16)"
+    range 2 16
+    default 4
+    help
+        set Max reference frame number which ranges from 2 to 16
+
+config HI_VDEC_MJPEG_SUPPORT
+    bool "Motion JPEG Decoder Support"
+    default n
+    help
+        when enabled, Motion JPEG stream decoder is supported
+
+config HI_VDEC_USERDATA_CC_SUPPORT
+    bool "CC or AFD Support"
+    default y
+    help
+        when enabled, Closed Caption(CC) or Active Format Description(AFD) user data can be received
+
+config HI_VDEC_USERDATA_CC_BUFSIZE
+    hex "CC or AFD Buffer Size"
+    depends on HI_VDEC_USERDATA_CC_SUPPORT
+    range 0x4000 0x40000
+    default 0xC000
+    help
+        Closed Caption(CC) or Active Format Description(AFD) user data buffer size, recommend: 0xC000

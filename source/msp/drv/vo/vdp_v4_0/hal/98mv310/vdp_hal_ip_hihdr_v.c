@@ -1,0 +1,2779 @@
+
+#include "vdp_hal_ip_hihdr_v.h"
+#include "vdp_hal_comm.h"
+extern volatile S_VDP_REGS_TYPE *pVdpReg;
+
+
+HI_VOID VDP_HIHDR_V_SetDCoefAddr  (HI_U32 u32Addr)
+{
+
+    U_PARA_ADDR_VHD_CHN09 PARA_ADDR_VHD_CHN09;
+
+    PARA_ADDR_VHD_CHN09.bits.para_addr_vhd_chn09 = u32Addr;
+    VDP_RegWrite((HI_ULONG)&(pVdpReg->PARA_ADDR_VHD_CHN09.u32),PARA_ADDR_VHD_CHN09.u32);
+
+    return ;
+}
+
+HI_VOID VDP_HIHDR_V_SetSCoefAddr  (HI_U32 u32Addr)
+{
+
+    U_PARA_ADDR_VHD_CHN10 PARA_ADDR_VHD_CHN10;
+
+    PARA_ADDR_VHD_CHN10.bits.para_addr_vhd_chn10 = u32Addr;
+    VDP_RegWrite((HI_ULONG)&(pVdpReg->PARA_ADDR_VHD_CHN10.u32),PARA_ADDR_VHD_CHN10.u32);
+
+    return ;
+}
+
+HI_VOID  VDP_HIHDR_V_SetDParaUpd (HI_U32 regup)
+{
+    U_PARA_UP_VHD PARA_UP_VHD;
+    
+    PARA_UP_VHD.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->PARA_UP_VHD.u32));
+    PARA_UP_VHD.bits.para_up_vhd_chn09 = regup;
+    VDP_RegWrite((HI_ULONG)&(pVdpReg->PARA_UP_VHD.u32),PARA_UP_VHD.u32);
+    return ;
+}
+
+HI_VOID  VDP_HIHDR_V_SetSParaUpd (HI_U32 regup)
+{
+    U_PARA_UP_VHD PARA_UP_VHD;
+    
+    PARA_UP_VHD.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->PARA_UP_VHD.u32));
+    PARA_UP_VHD.bits.para_up_vhd_chn10 = regup;
+    VDP_RegWrite((HI_ULONG)&(pVdpReg->PARA_UP_VHD.u32),PARA_UP_VHD.u32);
+    return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetHihdrVDemoPos(HI_U32 hihdr_v_demo_pos)
+{
+	U_HIHDR_V_YUV2RGB_CTRL HIHDR_V_YUV2RGB_CTRL;
+	
+	HIHDR_V_YUV2RGB_CTRL.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->HIHDR_V_YUV2RGB_CTRL.u32));
+	HIHDR_V_YUV2RGB_CTRL.bits.hihdr_v_demo_pos = hihdr_v_demo_pos;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->HIHDR_V_YUV2RGB_CTRL.u32),HIHDR_V_YUV2RGB_CTRL.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetHihdrVDemoMode(HI_U32 hihdr_v_demo_mode)
+{
+	U_HIHDR_V_YUV2RGB_CTRL HIHDR_V_YUV2RGB_CTRL;
+	
+	HIHDR_V_YUV2RGB_CTRL.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->HIHDR_V_YUV2RGB_CTRL.u32));
+	HIHDR_V_YUV2RGB_CTRL.bits.hihdr_v_demo_mode = hihdr_v_demo_mode;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->HIHDR_V_YUV2RGB_CTRL.u32),HIHDR_V_YUV2RGB_CTRL.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetHihdrVDemoEn(HI_U32 hihdr_v_demo_en)
+{
+	U_HIHDR_V_YUV2RGB_CTRL HIHDR_V_YUV2RGB_CTRL;
+	
+	HIHDR_V_YUV2RGB_CTRL.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->HIHDR_V_YUV2RGB_CTRL.u32));
+	HIHDR_V_YUV2RGB_CTRL.bits.hihdr_v_demo_en = hihdr_v_demo_en;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->HIHDR_V_YUV2RGB_CTRL.u32),HIHDR_V_YUV2RGB_CTRL.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetHihdrV1VhdrEn(HI_U32 hihdr_v1_vhdr_en)
+{
+	U_HIHDR_V_YUV2RGB_CTRL HIHDR_V_YUV2RGB_CTRL;
+	
+	HIHDR_V_YUV2RGB_CTRL.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->HIHDR_V_YUV2RGB_CTRL.u32));
+	HIHDR_V_YUV2RGB_CTRL.bits.hihdr_v1_vhdr_en = hihdr_v1_vhdr_en;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->HIHDR_V_YUV2RGB_CTRL.u32),HIHDR_V_YUV2RGB_CTRL.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetHihdrV0VhdrEn(HI_U32 hihdr_v0_vhdr_en)
+{
+	U_HIHDR_V_YUV2RGB_CTRL HIHDR_V_YUV2RGB_CTRL;
+	
+	HIHDR_V_YUV2RGB_CTRL.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->HIHDR_V_YUV2RGB_CTRL.u32));
+	HIHDR_V_YUV2RGB_CTRL.bits.hihdr_v0_vhdr_en = hihdr_v0_vhdr_en;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->HIHDR_V_YUV2RGB_CTRL.u32),HIHDR_V_YUV2RGB_CTRL.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetHihdrV1Y2rEn(HI_U32 hihdr_v1_y2r_en)
+{
+	U_HIHDR_V_YUV2RGB_CTRL HIHDR_V_YUV2RGB_CTRL;
+	
+	HIHDR_V_YUV2RGB_CTRL.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->HIHDR_V_YUV2RGB_CTRL.u32));
+	HIHDR_V_YUV2RGB_CTRL.bits.hihdr_v1_y2r_en = hihdr_v1_y2r_en;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->HIHDR_V_YUV2RGB_CTRL.u32),HIHDR_V_YUV2RGB_CTRL.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetHihdrV0Y2rEn(HI_U32 hihdr_v0_y2r_en)
+{
+	U_HIHDR_V_YUV2RGB_CTRL HIHDR_V_YUV2RGB_CTRL;
+	
+	HIHDR_V_YUV2RGB_CTRL.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->HIHDR_V_YUV2RGB_CTRL.u32));
+	HIHDR_V_YUV2RGB_CTRL.bits.hihdr_v0_y2r_en = hihdr_v0_y2r_en;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->HIHDR_V_YUV2RGB_CTRL.u32),HIHDR_V_YUV2RGB_CTRL.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetHihdrV1ClEn(HI_U32 hihdr_v1_cl_en)
+{
+	U_HIHDR_V_YUV2RGB_CTRL HIHDR_V_YUV2RGB_CTRL;
+	
+	HIHDR_V_YUV2RGB_CTRL.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->HIHDR_V_YUV2RGB_CTRL.u32));
+	HIHDR_V_YUV2RGB_CTRL.bits.hihdr_v1_cl_en = hihdr_v1_cl_en;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->HIHDR_V_YUV2RGB_CTRL.u32),HIHDR_V_YUV2RGB_CTRL.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetHihdrV0ClEn(HI_U32 hihdr_v0_cl_en)
+{
+	U_HIHDR_V_YUV2RGB_CTRL HIHDR_V_YUV2RGB_CTRL;
+	
+	HIHDR_V_YUV2RGB_CTRL.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->HIHDR_V_YUV2RGB_CTRL.u32));
+	HIHDR_V_YUV2RGB_CTRL.bits.hihdr_v0_cl_en = hihdr_v0_cl_en;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->HIHDR_V_YUV2RGB_CTRL.u32),HIHDR_V_YUV2RGB_CTRL.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetHihdrY2rCkGtEn(HI_U32 hihdr_y2r_ck_gt_en)
+{
+	U_HIHDR_V_YUV2RGB_CTRL HIHDR_V_YUV2RGB_CTRL;
+	
+	HIHDR_V_YUV2RGB_CTRL.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->HIHDR_V_YUV2RGB_CTRL.u32));
+	HIHDR_V_YUV2RGB_CTRL.bits.hihdr_y2r_ck_gt_en = hihdr_y2r_ck_gt_en;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->HIHDR_V_YUV2RGB_CTRL.u32),HIHDR_V_YUV2RGB_CTRL.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetHihdrY2rEn(HI_U32 hihdr_y2r_en)
+{
+	U_HIHDR_V_YUV2RGB_CTRL HIHDR_V_YUV2RGB_CTRL;
+	
+	HIHDR_V_YUV2RGB_CTRL.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->HIHDR_V_YUV2RGB_CTRL.u32));
+	HIHDR_V_YUV2RGB_CTRL.bits.hihdr_y2r_en = hihdr_y2r_en;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->HIHDR_V_YUV2RGB_CTRL.u32),HIHDR_V_YUV2RGB_CTRL.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetHihdrY2rCoef00(HI_U32 hihdr_y2r_coef00)
+{
+	U_HIHDR_V_YUV2RGB_COEF00 HIHDR_V_YUV2RGB_COEF00;
+	
+	HIHDR_V_YUV2RGB_COEF00.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->HIHDR_V_YUV2RGB_COEF00.u32));
+	HIHDR_V_YUV2RGB_COEF00.bits.hihdr_y2r_coef00 = hihdr_y2r_coef00;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->HIHDR_V_YUV2RGB_COEF00.u32),HIHDR_V_YUV2RGB_COEF00.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetHihdrY2rCoef01(HI_U32 hihdr_y2r_coef01)
+{
+	U_HIHDR_V_YUV2RGB_COEF01 HIHDR_V_YUV2RGB_COEF01;
+	
+	HIHDR_V_YUV2RGB_COEF01.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->HIHDR_V_YUV2RGB_COEF01.u32));
+	HIHDR_V_YUV2RGB_COEF01.bits.hihdr_y2r_coef01 = hihdr_y2r_coef01;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->HIHDR_V_YUV2RGB_COEF01.u32),HIHDR_V_YUV2RGB_COEF01.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetHihdrY2rCoef02(HI_U32 hihdr_y2r_coef02)
+{
+	U_HIHDR_V_YUV2RGB_COEF02 HIHDR_V_YUV2RGB_COEF02;
+	
+	HIHDR_V_YUV2RGB_COEF02.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->HIHDR_V_YUV2RGB_COEF02.u32));
+	HIHDR_V_YUV2RGB_COEF02.bits.hihdr_y2r_coef02 = hihdr_y2r_coef02;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->HIHDR_V_YUV2RGB_COEF02.u32),HIHDR_V_YUV2RGB_COEF02.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetHihdrY2rCoef03(HI_U32 hihdr_y2r_coef03)
+{
+	U_HIHDR_V_YUV2RGB_COEF03 HIHDR_V_YUV2RGB_COEF03;
+	
+	HIHDR_V_YUV2RGB_COEF03.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->HIHDR_V_YUV2RGB_COEF03.u32));
+	HIHDR_V_YUV2RGB_COEF03.bits.hihdr_y2r_coef03 = hihdr_y2r_coef03;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->HIHDR_V_YUV2RGB_COEF03.u32),HIHDR_V_YUV2RGB_COEF03.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetHihdrY2rCoef04(HI_U32 hihdr_y2r_coef04)
+{
+	U_HIHDR_V_YUV2RGB_COEF04 HIHDR_V_YUV2RGB_COEF04;
+	
+	HIHDR_V_YUV2RGB_COEF04.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->HIHDR_V_YUV2RGB_COEF04.u32));
+	HIHDR_V_YUV2RGB_COEF04.bits.hihdr_y2r_coef04 = hihdr_y2r_coef04;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->HIHDR_V_YUV2RGB_COEF04.u32),HIHDR_V_YUV2RGB_COEF04.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetHihdrY2rCoef05(HI_U32 hihdr_y2r_coef05)
+{
+	U_HIHDR_V_YUV2RGB_COEF05 HIHDR_V_YUV2RGB_COEF05;
+	
+	HIHDR_V_YUV2RGB_COEF05.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->HIHDR_V_YUV2RGB_COEF05.u32));
+	HIHDR_V_YUV2RGB_COEF05.bits.hihdr_y2r_coef05 = hihdr_y2r_coef05;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->HIHDR_V_YUV2RGB_COEF05.u32),HIHDR_V_YUV2RGB_COEF05.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetHihdrY2rCoef06(HI_U32 hihdr_y2r_coef06)
+{
+	U_HIHDR_V_YUV2RGB_COEF06 HIHDR_V_YUV2RGB_COEF06;
+	
+	HIHDR_V_YUV2RGB_COEF06.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->HIHDR_V_YUV2RGB_COEF06.u32));
+	HIHDR_V_YUV2RGB_COEF06.bits.hihdr_y2r_coef06 = hihdr_y2r_coef06;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->HIHDR_V_YUV2RGB_COEF06.u32),HIHDR_V_YUV2RGB_COEF06.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetHihdrY2rCoef07(HI_U32 hihdr_y2r_coef07)
+{
+	U_HIHDR_V_YUV2RGB_COEF07 HIHDR_V_YUV2RGB_COEF07;
+	
+	HIHDR_V_YUV2RGB_COEF07.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->HIHDR_V_YUV2RGB_COEF07.u32));
+	HIHDR_V_YUV2RGB_COEF07.bits.hihdr_y2r_coef07 = hihdr_y2r_coef07;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->HIHDR_V_YUV2RGB_COEF07.u32),HIHDR_V_YUV2RGB_COEF07.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetHihdrY2rCoef08(HI_U32 hihdr_y2r_coef08)
+{
+	U_HIHDR_V_YUV2RGB_COEF08 HIHDR_V_YUV2RGB_COEF08;
+	
+	HIHDR_V_YUV2RGB_COEF08.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->HIHDR_V_YUV2RGB_COEF08.u32));
+	HIHDR_V_YUV2RGB_COEF08.bits.hihdr_y2r_coef08 = hihdr_y2r_coef08;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->HIHDR_V_YUV2RGB_COEF08.u32),HIHDR_V_YUV2RGB_COEF08.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetHihdrY2rCoef10(HI_U32 hihdr_y2r_coef10)
+{
+	U_HIHDR_V_YUV2RGB_COEF10 HIHDR_V_YUV2RGB_COEF10;
+	
+	HIHDR_V_YUV2RGB_COEF10.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->HIHDR_V_YUV2RGB_COEF10.u32));
+	HIHDR_V_YUV2RGB_COEF10.bits.hihdr_y2r_coef10 = hihdr_y2r_coef10;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->HIHDR_V_YUV2RGB_COEF10.u32),HIHDR_V_YUV2RGB_COEF10.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetHihdrY2rCoef11(HI_U32 hihdr_y2r_coef11)
+{
+	U_HIHDR_V_YUV2RGB_COEF11 HIHDR_V_YUV2RGB_COEF11;
+	
+	HIHDR_V_YUV2RGB_COEF11.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->HIHDR_V_YUV2RGB_COEF11.u32));
+	HIHDR_V_YUV2RGB_COEF11.bits.hihdr_y2r_coef11 = hihdr_y2r_coef11;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->HIHDR_V_YUV2RGB_COEF11.u32),HIHDR_V_YUV2RGB_COEF11.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetHihdrY2rCoef12(HI_U32 hihdr_y2r_coef12)
+{
+	U_HIHDR_V_YUV2RGB_COEF12 HIHDR_V_YUV2RGB_COEF12;
+	
+	HIHDR_V_YUV2RGB_COEF12.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->HIHDR_V_YUV2RGB_COEF12.u32));
+	HIHDR_V_YUV2RGB_COEF12.bits.hihdr_y2r_coef12 = hihdr_y2r_coef12;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->HIHDR_V_YUV2RGB_COEF12.u32),HIHDR_V_YUV2RGB_COEF12.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetHihdrY2rCoef13(HI_U32 hihdr_y2r_coef13)
+{
+	U_HIHDR_V_YUV2RGB_COEF13 HIHDR_V_YUV2RGB_COEF13;
+	
+	HIHDR_V_YUV2RGB_COEF13.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->HIHDR_V_YUV2RGB_COEF13.u32));
+	HIHDR_V_YUV2RGB_COEF13.bits.hihdr_y2r_coef13 = hihdr_y2r_coef13;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->HIHDR_V_YUV2RGB_COEF13.u32),HIHDR_V_YUV2RGB_COEF13.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetHihdrY2rCoef14(HI_U32 hihdr_y2r_coef14)
+{
+	U_HIHDR_V_YUV2RGB_COEF14 HIHDR_V_YUV2RGB_COEF14;
+	
+	HIHDR_V_YUV2RGB_COEF14.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->HIHDR_V_YUV2RGB_COEF14.u32));
+	HIHDR_V_YUV2RGB_COEF14.bits.hihdr_y2r_coef14 = hihdr_y2r_coef14;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->HIHDR_V_YUV2RGB_COEF14.u32),HIHDR_V_YUV2RGB_COEF14.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetHihdrY2rCoef15(HI_U32 hihdr_y2r_coef15)
+{
+	U_HIHDR_V_YUV2RGB_COEF15 HIHDR_V_YUV2RGB_COEF15;
+	
+	HIHDR_V_YUV2RGB_COEF15.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->HIHDR_V_YUV2RGB_COEF15.u32));
+	HIHDR_V_YUV2RGB_COEF15.bits.hihdr_y2r_coef15 = hihdr_y2r_coef15;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->HIHDR_V_YUV2RGB_COEF15.u32),HIHDR_V_YUV2RGB_COEF15.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetHihdrY2rCoef16(HI_U32 hihdr_y2r_coef16)
+{
+	U_HIHDR_V_YUV2RGB_COEF16 HIHDR_V_YUV2RGB_COEF16;
+	
+	HIHDR_V_YUV2RGB_COEF16.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->HIHDR_V_YUV2RGB_COEF16.u32));
+	HIHDR_V_YUV2RGB_COEF16.bits.hihdr_y2r_coef16 = hihdr_y2r_coef16;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->HIHDR_V_YUV2RGB_COEF16.u32),HIHDR_V_YUV2RGB_COEF16.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetHihdrY2rCoef17(HI_U32 hihdr_y2r_coef17)
+{
+	U_HIHDR_V_YUV2RGB_COEF17 HIHDR_V_YUV2RGB_COEF17;
+	
+	HIHDR_V_YUV2RGB_COEF17.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->HIHDR_V_YUV2RGB_COEF17.u32));
+	HIHDR_V_YUV2RGB_COEF17.bits.hihdr_y2r_coef17 = hihdr_y2r_coef17;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->HIHDR_V_YUV2RGB_COEF17.u32),HIHDR_V_YUV2RGB_COEF17.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetHihdrY2rCoef18(HI_U32 hihdr_y2r_coef18)
+{
+	U_HIHDR_V_YUV2RGB_COEF18 HIHDR_V_YUV2RGB_COEF18;
+	
+	HIHDR_V_YUV2RGB_COEF18.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->HIHDR_V_YUV2RGB_COEF18.u32));
+	HIHDR_V_YUV2RGB_COEF18.bits.hihdr_y2r_coef18 = hihdr_y2r_coef18;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->HIHDR_V_YUV2RGB_COEF18.u32),HIHDR_V_YUV2RGB_COEF18.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetHihdrY2rV1Scale2p(HI_U32 hihdr_y2r_v1_scale2p)
+{
+	U_HIHDR_V_YUV2RGB_SCALE2P HIHDR_V_YUV2RGB_SCALE2P;
+	
+	HIHDR_V_YUV2RGB_SCALE2P.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->HIHDR_V_YUV2RGB_SCALE2P.u32));
+	HIHDR_V_YUV2RGB_SCALE2P.bits.hihdr_y2r_v1_scale2p = hihdr_y2r_v1_scale2p;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->HIHDR_V_YUV2RGB_SCALE2P.u32),HIHDR_V_YUV2RGB_SCALE2P.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetHihdrY2rV0Scale2p(HI_U32 hihdr_y2r_v0_scale2p)
+{
+	U_HIHDR_V_YUV2RGB_SCALE2P HIHDR_V_YUV2RGB_SCALE2P;
+	
+	HIHDR_V_YUV2RGB_SCALE2P.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->HIHDR_V_YUV2RGB_SCALE2P.u32));
+	HIHDR_V_YUV2RGB_SCALE2P.bits.hihdr_y2r_v0_scale2p = hihdr_y2r_v0_scale2p;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->HIHDR_V_YUV2RGB_SCALE2P.u32),HIHDR_V_YUV2RGB_SCALE2P.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetHihdrY2rIdc00(HI_U32 hihdr_y2r_idc00)
+{
+	U_HIHDR_V_YUV2RGB_IN_DC00 HIHDR_V_YUV2RGB_IN_DC00;
+	
+	HIHDR_V_YUV2RGB_IN_DC00.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->HIHDR_V_YUV2RGB_IN_DC00.u32));
+	HIHDR_V_YUV2RGB_IN_DC00.bits.hihdr_y2r_idc00 = hihdr_y2r_idc00;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->HIHDR_V_YUV2RGB_IN_DC00.u32),HIHDR_V_YUV2RGB_IN_DC00.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetHihdrY2rIdc01(HI_U32 hihdr_y2r_idc01)
+{
+	U_HIHDR_V_YUV2RGB_IN_DC01 HIHDR_V_YUV2RGB_IN_DC01;
+	
+	HIHDR_V_YUV2RGB_IN_DC01.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->HIHDR_V_YUV2RGB_IN_DC01.u32));
+	HIHDR_V_YUV2RGB_IN_DC01.bits.hihdr_y2r_idc01 = hihdr_y2r_idc01;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->HIHDR_V_YUV2RGB_IN_DC01.u32),HIHDR_V_YUV2RGB_IN_DC01.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetHihdrY2rIdc02(HI_U32 hihdr_y2r_idc02)
+{
+	U_HIHDR_V_YUV2RGB_IN_DC02 HIHDR_V_YUV2RGB_IN_DC02;
+	
+	HIHDR_V_YUV2RGB_IN_DC02.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->HIHDR_V_YUV2RGB_IN_DC02.u32));
+	HIHDR_V_YUV2RGB_IN_DC02.bits.hihdr_y2r_idc02 = hihdr_y2r_idc02;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->HIHDR_V_YUV2RGB_IN_DC02.u32),HIHDR_V_YUV2RGB_IN_DC02.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetHihdrY2rOdc00(HI_U32 hihdr_y2r_odc00)
+{
+	U_HIHDR_V_YUV2RGB_OUT_DC00 HIHDR_V_YUV2RGB_OUT_DC00;
+	
+	HIHDR_V_YUV2RGB_OUT_DC00.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->HIHDR_V_YUV2RGB_OUT_DC00.u32));
+	HIHDR_V_YUV2RGB_OUT_DC00.bits.hihdr_y2r_odc00 = hihdr_y2r_odc00;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->HIHDR_V_YUV2RGB_OUT_DC00.u32),HIHDR_V_YUV2RGB_OUT_DC00.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetHihdrY2rOdc01(HI_U32 hihdr_y2r_odc01)
+{
+	U_HIHDR_V_YUV2RGB_OUT_DC01 HIHDR_V_YUV2RGB_OUT_DC01;
+	
+	HIHDR_V_YUV2RGB_OUT_DC01.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->HIHDR_V_YUV2RGB_OUT_DC01.u32));
+	HIHDR_V_YUV2RGB_OUT_DC01.bits.hihdr_y2r_odc01 = hihdr_y2r_odc01;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->HIHDR_V_YUV2RGB_OUT_DC01.u32),HIHDR_V_YUV2RGB_OUT_DC01.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetHihdrY2rOdc02(HI_U32 hihdr_y2r_odc02)
+{
+	U_HIHDR_V_YUV2RGB_OUT_DC02 HIHDR_V_YUV2RGB_OUT_DC02;
+	
+	HIHDR_V_YUV2RGB_OUT_DC02.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->HIHDR_V_YUV2RGB_OUT_DC02.u32));
+	HIHDR_V_YUV2RGB_OUT_DC02.bits.hihdr_y2r_odc02 = hihdr_y2r_odc02;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->HIHDR_V_YUV2RGB_OUT_DC02.u32),HIHDR_V_YUV2RGB_OUT_DC02.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetHihdrY2rIdc10(HI_U32 hihdr_y2r_idc10)
+{
+	U_HIHDR_V_YUV2RGB_IN_DC10 HIHDR_V_YUV2RGB_IN_DC10;
+	
+	HIHDR_V_YUV2RGB_IN_DC10.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->HIHDR_V_YUV2RGB_IN_DC10.u32));
+	HIHDR_V_YUV2RGB_IN_DC10.bits.hihdr_y2r_idc10 = hihdr_y2r_idc10;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->HIHDR_V_YUV2RGB_IN_DC10.u32),HIHDR_V_YUV2RGB_IN_DC10.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetHihdrY2rIdc11(HI_U32 hihdr_y2r_idc11)
+{
+	U_HIHDR_V_YUV2RGB_IN_DC11 HIHDR_V_YUV2RGB_IN_DC11;
+	
+	HIHDR_V_YUV2RGB_IN_DC11.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->HIHDR_V_YUV2RGB_IN_DC11.u32));
+	HIHDR_V_YUV2RGB_IN_DC11.bits.hihdr_y2r_idc11 = hihdr_y2r_idc11;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->HIHDR_V_YUV2RGB_IN_DC11.u32),HIHDR_V_YUV2RGB_IN_DC11.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetHihdrY2rIdc12(HI_U32 hihdr_y2r_idc12)
+{
+	U_HIHDR_V_YUV2RGB_IN_DC12 HIHDR_V_YUV2RGB_IN_DC12;
+	
+	HIHDR_V_YUV2RGB_IN_DC12.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->HIHDR_V_YUV2RGB_IN_DC12.u32));
+	HIHDR_V_YUV2RGB_IN_DC12.bits.hihdr_y2r_idc12 = hihdr_y2r_idc12;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->HIHDR_V_YUV2RGB_IN_DC12.u32),HIHDR_V_YUV2RGB_IN_DC12.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetHihdrY2rOdc10(HI_U32 hihdr_y2r_odc10)
+{
+	U_HIHDR_V_YUV2RGB_OUT_DC10 HIHDR_V_YUV2RGB_OUT_DC10;
+	
+	HIHDR_V_YUV2RGB_OUT_DC10.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->HIHDR_V_YUV2RGB_OUT_DC10.u32));
+	HIHDR_V_YUV2RGB_OUT_DC10.bits.hihdr_y2r_odc10 = hihdr_y2r_odc10;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->HIHDR_V_YUV2RGB_OUT_DC10.u32),HIHDR_V_YUV2RGB_OUT_DC10.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetHihdrY2rOdc11(HI_U32 hihdr_y2r_odc11)
+{
+	U_HIHDR_V_YUV2RGB_OUT_DC11 HIHDR_V_YUV2RGB_OUT_DC11;
+	
+	HIHDR_V_YUV2RGB_OUT_DC11.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->HIHDR_V_YUV2RGB_OUT_DC11.u32));
+	HIHDR_V_YUV2RGB_OUT_DC11.bits.hihdr_y2r_odc11 = hihdr_y2r_odc11;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->HIHDR_V_YUV2RGB_OUT_DC11.u32),HIHDR_V_YUV2RGB_OUT_DC11.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetHihdrY2rOdc12(HI_U32 hihdr_y2r_odc12)
+{
+	U_HIHDR_V_YUV2RGB_OUT_DC12 HIHDR_V_YUV2RGB_OUT_DC12;
+	
+	HIHDR_V_YUV2RGB_OUT_DC12.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->HIHDR_V_YUV2RGB_OUT_DC12.u32));
+	HIHDR_V_YUV2RGB_OUT_DC12.bits.hihdr_y2r_odc12 = hihdr_y2r_odc12;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->HIHDR_V_YUV2RGB_OUT_DC12.u32),HIHDR_V_YUV2RGB_OUT_DC12.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetHihdrY2rV1ClipMin(HI_U32 hihdr_y2r_v1_clip_min)
+{
+	U_HIHDR_V_YUV2RGB_MIN HIHDR_V_YUV2RGB_MIN;
+	
+	HIHDR_V_YUV2RGB_MIN.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->HIHDR_V_YUV2RGB_MIN.u32));
+	HIHDR_V_YUV2RGB_MIN.bits.hihdr_y2r_v1_clip_min = hihdr_y2r_v1_clip_min;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->HIHDR_V_YUV2RGB_MIN.u32),HIHDR_V_YUV2RGB_MIN.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetHihdrY2rV0ClipMin(HI_U32 hihdr_y2r_v0_clip_min)
+{
+	U_HIHDR_V_YUV2RGB_MIN HIHDR_V_YUV2RGB_MIN;
+	
+	HIHDR_V_YUV2RGB_MIN.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->HIHDR_V_YUV2RGB_MIN.u32));
+	HIHDR_V_YUV2RGB_MIN.bits.hihdr_y2r_v0_clip_min = hihdr_y2r_v0_clip_min;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->HIHDR_V_YUV2RGB_MIN.u32),HIHDR_V_YUV2RGB_MIN.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetHihdrY2rV1ClipMax(HI_U32 hihdr_y2r_v1_clip_max)
+{
+	U_HIHDR_V_YUV2RGB_MAX HIHDR_V_YUV2RGB_MAX;
+	
+	HIHDR_V_YUV2RGB_MAX.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->HIHDR_V_YUV2RGB_MAX.u32));
+	HIHDR_V_YUV2RGB_MAX.bits.hihdr_y2r_v1_clip_max = hihdr_y2r_v1_clip_max;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->HIHDR_V_YUV2RGB_MAX.u32),HIHDR_V_YUV2RGB_MAX.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetHihdrY2rV0ClipMax(HI_U32 hihdr_y2r_v0_clip_max)
+{
+	U_HIHDR_V_YUV2RGB_MAX HIHDR_V_YUV2RGB_MAX;
+	
+	HIHDR_V_YUV2RGB_MAX.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->HIHDR_V_YUV2RGB_MAX.u32));
+	HIHDR_V_YUV2RGB_MAX.bits.hihdr_y2r_v0_clip_max = hihdr_y2r_v0_clip_max;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->HIHDR_V_YUV2RGB_MAX.u32),HIHDR_V_YUV2RGB_MAX.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVhdrCkGtEn(HI_U32 vhdr_ck_gt_en)
+{
+	U_VHDR_CTRL VHDR_CTRL;
+	
+	VHDR_CTRL.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_CTRL.u32));
+	VHDR_CTRL.bits.vhdr_ck_gt_en = vhdr_ck_gt_en;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_CTRL.u32),VHDR_CTRL.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVhdrGamutBind(HI_U32 vhdr_gamut_bind)
+{
+	U_VHDR_CTRL VHDR_CTRL;
+	
+	VHDR_CTRL.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_CTRL.u32));
+	VHDR_CTRL.bits.vhdr_gamut_bind = vhdr_gamut_bind;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_CTRL.u32),VHDR_CTRL.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVhdrEn(HI_U32 vhdr_en)
+{
+	U_VHDR_CTRL VHDR_CTRL;
+	
+	VHDR_CTRL.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_CTRL.u32));
+	VHDR_CTRL.bits.vhdr_en = vhdr_en;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_CTRL.u32),VHDR_CTRL.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVhdrDegmmEn(HI_U32 vhdr_degmm_en)
+{
+	U_VHDR_DEGAMMA_CTRL VHDR_DEGAMMA_CTRL;
+	
+	VHDR_DEGAMMA_CTRL.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_DEGAMMA_CTRL.u32));
+	VHDR_DEGAMMA_CTRL.bits.vhdr_degmm_en = vhdr_degmm_en;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_DEGAMMA_CTRL.u32),VHDR_DEGAMMA_CTRL.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVhdrDegammaRdEn(HI_U32 vhdr_degamma_rd_en)
+{
+	U_VHDR_DEGAMMA_REN VHDR_DEGAMMA_REN;
+	
+	VHDR_DEGAMMA_REN.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_DEGAMMA_REN.u32));
+	VHDR_DEGAMMA_REN.bits.vhdr_degamma_rd_en = vhdr_degamma_rd_en;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_DEGAMMA_REN.u32),VHDR_DEGAMMA_REN.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVhdrDegammaParaData(HI_U32 vhdr_degamma_para_data)
+{
+	U_VHDR_DEGAMMA_DATA VHDR_DEGAMMA_DATA;
+	
+	VHDR_DEGAMMA_DATA.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_DEGAMMA_DATA.u32));
+	VHDR_DEGAMMA_DATA.bits.vhdr_degamma_para_data = vhdr_degamma_para_data;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_DEGAMMA_DATA.u32),VHDR_DEGAMMA_DATA.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVDegmmX4Step(HI_U32 v_degmm_x4_step)
+{
+	U_VHDR_DEGAMMA_STEP1 VHDR_DEGAMMA_STEP1;
+	
+	VHDR_DEGAMMA_STEP1.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_DEGAMMA_STEP1.u32));
+	VHDR_DEGAMMA_STEP1.bits.v_degmm_x4_step = v_degmm_x4_step;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_DEGAMMA_STEP1.u32),VHDR_DEGAMMA_STEP1.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVDegmmX3Step(HI_U32 v_degmm_x3_step)
+{
+	U_VHDR_DEGAMMA_STEP1 VHDR_DEGAMMA_STEP1;
+	
+	VHDR_DEGAMMA_STEP1.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_DEGAMMA_STEP1.u32));
+	VHDR_DEGAMMA_STEP1.bits.v_degmm_x3_step = v_degmm_x3_step;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_DEGAMMA_STEP1.u32),VHDR_DEGAMMA_STEP1.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVDegmmX2Step(HI_U32 v_degmm_x2_step)
+{
+	U_VHDR_DEGAMMA_STEP1 VHDR_DEGAMMA_STEP1;
+	
+	VHDR_DEGAMMA_STEP1.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_DEGAMMA_STEP1.u32));
+	VHDR_DEGAMMA_STEP1.bits.v_degmm_x2_step = v_degmm_x2_step;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_DEGAMMA_STEP1.u32),VHDR_DEGAMMA_STEP1.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVDegmmX1Step(HI_U32 v_degmm_x1_step)
+{
+	U_VHDR_DEGAMMA_STEP1 VHDR_DEGAMMA_STEP1;
+	
+	VHDR_DEGAMMA_STEP1.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_DEGAMMA_STEP1.u32));
+	VHDR_DEGAMMA_STEP1.bits.v_degmm_x1_step = v_degmm_x1_step;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_DEGAMMA_STEP1.u32),VHDR_DEGAMMA_STEP1.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVDegmmX8Step(HI_U32 v_degmm_x8_step)
+{
+	U_VHDR_DEGAMMA_STEP2 VHDR_DEGAMMA_STEP2;
+	
+	VHDR_DEGAMMA_STEP2.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_DEGAMMA_STEP2.u32));
+	VHDR_DEGAMMA_STEP2.bits.v_degmm_x8_step = v_degmm_x8_step;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_DEGAMMA_STEP2.u32),VHDR_DEGAMMA_STEP2.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVDegmmX7Step(HI_U32 v_degmm_x7_step)
+{
+	U_VHDR_DEGAMMA_STEP2 VHDR_DEGAMMA_STEP2;
+	
+	VHDR_DEGAMMA_STEP2.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_DEGAMMA_STEP2.u32));
+	VHDR_DEGAMMA_STEP2.bits.v_degmm_x7_step = v_degmm_x7_step;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_DEGAMMA_STEP2.u32),VHDR_DEGAMMA_STEP2.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVDegmmX6Step(HI_U32 v_degmm_x6_step)
+{
+	U_VHDR_DEGAMMA_STEP2 VHDR_DEGAMMA_STEP2;
+	
+	VHDR_DEGAMMA_STEP2.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_DEGAMMA_STEP2.u32));
+	VHDR_DEGAMMA_STEP2.bits.v_degmm_x6_step = v_degmm_x6_step;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_DEGAMMA_STEP2.u32),VHDR_DEGAMMA_STEP2.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVDegmmX5Step(HI_U32 v_degmm_x5_step)
+{
+	U_VHDR_DEGAMMA_STEP2 VHDR_DEGAMMA_STEP2;
+	
+	VHDR_DEGAMMA_STEP2.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_DEGAMMA_STEP2.u32));
+	VHDR_DEGAMMA_STEP2.bits.v_degmm_x5_step = v_degmm_x5_step;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_DEGAMMA_STEP2.u32),VHDR_DEGAMMA_STEP2.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVDegmmX2Pos(HI_U32 v_degmm_x2_pos)
+{
+	U_VHDR_DEGAMMA_POS1 VHDR_DEGAMMA_POS1;
+	
+	VHDR_DEGAMMA_POS1.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_DEGAMMA_POS1.u32));
+	VHDR_DEGAMMA_POS1.bits.v_degmm_x2_pos = v_degmm_x2_pos;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_DEGAMMA_POS1.u32),VHDR_DEGAMMA_POS1.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVDegmmX1Pos(HI_U32 v_degmm_x1_pos)
+{
+	U_VHDR_DEGAMMA_POS1 VHDR_DEGAMMA_POS1;
+	
+	VHDR_DEGAMMA_POS1.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_DEGAMMA_POS1.u32));
+	VHDR_DEGAMMA_POS1.bits.v_degmm_x1_pos = v_degmm_x1_pos;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_DEGAMMA_POS1.u32),VHDR_DEGAMMA_POS1.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVDegmmX4Pos(HI_U32 v_degmm_x4_pos)
+{
+	U_VHDR_DEGAMMA_POS2 VHDR_DEGAMMA_POS2;
+	
+	VHDR_DEGAMMA_POS2.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_DEGAMMA_POS2.u32));
+	VHDR_DEGAMMA_POS2.bits.v_degmm_x4_pos = v_degmm_x4_pos;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_DEGAMMA_POS2.u32),VHDR_DEGAMMA_POS2.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVDegmmX3Pos(HI_U32 v_degmm_x3_pos)
+{
+	U_VHDR_DEGAMMA_POS2 VHDR_DEGAMMA_POS2;
+	
+	VHDR_DEGAMMA_POS2.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_DEGAMMA_POS2.u32));
+	VHDR_DEGAMMA_POS2.bits.v_degmm_x3_pos = v_degmm_x3_pos;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_DEGAMMA_POS2.u32),VHDR_DEGAMMA_POS2.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVDegmmX6Pos(HI_U32 v_degmm_x6_pos)
+{
+	U_VHDR_DEGAMMA_POS3 VHDR_DEGAMMA_POS3;
+	
+	VHDR_DEGAMMA_POS3.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_DEGAMMA_POS3.u32));
+	VHDR_DEGAMMA_POS3.bits.v_degmm_x6_pos = v_degmm_x6_pos;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_DEGAMMA_POS3.u32),VHDR_DEGAMMA_POS3.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVDegmmX5Pos(HI_U32 v_degmm_x5_pos)
+{
+	U_VHDR_DEGAMMA_POS3 VHDR_DEGAMMA_POS3;
+	
+	VHDR_DEGAMMA_POS3.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_DEGAMMA_POS3.u32));
+	VHDR_DEGAMMA_POS3.bits.v_degmm_x5_pos = v_degmm_x5_pos;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_DEGAMMA_POS3.u32),VHDR_DEGAMMA_POS3.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVDegmmX8Pos(HI_U32 v_degmm_x8_pos)
+{
+	U_VHDR_DEGAMMA_POS4 VHDR_DEGAMMA_POS4;
+	
+	VHDR_DEGAMMA_POS4.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_DEGAMMA_POS4.u32));
+	VHDR_DEGAMMA_POS4.bits.v_degmm_x8_pos = v_degmm_x8_pos;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_DEGAMMA_POS4.u32),VHDR_DEGAMMA_POS4.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVDegmmX7Pos(HI_U32 v_degmm_x7_pos)
+{
+	U_VHDR_DEGAMMA_POS4 VHDR_DEGAMMA_POS4;
+	
+	VHDR_DEGAMMA_POS4.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_DEGAMMA_POS4.u32));
+	VHDR_DEGAMMA_POS4.bits.v_degmm_x7_pos = v_degmm_x7_pos;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_DEGAMMA_POS4.u32),VHDR_DEGAMMA_POS4.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVDegmmX4Num(HI_U32 v_degmm_x4_num)
+{
+	U_VHDR_DEGAMMA_NUM1 VHDR_DEGAMMA_NUM1;
+	
+	VHDR_DEGAMMA_NUM1.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_DEGAMMA_NUM1.u32));
+	VHDR_DEGAMMA_NUM1.bits.v_degmm_x4_num = v_degmm_x4_num;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_DEGAMMA_NUM1.u32),VHDR_DEGAMMA_NUM1.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVDegmmX3Num(HI_U32 v_degmm_x3_num)
+{
+	U_VHDR_DEGAMMA_NUM1 VHDR_DEGAMMA_NUM1;
+	
+	VHDR_DEGAMMA_NUM1.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_DEGAMMA_NUM1.u32));
+	VHDR_DEGAMMA_NUM1.bits.v_degmm_x3_num = v_degmm_x3_num;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_DEGAMMA_NUM1.u32),VHDR_DEGAMMA_NUM1.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVDegmmX2Num(HI_U32 v_degmm_x2_num)
+{
+	U_VHDR_DEGAMMA_NUM1 VHDR_DEGAMMA_NUM1;
+	
+	VHDR_DEGAMMA_NUM1.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_DEGAMMA_NUM1.u32));
+	VHDR_DEGAMMA_NUM1.bits.v_degmm_x2_num = v_degmm_x2_num;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_DEGAMMA_NUM1.u32),VHDR_DEGAMMA_NUM1.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVDegmmX1Num(HI_U32 v_degmm_x1_num)
+{
+	U_VHDR_DEGAMMA_NUM1 VHDR_DEGAMMA_NUM1;
+	
+	VHDR_DEGAMMA_NUM1.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_DEGAMMA_NUM1.u32));
+	VHDR_DEGAMMA_NUM1.bits.v_degmm_x1_num = v_degmm_x1_num;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_DEGAMMA_NUM1.u32),VHDR_DEGAMMA_NUM1.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVDegmmX8Num(HI_U32 v_degmm_x8_num)
+{
+	U_VHDR_DEGAMMA_NUM2 VHDR_DEGAMMA_NUM2;
+	
+	VHDR_DEGAMMA_NUM2.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_DEGAMMA_NUM2.u32));
+	VHDR_DEGAMMA_NUM2.bits.v_degmm_x8_num = v_degmm_x8_num;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_DEGAMMA_NUM2.u32),VHDR_DEGAMMA_NUM2.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVDegmmX7Num(HI_U32 v_degmm_x7_num)
+{
+	U_VHDR_DEGAMMA_NUM2 VHDR_DEGAMMA_NUM2;
+	
+	VHDR_DEGAMMA_NUM2.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_DEGAMMA_NUM2.u32));
+	VHDR_DEGAMMA_NUM2.bits.v_degmm_x7_num = v_degmm_x7_num;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_DEGAMMA_NUM2.u32),VHDR_DEGAMMA_NUM2.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVDegmmX6Num(HI_U32 v_degmm_x6_num)
+{
+	U_VHDR_DEGAMMA_NUM2 VHDR_DEGAMMA_NUM2;
+	
+	VHDR_DEGAMMA_NUM2.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_DEGAMMA_NUM2.u32));
+	VHDR_DEGAMMA_NUM2.bits.v_degmm_x6_num = v_degmm_x6_num;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_DEGAMMA_NUM2.u32),VHDR_DEGAMMA_NUM2.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVDegmmX5Num(HI_U32 v_degmm_x5_num)
+{
+	U_VHDR_DEGAMMA_NUM2 VHDR_DEGAMMA_NUM2;
+	
+	VHDR_DEGAMMA_NUM2.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_DEGAMMA_NUM2.u32));
+	VHDR_DEGAMMA_NUM2.bits.v_degmm_x5_num = v_degmm_x5_num;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_DEGAMMA_NUM2.u32),VHDR_DEGAMMA_NUM2.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVhdrGamutEn(HI_U32 vhdr_gamut_en)
+{
+	U_VHDR_GAMUT_CTRL VHDR_GAMUT_CTRL;
+	
+	VHDR_GAMUT_CTRL.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_GAMUT_CTRL.u32));
+	VHDR_GAMUT_CTRL.bits.vhdr_gamut_en = vhdr_gamut_en;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_GAMUT_CTRL.u32),VHDR_GAMUT_CTRL.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVhdrGamutCoef00(HI_U32 vhdr_gamut_coef00)
+{
+	U_VHDR_GAMUT_COEF00 VHDR_GAMUT_COEF00;
+	
+	VHDR_GAMUT_COEF00.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_GAMUT_COEF00.u32));
+	VHDR_GAMUT_COEF00.bits.vhdr_gamut_coef00 = vhdr_gamut_coef00;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_GAMUT_COEF00.u32),VHDR_GAMUT_COEF00.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVhdrGamutCoef01(HI_U32 vhdr_gamut_coef01)
+{
+	U_VHDR_GAMUT_COEF01 VHDR_GAMUT_COEF01;
+	
+	VHDR_GAMUT_COEF01.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_GAMUT_COEF01.u32));
+	VHDR_GAMUT_COEF01.bits.vhdr_gamut_coef01 = vhdr_gamut_coef01;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_GAMUT_COEF01.u32),VHDR_GAMUT_COEF01.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVhdrGamutCoef02(HI_U32 vhdr_gamut_coef02)
+{
+	U_VHDR_GAMUT_COEF02 VHDR_GAMUT_COEF02;
+	
+	VHDR_GAMUT_COEF02.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_GAMUT_COEF02.u32));
+	VHDR_GAMUT_COEF02.bits.vhdr_gamut_coef02 = vhdr_gamut_coef02;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_GAMUT_COEF02.u32),VHDR_GAMUT_COEF02.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVhdrGamutCoef10(HI_U32 vhdr_gamut_coef10)
+{
+	U_VHDR_GAMUT_COEF10 VHDR_GAMUT_COEF10;
+	
+	VHDR_GAMUT_COEF10.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_GAMUT_COEF10.u32));
+	VHDR_GAMUT_COEF10.bits.vhdr_gamut_coef10 = vhdr_gamut_coef10;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_GAMUT_COEF10.u32),VHDR_GAMUT_COEF10.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVhdrGamutCoef11(HI_U32 vhdr_gamut_coef11)
+{
+	U_VHDR_GAMUT_COEF11 VHDR_GAMUT_COEF11;
+	
+	VHDR_GAMUT_COEF11.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_GAMUT_COEF11.u32));
+	VHDR_GAMUT_COEF11.bits.vhdr_gamut_coef11 = vhdr_gamut_coef11;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_GAMUT_COEF11.u32),VHDR_GAMUT_COEF11.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVhdrGamutCoef12(HI_U32 vhdr_gamut_coef12)
+{
+	U_VHDR_GAMUT_COEF12 VHDR_GAMUT_COEF12;
+	
+	VHDR_GAMUT_COEF12.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_GAMUT_COEF12.u32));
+	VHDR_GAMUT_COEF12.bits.vhdr_gamut_coef12 = vhdr_gamut_coef12;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_GAMUT_COEF12.u32),VHDR_GAMUT_COEF12.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVhdrGamutCoef20(HI_U32 vhdr_gamut_coef20)
+{
+	U_VHDR_GAMUT_COEF20 VHDR_GAMUT_COEF20;
+	
+	VHDR_GAMUT_COEF20.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_GAMUT_COEF20.u32));
+	VHDR_GAMUT_COEF20.bits.vhdr_gamut_coef20 = vhdr_gamut_coef20;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_GAMUT_COEF20.u32),VHDR_GAMUT_COEF20.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVhdrGamutCoef21(HI_U32 vhdr_gamut_coef21)
+{
+	U_VHDR_GAMUT_COEF21 VHDR_GAMUT_COEF21;
+	
+	VHDR_GAMUT_COEF21.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_GAMUT_COEF21.u32));
+	VHDR_GAMUT_COEF21.bits.vhdr_gamut_coef21 = vhdr_gamut_coef21;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_GAMUT_COEF21.u32),VHDR_GAMUT_COEF21.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVhdrGamutCoef22(HI_U32 vhdr_gamut_coef22)
+{
+	U_VHDR_GAMUT_COEF22 VHDR_GAMUT_COEF22;
+	
+	VHDR_GAMUT_COEF22.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_GAMUT_COEF22.u32));
+	VHDR_GAMUT_COEF22.bits.vhdr_gamut_coef22 = vhdr_gamut_coef22;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_GAMUT_COEF22.u32),VHDR_GAMUT_COEF22.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVhdrGamutScale(HI_U32 vhdr_gamut_scale)
+{
+	U_VHDR_GAMUT_SCALE VHDR_GAMUT_SCALE;
+	
+	VHDR_GAMUT_SCALE.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_GAMUT_SCALE.u32));
+	VHDR_GAMUT_SCALE.bits.vhdr_gamut_scale = vhdr_gamut_scale;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_GAMUT_SCALE.u32),VHDR_GAMUT_SCALE.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVhdrGamutIdc0(HI_U32 vhdr_gamut_idc0)
+{
+	U_VHDR_GAMUT_IDC0 VHDR_GAMUT_IDC0;
+	
+	VHDR_GAMUT_IDC0.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_GAMUT_IDC0.u32));
+	VHDR_GAMUT_IDC0.bits.vhdr_gamut_idc0 = vhdr_gamut_idc0;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_GAMUT_IDC0.u32),VHDR_GAMUT_IDC0.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVhdrGamutIdc1(HI_U32 vhdr_gamut_idc1)
+{
+	U_VHDR_GAMUT_IDC1 VHDR_GAMUT_IDC1;
+	
+	VHDR_GAMUT_IDC1.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_GAMUT_IDC1.u32));
+	VHDR_GAMUT_IDC1.bits.vhdr_gamut_idc1 = vhdr_gamut_idc1;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_GAMUT_IDC1.u32),VHDR_GAMUT_IDC1.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVhdrGamutIdc2(HI_U32 vhdr_gamut_idc2)
+{
+	U_VHDR_GAMUT_IDC2 VHDR_GAMUT_IDC2;
+	
+	VHDR_GAMUT_IDC2.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_GAMUT_IDC2.u32));
+	VHDR_GAMUT_IDC2.bits.vhdr_gamut_idc2 = vhdr_gamut_idc2;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_GAMUT_IDC2.u32),VHDR_GAMUT_IDC2.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVhdrGamutOdc0(HI_U32 vhdr_gamut_odc0)
+{
+	U_VHDR_GAMUT_ODC0 VHDR_GAMUT_ODC0;
+	
+	VHDR_GAMUT_ODC0.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_GAMUT_ODC0.u32));
+	VHDR_GAMUT_ODC0.bits.vhdr_gamut_odc0 = vhdr_gamut_odc0;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_GAMUT_ODC0.u32),VHDR_GAMUT_ODC0.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVhdrGamutOdc1(HI_U32 vhdr_gamut_odc1)
+{
+	U_VHDR_GAMUT_ODC1 VHDR_GAMUT_ODC1;
+	
+	VHDR_GAMUT_ODC1.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_GAMUT_ODC1.u32));
+	VHDR_GAMUT_ODC1.bits.vhdr_gamut_odc1 = vhdr_gamut_odc1;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_GAMUT_ODC1.u32),VHDR_GAMUT_ODC1.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVhdrGamutOdc2(HI_U32 vhdr_gamut_odc2)
+{
+	U_VHDR_GAMUT_ODC2 VHDR_GAMUT_ODC2;
+	
+	VHDR_GAMUT_ODC2.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_GAMUT_ODC2.u32));
+	VHDR_GAMUT_ODC2.bits.vhdr_gamut_odc2 = vhdr_gamut_odc2;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_GAMUT_ODC2.u32),VHDR_GAMUT_ODC2.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVhdrGamutClipMin(HI_U32 vhdr_gamut_clip_min)
+{
+	U_VHDR_GAMUT_CLIP_MIN VHDR_GAMUT_CLIP_MIN;
+	
+	VHDR_GAMUT_CLIP_MIN.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_GAMUT_CLIP_MIN.u32));
+	VHDR_GAMUT_CLIP_MIN.bits.vhdr_gamut_clip_min = vhdr_gamut_clip_min;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_GAMUT_CLIP_MIN.u32),VHDR_GAMUT_CLIP_MIN.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVhdrGamutClipMax(HI_U32 vhdr_gamut_clip_max)
+{
+	U_VHDR_GAMUT_CLIP_MAX VHDR_GAMUT_CLIP_MAX;
+	
+	VHDR_GAMUT_CLIP_MAX.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_GAMUT_CLIP_MAX.u32));
+	VHDR_GAMUT_CLIP_MAX.bits.vhdr_gamut_clip_max = vhdr_gamut_clip_max;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_GAMUT_CLIP_MAX.u32),VHDR_GAMUT_CLIP_MAX.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVhdrTmapEn(HI_U32 vhdr_tmap_en)
+{
+	U_VHDR_TONEMAP_CTRL VHDR_TONEMAP_CTRL;
+	
+	VHDR_TONEMAP_CTRL.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_CTRL.u32));
+	VHDR_TONEMAP_CTRL.bits.vhdr_tmap_en = vhdr_tmap_en;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_CTRL.u32),VHDR_TONEMAP_CTRL.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVhdrSmRdEn(HI_U32 vhdr_sm_rd_en)
+{
+	U_VHDR_TONEMAP_REN VHDR_TONEMAP_REN;
+	
+	VHDR_TONEMAP_REN.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_REN.u32));
+	VHDR_TONEMAP_REN.bits.vhdr_sm_rd_en = vhdr_sm_rd_en;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_REN.u32),VHDR_TONEMAP_REN.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVhdrTmapRdEn(HI_U32 vhdr_tmap_rd_en)
+{
+	U_VHDR_TONEMAP_REN VHDR_TONEMAP_REN;
+	
+	VHDR_TONEMAP_REN.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_REN.u32));
+	VHDR_TONEMAP_REN.bits.vhdr_tmap_rd_en = vhdr_tmap_rd_en;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_REN.u32),VHDR_TONEMAP_REN.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVhdrTmapParaData(HI_U32 vhdr_tmap_para_data)
+{
+	U_VHDR_TONEMAP_DATA VHDR_TONEMAP_DATA;
+	
+	VHDR_TONEMAP_DATA.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_DATA.u32));
+	VHDR_TONEMAP_DATA.bits.vhdr_tmap_para_data = vhdr_tmap_para_data;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_DATA.u32),VHDR_TONEMAP_DATA.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVhdrSmParaData(HI_U32 vhdr_sm_para_data)
+{
+	U_VHDR_TONEMAP_SM_DATA VHDR_TONEMAP_SM_DATA;
+	
+	VHDR_TONEMAP_SM_DATA.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_SM_DATA.u32));
+	VHDR_TONEMAP_SM_DATA.bits.vhdr_sm_para_data = vhdr_sm_para_data;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_SM_DATA.u32),VHDR_TONEMAP_SM_DATA.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVTmapX4Step(HI_U32 v_tmap_x4_step)
+{
+	U_VHDR_TONEMAP_STEP1 VHDR_TONEMAP_STEP1;
+	
+	VHDR_TONEMAP_STEP1.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_STEP1.u32));
+	VHDR_TONEMAP_STEP1.bits.v_tmap_x4_step = v_tmap_x4_step;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_STEP1.u32),VHDR_TONEMAP_STEP1.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVTmapX3Step(HI_U32 v_tmap_x3_step)
+{
+	U_VHDR_TONEMAP_STEP1 VHDR_TONEMAP_STEP1;
+	
+	VHDR_TONEMAP_STEP1.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_STEP1.u32));
+	VHDR_TONEMAP_STEP1.bits.v_tmap_x3_step = v_tmap_x3_step;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_STEP1.u32),VHDR_TONEMAP_STEP1.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVTmapX2Step(HI_U32 v_tmap_x2_step)
+{
+	U_VHDR_TONEMAP_STEP1 VHDR_TONEMAP_STEP1;
+	
+	VHDR_TONEMAP_STEP1.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_STEP1.u32));
+	VHDR_TONEMAP_STEP1.bits.v_tmap_x2_step = v_tmap_x2_step;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_STEP1.u32),VHDR_TONEMAP_STEP1.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVTmapX1Step(HI_U32 v_tmap_x1_step)
+{
+	U_VHDR_TONEMAP_STEP1 VHDR_TONEMAP_STEP1;
+	
+	VHDR_TONEMAP_STEP1.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_STEP1.u32));
+	VHDR_TONEMAP_STEP1.bits.v_tmap_x1_step = v_tmap_x1_step;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_STEP1.u32),VHDR_TONEMAP_STEP1.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVTmapX8Step(HI_U32 v_tmap_x8_step)
+{
+	U_VHDR_TONEMAP_STEP2 VHDR_TONEMAP_STEP2;
+	
+	VHDR_TONEMAP_STEP2.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_STEP2.u32));
+	VHDR_TONEMAP_STEP2.bits.v_tmap_x8_step = v_tmap_x8_step;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_STEP2.u32),VHDR_TONEMAP_STEP2.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVTmapX7Step(HI_U32 v_tmap_x7_step)
+{
+	U_VHDR_TONEMAP_STEP2 VHDR_TONEMAP_STEP2;
+	
+	VHDR_TONEMAP_STEP2.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_STEP2.u32));
+	VHDR_TONEMAP_STEP2.bits.v_tmap_x7_step = v_tmap_x7_step;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_STEP2.u32),VHDR_TONEMAP_STEP2.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVTmapX6Step(HI_U32 v_tmap_x6_step)
+{
+	U_VHDR_TONEMAP_STEP2 VHDR_TONEMAP_STEP2;
+	
+	VHDR_TONEMAP_STEP2.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_STEP2.u32));
+	VHDR_TONEMAP_STEP2.bits.v_tmap_x6_step = v_tmap_x6_step;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_STEP2.u32),VHDR_TONEMAP_STEP2.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVTmapX5Step(HI_U32 v_tmap_x5_step)
+{
+	U_VHDR_TONEMAP_STEP2 VHDR_TONEMAP_STEP2;
+	
+	VHDR_TONEMAP_STEP2.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_STEP2.u32));
+	VHDR_TONEMAP_STEP2.bits.v_tmap_x5_step = v_tmap_x5_step;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_STEP2.u32),VHDR_TONEMAP_STEP2.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVTmapX1Pos(HI_U32 v_tmap_x1_pos)
+{
+	U_VHDR_TONEMAP_POS1 VHDR_TONEMAP_POS1;
+	
+	VHDR_TONEMAP_POS1.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_POS1.u32));
+	VHDR_TONEMAP_POS1.bits.v_tmap_x1_pos = v_tmap_x1_pos;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_POS1.u32),VHDR_TONEMAP_POS1.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVTmapX2Pos(HI_U32 v_tmap_x2_pos)
+{
+	U_VHDR_TONEMAP_POS2 VHDR_TONEMAP_POS2;
+	
+	VHDR_TONEMAP_POS2.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_POS2.u32));
+	VHDR_TONEMAP_POS2.bits.v_tmap_x2_pos = v_tmap_x2_pos;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_POS2.u32),VHDR_TONEMAP_POS2.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVTmapX3Pos(HI_U32 v_tmap_x3_pos)
+{
+	U_VHDR_TONEMAP_POS3 VHDR_TONEMAP_POS3;
+	
+	VHDR_TONEMAP_POS3.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_POS3.u32));
+	VHDR_TONEMAP_POS3.bits.v_tmap_x3_pos = v_tmap_x3_pos;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_POS3.u32),VHDR_TONEMAP_POS3.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVTmapX4Pos(HI_U32 v_tmap_x4_pos)
+{
+	U_VHDR_TONEMAP_POS4 VHDR_TONEMAP_POS4;
+	
+	VHDR_TONEMAP_POS4.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_POS4.u32));
+	VHDR_TONEMAP_POS4.bits.v_tmap_x4_pos = v_tmap_x4_pos;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_POS4.u32),VHDR_TONEMAP_POS4.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVTmapX5Pos(HI_U32 v_tmap_x5_pos)
+{
+	U_VHDR_TONEMAP_POS5 VHDR_TONEMAP_POS5;
+	
+	VHDR_TONEMAP_POS5.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_POS5.u32));
+	VHDR_TONEMAP_POS5.bits.v_tmap_x5_pos = v_tmap_x5_pos;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_POS5.u32),VHDR_TONEMAP_POS5.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVTmapX6Pos(HI_U32 v_tmap_x6_pos)
+{
+	U_VHDR_TONEMAP_POS6 VHDR_TONEMAP_POS6;
+	
+	VHDR_TONEMAP_POS6.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_POS6.u32));
+	VHDR_TONEMAP_POS6.bits.v_tmap_x6_pos = v_tmap_x6_pos;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_POS6.u32),VHDR_TONEMAP_POS6.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVTmapX7Pos(HI_U32 v_tmap_x7_pos)
+{
+	U_VHDR_TONEMAP_POS7 VHDR_TONEMAP_POS7;
+	
+	VHDR_TONEMAP_POS7.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_POS7.u32));
+	VHDR_TONEMAP_POS7.bits.v_tmap_x7_pos = v_tmap_x7_pos;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_POS7.u32),VHDR_TONEMAP_POS7.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVTmapX8Pos(HI_U32 v_tmap_x8_pos)
+{
+	U_VHDR_TONEMAP_POS8 VHDR_TONEMAP_POS8;
+	
+	VHDR_TONEMAP_POS8.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_POS8.u32));
+	VHDR_TONEMAP_POS8.bits.v_tmap_x8_pos = v_tmap_x8_pos;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_POS8.u32),VHDR_TONEMAP_POS8.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVTmapX4Num(HI_U32 v_tmap_x4_num)
+{
+	U_VHDR_TONEMAP_NUM1 VHDR_TONEMAP_NUM1;
+	
+	VHDR_TONEMAP_NUM1.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_NUM1.u32));
+	VHDR_TONEMAP_NUM1.bits.v_tmap_x4_num = v_tmap_x4_num;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_NUM1.u32),VHDR_TONEMAP_NUM1.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVTmapX3Num(HI_U32 v_tmap_x3_num)
+{
+	U_VHDR_TONEMAP_NUM1 VHDR_TONEMAP_NUM1;
+	
+	VHDR_TONEMAP_NUM1.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_NUM1.u32));
+	VHDR_TONEMAP_NUM1.bits.v_tmap_x3_num = v_tmap_x3_num;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_NUM1.u32),VHDR_TONEMAP_NUM1.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVTmapX2Num(HI_U32 v_tmap_x2_num)
+{
+	U_VHDR_TONEMAP_NUM1 VHDR_TONEMAP_NUM1;
+	
+	VHDR_TONEMAP_NUM1.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_NUM1.u32));
+	VHDR_TONEMAP_NUM1.bits.v_tmap_x2_num = v_tmap_x2_num;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_NUM1.u32),VHDR_TONEMAP_NUM1.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVTmapX1Num(HI_U32 v_tmap_x1_num)
+{
+	U_VHDR_TONEMAP_NUM1 VHDR_TONEMAP_NUM1;
+	
+	VHDR_TONEMAP_NUM1.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_NUM1.u32));
+	VHDR_TONEMAP_NUM1.bits.v_tmap_x1_num = v_tmap_x1_num;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_NUM1.u32),VHDR_TONEMAP_NUM1.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVTmapX8Num(HI_U32 v_tmap_x8_num)
+{
+	U_VHDR_TONEMAP_NUM2 VHDR_TONEMAP_NUM2;
+	
+	VHDR_TONEMAP_NUM2.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_NUM2.u32));
+	VHDR_TONEMAP_NUM2.bits.v_tmap_x8_num = v_tmap_x8_num;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_NUM2.u32),VHDR_TONEMAP_NUM2.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVTmapX7Num(HI_U32 v_tmap_x7_num)
+{
+	U_VHDR_TONEMAP_NUM2 VHDR_TONEMAP_NUM2;
+	
+	VHDR_TONEMAP_NUM2.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_NUM2.u32));
+	VHDR_TONEMAP_NUM2.bits.v_tmap_x7_num = v_tmap_x7_num;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_NUM2.u32),VHDR_TONEMAP_NUM2.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVTmapX6Num(HI_U32 v_tmap_x6_num)
+{
+	U_VHDR_TONEMAP_NUM2 VHDR_TONEMAP_NUM2;
+	
+	VHDR_TONEMAP_NUM2.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_NUM2.u32));
+	VHDR_TONEMAP_NUM2.bits.v_tmap_x6_num = v_tmap_x6_num;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_NUM2.u32),VHDR_TONEMAP_NUM2.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVTmapX5Num(HI_U32 v_tmap_x5_num)
+{
+	U_VHDR_TONEMAP_NUM2 VHDR_TONEMAP_NUM2;
+	
+	VHDR_TONEMAP_NUM2.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_NUM2.u32));
+	VHDR_TONEMAP_NUM2.bits.v_tmap_x5_num = v_tmap_x5_num;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_NUM2.u32),VHDR_TONEMAP_NUM2.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVSmapX4Step(HI_U32 v_smap_x4_step)
+{
+	U_VHDR_TONEMAP_SM_STEP1 VHDR_TONEMAP_SM_STEP1;
+	
+	VHDR_TONEMAP_SM_STEP1.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_SM_STEP1.u32));
+	VHDR_TONEMAP_SM_STEP1.bits.v_smap_x4_step = v_smap_x4_step;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_SM_STEP1.u32),VHDR_TONEMAP_SM_STEP1.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVSmapX3Step(HI_U32 v_smap_x3_step)
+{
+	U_VHDR_TONEMAP_SM_STEP1 VHDR_TONEMAP_SM_STEP1;
+	
+	VHDR_TONEMAP_SM_STEP1.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_SM_STEP1.u32));
+	VHDR_TONEMAP_SM_STEP1.bits.v_smap_x3_step = v_smap_x3_step;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_SM_STEP1.u32),VHDR_TONEMAP_SM_STEP1.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVSmapX2Step(HI_U32 v_smap_x2_step)
+{
+	U_VHDR_TONEMAP_SM_STEP1 VHDR_TONEMAP_SM_STEP1;
+	
+	VHDR_TONEMAP_SM_STEP1.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_SM_STEP1.u32));
+	VHDR_TONEMAP_SM_STEP1.bits.v_smap_x2_step = v_smap_x2_step;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_SM_STEP1.u32),VHDR_TONEMAP_SM_STEP1.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVSmapX1Step(HI_U32 v_smap_x1_step)
+{
+	U_VHDR_TONEMAP_SM_STEP1 VHDR_TONEMAP_SM_STEP1;
+	
+	VHDR_TONEMAP_SM_STEP1.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_SM_STEP1.u32));
+	VHDR_TONEMAP_SM_STEP1.bits.v_smap_x1_step = v_smap_x1_step;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_SM_STEP1.u32),VHDR_TONEMAP_SM_STEP1.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVSmapX8Step(HI_U32 v_smap_x8_step)
+{
+	U_VHDR_TONEMAP_SM_STEP2 VHDR_TONEMAP_SM_STEP2;
+	
+	VHDR_TONEMAP_SM_STEP2.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_SM_STEP2.u32));
+	VHDR_TONEMAP_SM_STEP2.bits.v_smap_x8_step = v_smap_x8_step;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_SM_STEP2.u32),VHDR_TONEMAP_SM_STEP2.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVSmapX7Step(HI_U32 v_smap_x7_step)
+{
+	U_VHDR_TONEMAP_SM_STEP2 VHDR_TONEMAP_SM_STEP2;
+	
+	VHDR_TONEMAP_SM_STEP2.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_SM_STEP2.u32));
+	VHDR_TONEMAP_SM_STEP2.bits.v_smap_x7_step = v_smap_x7_step;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_SM_STEP2.u32),VHDR_TONEMAP_SM_STEP2.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVSmapX6Step(HI_U32 v_smap_x6_step)
+{
+	U_VHDR_TONEMAP_SM_STEP2 VHDR_TONEMAP_SM_STEP2;
+	
+	VHDR_TONEMAP_SM_STEP2.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_SM_STEP2.u32));
+	VHDR_TONEMAP_SM_STEP2.bits.v_smap_x6_step = v_smap_x6_step;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_SM_STEP2.u32),VHDR_TONEMAP_SM_STEP2.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVSmapX5Step(HI_U32 v_smap_x5_step)
+{
+	U_VHDR_TONEMAP_SM_STEP2 VHDR_TONEMAP_SM_STEP2;
+	
+	VHDR_TONEMAP_SM_STEP2.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_SM_STEP2.u32));
+	VHDR_TONEMAP_SM_STEP2.bits.v_smap_x5_step = v_smap_x5_step;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_SM_STEP2.u32),VHDR_TONEMAP_SM_STEP2.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVSmapX1Pos(HI_U32 v_smap_x1_pos)
+{
+	U_VHDR_TONEMAP_SM_POS1 VHDR_TONEMAP_SM_POS1;
+	
+	VHDR_TONEMAP_SM_POS1.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_SM_POS1.u32));
+	VHDR_TONEMAP_SM_POS1.bits.v_smap_x1_pos = v_smap_x1_pos;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_SM_POS1.u32),VHDR_TONEMAP_SM_POS1.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVSmapX2Pos(HI_U32 v_smap_x2_pos)
+{
+	U_VHDR_TONEMAP_SM_POS2 VHDR_TONEMAP_SM_POS2;
+	
+	VHDR_TONEMAP_SM_POS2.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_SM_POS2.u32));
+	VHDR_TONEMAP_SM_POS2.bits.v_smap_x2_pos = v_smap_x2_pos;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_SM_POS2.u32),VHDR_TONEMAP_SM_POS2.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVSmapX3Pos(HI_U32 v_smap_x3_pos)
+{
+	U_VHDR_TONEMAP_SM_POS3 VHDR_TONEMAP_SM_POS3;
+	
+	VHDR_TONEMAP_SM_POS3.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_SM_POS3.u32));
+	VHDR_TONEMAP_SM_POS3.bits.v_smap_x3_pos = v_smap_x3_pos;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_SM_POS3.u32),VHDR_TONEMAP_SM_POS3.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVSmapX4Pos(HI_U32 v_smap_x4_pos)
+{
+	U_VHDR_TONEMAP_SM_POS4 VHDR_TONEMAP_SM_POS4;
+	
+	VHDR_TONEMAP_SM_POS4.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_SM_POS4.u32));
+	VHDR_TONEMAP_SM_POS4.bits.v_smap_x4_pos = v_smap_x4_pos;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_SM_POS4.u32),VHDR_TONEMAP_SM_POS4.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVSmapX5Pos(HI_U32 v_smap_x5_pos)
+{
+	U_VHDR_TONEMAP_SM_POS5 VHDR_TONEMAP_SM_POS5;
+	
+	VHDR_TONEMAP_SM_POS5.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_SM_POS5.u32));
+	VHDR_TONEMAP_SM_POS5.bits.v_smap_x5_pos = v_smap_x5_pos;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_SM_POS5.u32),VHDR_TONEMAP_SM_POS5.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVSmapX6Pos(HI_U32 v_smap_x6_pos)
+{
+	U_VHDR_TONEMAP_SM_POS6 VHDR_TONEMAP_SM_POS6;
+	
+	VHDR_TONEMAP_SM_POS6.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_SM_POS6.u32));
+	VHDR_TONEMAP_SM_POS6.bits.v_smap_x6_pos = v_smap_x6_pos;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_SM_POS6.u32),VHDR_TONEMAP_SM_POS6.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVSmapX7Pos(HI_U32 v_smap_x7_pos)
+{
+	U_VHDR_TONEMAP_SM_POS7 VHDR_TONEMAP_SM_POS7;
+	
+	VHDR_TONEMAP_SM_POS7.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_SM_POS7.u32));
+	VHDR_TONEMAP_SM_POS7.bits.v_smap_x7_pos = v_smap_x7_pos;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_SM_POS7.u32),VHDR_TONEMAP_SM_POS7.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVSmapX8Pos(HI_U32 v_smap_x8_pos)
+{
+	U_VHDR_TONEMAP_SM_POS8 VHDR_TONEMAP_SM_POS8;
+	
+	VHDR_TONEMAP_SM_POS8.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_SM_POS8.u32));
+	VHDR_TONEMAP_SM_POS8.bits.v_smap_x8_pos = v_smap_x8_pos;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_SM_POS8.u32),VHDR_TONEMAP_SM_POS8.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVSmapX4Num(HI_U32 v_smap_x4_num)
+{
+	U_VHDR_TONEMAP_SM_NUM1 VHDR_TONEMAP_SM_NUM1;
+	
+	VHDR_TONEMAP_SM_NUM1.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_SM_NUM1.u32));
+	VHDR_TONEMAP_SM_NUM1.bits.v_smap_x4_num = v_smap_x4_num;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_SM_NUM1.u32),VHDR_TONEMAP_SM_NUM1.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVSmapX3Num(HI_U32 v_smap_x3_num)
+{
+	U_VHDR_TONEMAP_SM_NUM1 VHDR_TONEMAP_SM_NUM1;
+	
+	VHDR_TONEMAP_SM_NUM1.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_SM_NUM1.u32));
+	VHDR_TONEMAP_SM_NUM1.bits.v_smap_x3_num = v_smap_x3_num;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_SM_NUM1.u32),VHDR_TONEMAP_SM_NUM1.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVSmapX2Num(HI_U32 v_smap_x2_num)
+{
+	U_VHDR_TONEMAP_SM_NUM1 VHDR_TONEMAP_SM_NUM1;
+	
+	VHDR_TONEMAP_SM_NUM1.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_SM_NUM1.u32));
+	VHDR_TONEMAP_SM_NUM1.bits.v_smap_x2_num = v_smap_x2_num;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_SM_NUM1.u32),VHDR_TONEMAP_SM_NUM1.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVSmapX1Num(HI_U32 v_smap_x1_num)
+{
+	U_VHDR_TONEMAP_SM_NUM1 VHDR_TONEMAP_SM_NUM1;
+	
+	VHDR_TONEMAP_SM_NUM1.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_SM_NUM1.u32));
+	VHDR_TONEMAP_SM_NUM1.bits.v_smap_x1_num = v_smap_x1_num;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_SM_NUM1.u32),VHDR_TONEMAP_SM_NUM1.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVSmapX8Num(HI_U32 v_smap_x8_num)
+{
+	U_VHDR_TONEMAP_SM_NUM2 VHDR_TONEMAP_SM_NUM2;
+	
+	VHDR_TONEMAP_SM_NUM2.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_SM_NUM2.u32));
+	VHDR_TONEMAP_SM_NUM2.bits.v_smap_x8_num = v_smap_x8_num;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_SM_NUM2.u32),VHDR_TONEMAP_SM_NUM2.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVSmapX7Num(HI_U32 v_smap_x7_num)
+{
+	U_VHDR_TONEMAP_SM_NUM2 VHDR_TONEMAP_SM_NUM2;
+	
+	VHDR_TONEMAP_SM_NUM2.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_SM_NUM2.u32));
+	VHDR_TONEMAP_SM_NUM2.bits.v_smap_x7_num = v_smap_x7_num;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_SM_NUM2.u32),VHDR_TONEMAP_SM_NUM2.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVSmapX6Num(HI_U32 v_smap_x6_num)
+{
+	U_VHDR_TONEMAP_SM_NUM2 VHDR_TONEMAP_SM_NUM2;
+	
+	VHDR_TONEMAP_SM_NUM2.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_SM_NUM2.u32));
+	VHDR_TONEMAP_SM_NUM2.bits.v_smap_x6_num = v_smap_x6_num;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_SM_NUM2.u32),VHDR_TONEMAP_SM_NUM2.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVSmapX5Num(HI_U32 v_smap_x5_num)
+{
+	U_VHDR_TONEMAP_SM_NUM2 VHDR_TONEMAP_SM_NUM2;
+	
+	VHDR_TONEMAP_SM_NUM2.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_SM_NUM2.u32));
+	VHDR_TONEMAP_SM_NUM2.bits.v_smap_x5_num = v_smap_x5_num;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_SM_NUM2.u32),VHDR_TONEMAP_SM_NUM2.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVhdrTmapLumaCoef0(HI_U32 vhdr_tmap_luma_coef0)
+{
+	U_VHDR_TONEMAP_LUMA_COEF0 VHDR_TONEMAP_LUMA_COEF0;
+	
+	VHDR_TONEMAP_LUMA_COEF0.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_LUMA_COEF0.u32));
+	VHDR_TONEMAP_LUMA_COEF0.bits.vhdr_tmap_luma_coef0 = vhdr_tmap_luma_coef0;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_LUMA_COEF0.u32),VHDR_TONEMAP_LUMA_COEF0.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVhdrTmapLumaCoef1(HI_U32 vhdr_tmap_luma_coef1)
+{
+	U_VHDR_TONEMAP_LUMA_COEF1 VHDR_TONEMAP_LUMA_COEF1;
+	
+	VHDR_TONEMAP_LUMA_COEF1.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_LUMA_COEF1.u32));
+	VHDR_TONEMAP_LUMA_COEF1.bits.vhdr_tmap_luma_coef1 = vhdr_tmap_luma_coef1;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_LUMA_COEF1.u32),VHDR_TONEMAP_LUMA_COEF1.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVhdrTmapLumaCoef2(HI_U32 vhdr_tmap_luma_coef2)
+{
+	U_VHDR_TONEMAP_LUMA_COEF2 VHDR_TONEMAP_LUMA_COEF2;
+	
+	VHDR_TONEMAP_LUMA_COEF2.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_LUMA_COEF2.u32));
+	VHDR_TONEMAP_LUMA_COEF2.bits.vhdr_tmap_luma_coef2 = vhdr_tmap_luma_coef2;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_LUMA_COEF2.u32),VHDR_TONEMAP_LUMA_COEF2.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVhdrTmapLumaScale(HI_U32 vhdr_tmap_luma_scale)
+{
+	U_VHDR_TONEMAP_LUMA_SCALE VHDR_TONEMAP_LUMA_SCALE;
+	
+	VHDR_TONEMAP_LUMA_SCALE.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_LUMA_SCALE.u32));
+	VHDR_TONEMAP_LUMA_SCALE.bits.vhdr_tmap_luma_scale = vhdr_tmap_luma_scale;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_LUMA_SCALE.u32),VHDR_TONEMAP_LUMA_SCALE.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVhdrTmapCoefScale(HI_U32 vhdr_tmap_coef_scale)
+{
+	U_VHDR_TONEMAP_COEF_SCALE VHDR_TONEMAP_COEF_SCALE;
+	
+	VHDR_TONEMAP_COEF_SCALE.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_COEF_SCALE.u32));
+	VHDR_TONEMAP_COEF_SCALE.bits.vhdr_tmap_coef_scale = vhdr_tmap_coef_scale;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_COEF_SCALE.u32),VHDR_TONEMAP_COEF_SCALE.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVhdrTmapOutClipMin(HI_U32 vhdr_tmap_out_clip_min)
+{
+	U_VHDR_TONEMAP_OUT_CLIP_MIN VHDR_TONEMAP_OUT_CLIP_MIN;
+	
+	VHDR_TONEMAP_OUT_CLIP_MIN.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_OUT_CLIP_MIN.u32));
+	VHDR_TONEMAP_OUT_CLIP_MIN.bits.vhdr_tmap_out_clip_min = vhdr_tmap_out_clip_min;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_OUT_CLIP_MIN.u32),VHDR_TONEMAP_OUT_CLIP_MIN.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVhdrTmapOutClipMax(HI_U32 vhdr_tmap_out_clip_max)
+{
+	U_VHDR_TONEMAP_OUT_CLIP_MAX VHDR_TONEMAP_OUT_CLIP_MAX;
+	
+	VHDR_TONEMAP_OUT_CLIP_MAX.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_OUT_CLIP_MAX.u32));
+	VHDR_TONEMAP_OUT_CLIP_MAX.bits.vhdr_tmap_out_clip_max = vhdr_tmap_out_clip_max;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_OUT_CLIP_MAX.u32),VHDR_TONEMAP_OUT_CLIP_MAX.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVhdrTmapOutDc0(HI_U32 vhdr_tmap_out_dc0)
+{
+	U_VHDR_TONEMAP_OUT_DC0 VHDR_TONEMAP_OUT_DC0;
+	
+	VHDR_TONEMAP_OUT_DC0.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_OUT_DC0.u32));
+	VHDR_TONEMAP_OUT_DC0.bits.vhdr_tmap_out_dc0 = vhdr_tmap_out_dc0;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_OUT_DC0.u32),VHDR_TONEMAP_OUT_DC0.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVhdrTmapOutDc1(HI_U32 vhdr_tmap_out_dc1)
+{
+	U_VHDR_TONEMAP_OUT_DC1 VHDR_TONEMAP_OUT_DC1;
+	
+	VHDR_TONEMAP_OUT_DC1.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_OUT_DC1.u32));
+	VHDR_TONEMAP_OUT_DC1.bits.vhdr_tmap_out_dc1 = vhdr_tmap_out_dc1;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_OUT_DC1.u32),VHDR_TONEMAP_OUT_DC1.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVhdrTmapOutDc2(HI_U32 vhdr_tmap_out_dc2)
+{
+	U_VHDR_TONEMAP_OUT_DC2 VHDR_TONEMAP_OUT_DC2;
+	
+	VHDR_TONEMAP_OUT_DC2.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_OUT_DC2.u32));
+	VHDR_TONEMAP_OUT_DC2.bits.vhdr_tmap_out_dc2 = vhdr_tmap_out_dc2;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_OUT_DC2.u32),VHDR_TONEMAP_OUT_DC2.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVhdrTmapScaleMixAlpha(HI_U32 vhdr_tmap_scale_mix_alpha)
+{
+	U_VHDR_TONEMAP_ALPHA VHDR_TONEMAP_ALPHA;
+	
+	VHDR_TONEMAP_ALPHA.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_ALPHA.u32));
+	VHDR_TONEMAP_ALPHA.bits.vhdr_tmap_scale_mix_alpha = vhdr_tmap_scale_mix_alpha;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_ALPHA.u32),VHDR_TONEMAP_ALPHA.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVhdrTmapMixAlpha(HI_U32 vhdr_tmap_mix_alpha)
+{
+	U_VHDR_TONEMAP_ALPHA VHDR_TONEMAP_ALPHA;
+	
+	VHDR_TONEMAP_ALPHA.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_ALPHA.u32));
+	VHDR_TONEMAP_ALPHA.bits.vhdr_tmap_mix_alpha = vhdr_tmap_mix_alpha;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_TONEMAP_ALPHA.u32),VHDR_TONEMAP_ALPHA.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVhdrGmmEn(HI_U32 vhdr_gmm_en)
+{
+	U_VHDR_GAMMA_CTRL VHDR_GAMMA_CTRL;
+	
+	VHDR_GAMMA_CTRL.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_GAMMA_CTRL.u32));
+	VHDR_GAMMA_CTRL.bits.vhdr_gmm_en = vhdr_gmm_en;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_GAMMA_CTRL.u32),VHDR_GAMMA_CTRL.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVhdrGammaRdEn(HI_U32 vhdr_gamma_rd_en)
+{
+	U_VHDR_GAMMA_REN VHDR_GAMMA_REN;
+	
+	VHDR_GAMMA_REN.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_GAMMA_REN.u32));
+	VHDR_GAMMA_REN.bits.vhdr_gamma_rd_en = vhdr_gamma_rd_en;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_GAMMA_REN.u32),VHDR_GAMMA_REN.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVhdrGammaParaData(HI_U32 vhdr_gamma_para_data)
+{
+	U_VHDR_GAMMMA_DATA VHDR_GAMMMA_DATA;
+	
+	VHDR_GAMMMA_DATA.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_GAMMMA_DATA.u32));
+	VHDR_GAMMMA_DATA.bits.vhdr_gamma_para_data = vhdr_gamma_para_data;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_GAMMMA_DATA.u32),VHDR_GAMMMA_DATA.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVGmmX4Step(HI_U32 v_gmm_x4_step)
+{
+	U_VHDR_GAMMA_STEP1 VHDR_GAMMA_STEP1;
+	
+	VHDR_GAMMA_STEP1.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_GAMMA_STEP1.u32));
+	VHDR_GAMMA_STEP1.bits.v_gmm_x4_step = v_gmm_x4_step;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_GAMMA_STEP1.u32),VHDR_GAMMA_STEP1.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVGmmX3Step(HI_U32 v_gmm_x3_step)
+{
+	U_VHDR_GAMMA_STEP1 VHDR_GAMMA_STEP1;
+	
+	VHDR_GAMMA_STEP1.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_GAMMA_STEP1.u32));
+	VHDR_GAMMA_STEP1.bits.v_gmm_x3_step = v_gmm_x3_step;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_GAMMA_STEP1.u32),VHDR_GAMMA_STEP1.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVGmmX2Step(HI_U32 v_gmm_x2_step)
+{
+	U_VHDR_GAMMA_STEP1 VHDR_GAMMA_STEP1;
+	
+	VHDR_GAMMA_STEP1.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_GAMMA_STEP1.u32));
+	VHDR_GAMMA_STEP1.bits.v_gmm_x2_step = v_gmm_x2_step;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_GAMMA_STEP1.u32),VHDR_GAMMA_STEP1.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVGmmX1Step(HI_U32 v_gmm_x1_step)
+{
+	U_VHDR_GAMMA_STEP1 VHDR_GAMMA_STEP1;
+	
+	VHDR_GAMMA_STEP1.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_GAMMA_STEP1.u32));
+	VHDR_GAMMA_STEP1.bits.v_gmm_x1_step = v_gmm_x1_step;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_GAMMA_STEP1.u32),VHDR_GAMMA_STEP1.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVGmmX8Step(HI_U32 v_gmm_x8_step)
+{
+	U_VHDR_GAMMA_STEP2 VHDR_GAMMA_STEP2;
+	
+	VHDR_GAMMA_STEP2.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_GAMMA_STEP2.u32));
+	VHDR_GAMMA_STEP2.bits.v_gmm_x8_step = v_gmm_x8_step;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_GAMMA_STEP2.u32),VHDR_GAMMA_STEP2.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVGmmX7Step(HI_U32 v_gmm_x7_step)
+{
+	U_VHDR_GAMMA_STEP2 VHDR_GAMMA_STEP2;
+	
+	VHDR_GAMMA_STEP2.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_GAMMA_STEP2.u32));
+	VHDR_GAMMA_STEP2.bits.v_gmm_x7_step = v_gmm_x7_step;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_GAMMA_STEP2.u32),VHDR_GAMMA_STEP2.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVGmmX6Step(HI_U32 v_gmm_x6_step)
+{
+	U_VHDR_GAMMA_STEP2 VHDR_GAMMA_STEP2;
+	
+	VHDR_GAMMA_STEP2.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_GAMMA_STEP2.u32));
+	VHDR_GAMMA_STEP2.bits.v_gmm_x6_step = v_gmm_x6_step;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_GAMMA_STEP2.u32),VHDR_GAMMA_STEP2.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVGmmX5Step(HI_U32 v_gmm_x5_step)
+{
+	U_VHDR_GAMMA_STEP2 VHDR_GAMMA_STEP2;
+	
+	VHDR_GAMMA_STEP2.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_GAMMA_STEP2.u32));
+	VHDR_GAMMA_STEP2.bits.v_gmm_x5_step = v_gmm_x5_step;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_GAMMA_STEP2.u32),VHDR_GAMMA_STEP2.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVGmmX1Pos(HI_U32 v_gmm_x1_pos)
+{
+	U_VHDR_GAMMA_POS1 VHDR_GAMMA_POS1;
+	
+	VHDR_GAMMA_POS1.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_GAMMA_POS1.u32));
+	VHDR_GAMMA_POS1.bits.v_gmm_x1_pos = v_gmm_x1_pos;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_GAMMA_POS1.u32),VHDR_GAMMA_POS1.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVGmmX2Pos(HI_U32 v_gmm_x2_pos)
+{
+	U_VHDR_GAMMA_POS2 VHDR_GAMMA_POS2;
+	
+	VHDR_GAMMA_POS2.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_GAMMA_POS2.u32));
+	VHDR_GAMMA_POS2.bits.v_gmm_x2_pos = v_gmm_x2_pos;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_GAMMA_POS2.u32),VHDR_GAMMA_POS2.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVGmmX3Pos(HI_U32 v_gmm_x3_pos)
+{
+	U_VHDR_GAMMA_POS3 VHDR_GAMMA_POS3;
+	
+	VHDR_GAMMA_POS3.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_GAMMA_POS3.u32));
+	VHDR_GAMMA_POS3.bits.v_gmm_x3_pos = v_gmm_x3_pos;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_GAMMA_POS3.u32),VHDR_GAMMA_POS3.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVGmmX4Pos(HI_U32 v_gmm_x4_pos)
+{
+	U_VHDR_GAMMA_POS4 VHDR_GAMMA_POS4;
+	
+	VHDR_GAMMA_POS4.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_GAMMA_POS4.u32));
+	VHDR_GAMMA_POS4.bits.v_gmm_x4_pos = v_gmm_x4_pos;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_GAMMA_POS4.u32),VHDR_GAMMA_POS4.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVGmmX5Pos(HI_U32 v_gmm_x5_pos)
+{
+	U_VHDR_GAMMA_POS5 VHDR_GAMMA_POS5;
+	
+	VHDR_GAMMA_POS5.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_GAMMA_POS5.u32));
+	VHDR_GAMMA_POS5.bits.v_gmm_x5_pos = v_gmm_x5_pos;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_GAMMA_POS5.u32),VHDR_GAMMA_POS5.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVGmmX6Pos(HI_U32 v_gmm_x6_pos)
+{
+	U_VHDR_GAMMA_POS6 VHDR_GAMMA_POS6;
+	
+	VHDR_GAMMA_POS6.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_GAMMA_POS6.u32));
+	VHDR_GAMMA_POS6.bits.v_gmm_x6_pos = v_gmm_x6_pos;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_GAMMA_POS6.u32),VHDR_GAMMA_POS6.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVGmmX7Pos(HI_U32 v_gmm_x7_pos)
+{
+	U_VHDR_GAMMA_POS7 VHDR_GAMMA_POS7;
+	
+	VHDR_GAMMA_POS7.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_GAMMA_POS7.u32));
+	VHDR_GAMMA_POS7.bits.v_gmm_x7_pos = v_gmm_x7_pos;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_GAMMA_POS7.u32),VHDR_GAMMA_POS7.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVGmmX8Pos(HI_U32 v_gmm_x8_pos)
+{
+	U_VHDR_GAMMA_POS8 VHDR_GAMMA_POS8;
+	
+	VHDR_GAMMA_POS8.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_GAMMA_POS8.u32));
+	VHDR_GAMMA_POS8.bits.v_gmm_x8_pos = v_gmm_x8_pos;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_GAMMA_POS8.u32),VHDR_GAMMA_POS8.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVGmmX4Num(HI_U32 v_gmm_x4_num)
+{
+	U_VHDR_GAMMA_NUM1 VHDR_GAMMA_NUM1;
+	
+	VHDR_GAMMA_NUM1.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_GAMMA_NUM1.u32));
+	VHDR_GAMMA_NUM1.bits.v_gmm_x4_num = v_gmm_x4_num;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_GAMMA_NUM1.u32),VHDR_GAMMA_NUM1.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVGmmX3Num(HI_U32 v_gmm_x3_num)
+{
+	U_VHDR_GAMMA_NUM1 VHDR_GAMMA_NUM1;
+	
+	VHDR_GAMMA_NUM1.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_GAMMA_NUM1.u32));
+	VHDR_GAMMA_NUM1.bits.v_gmm_x3_num = v_gmm_x3_num;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_GAMMA_NUM1.u32),VHDR_GAMMA_NUM1.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVGmmX2Num(HI_U32 v_gmm_x2_num)
+{
+	U_VHDR_GAMMA_NUM1 VHDR_GAMMA_NUM1;
+	
+	VHDR_GAMMA_NUM1.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_GAMMA_NUM1.u32));
+	VHDR_GAMMA_NUM1.bits.v_gmm_x2_num = v_gmm_x2_num;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_GAMMA_NUM1.u32),VHDR_GAMMA_NUM1.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVGmmX1Num(HI_U32 v_gmm_x1_num)
+{
+	U_VHDR_GAMMA_NUM1 VHDR_GAMMA_NUM1;
+	
+	VHDR_GAMMA_NUM1.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_GAMMA_NUM1.u32));
+	VHDR_GAMMA_NUM1.bits.v_gmm_x1_num = v_gmm_x1_num;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_GAMMA_NUM1.u32),VHDR_GAMMA_NUM1.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVGmmX8Num(HI_U32 v_gmm_x8_num)
+{
+	U_VHDR_GAMMA_NUM2 VHDR_GAMMA_NUM2;
+	
+	VHDR_GAMMA_NUM2.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_GAMMA_NUM2.u32));
+	VHDR_GAMMA_NUM2.bits.v_gmm_x8_num = v_gmm_x8_num;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_GAMMA_NUM2.u32),VHDR_GAMMA_NUM2.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVGmmX7Num(HI_U32 v_gmm_x7_num)
+{
+	U_VHDR_GAMMA_NUM2 VHDR_GAMMA_NUM2;
+	
+	VHDR_GAMMA_NUM2.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_GAMMA_NUM2.u32));
+	VHDR_GAMMA_NUM2.bits.v_gmm_x7_num = v_gmm_x7_num;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_GAMMA_NUM2.u32),VHDR_GAMMA_NUM2.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVGmmX6Num(HI_U32 v_gmm_x6_num)
+{
+	U_VHDR_GAMMA_NUM2 VHDR_GAMMA_NUM2;
+	
+	VHDR_GAMMA_NUM2.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_GAMMA_NUM2.u32));
+	VHDR_GAMMA_NUM2.bits.v_gmm_x6_num = v_gmm_x6_num;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_GAMMA_NUM2.u32),VHDR_GAMMA_NUM2.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVGmmX5Num(HI_U32 v_gmm_x5_num)
+{
+	U_VHDR_GAMMA_NUM2 VHDR_GAMMA_NUM2;
+	
+	VHDR_GAMMA_NUM2.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_GAMMA_NUM2.u32));
+	VHDR_GAMMA_NUM2.bits.v_gmm_x5_num = v_gmm_x5_num;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_GAMMA_NUM2.u32),VHDR_GAMMA_NUM2.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVhdrDitherRoundUnlim(HI_U32 vhdr_dither_round_unlim)
+{
+	U_VHDR_DITHER_CTRL VHDR_DITHER_CTRL;
+	
+	VHDR_DITHER_CTRL.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_DITHER_CTRL.u32));
+	VHDR_DITHER_CTRL.bits.vhdr_dither_round_unlim = vhdr_dither_round_unlim;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_DITHER_CTRL.u32),VHDR_DITHER_CTRL.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVhdrDitherEn(HI_U32 vhdr_dither_en)
+{
+	U_VHDR_DITHER_CTRL VHDR_DITHER_CTRL;
+	
+	VHDR_DITHER_CTRL.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_DITHER_CTRL.u32));
+	VHDR_DITHER_CTRL.bits.vhdr_dither_en = vhdr_dither_en;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_DITHER_CTRL.u32),VHDR_DITHER_CTRL.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVhdrDitherMode(HI_U32 vhdr_dither_mode)
+{
+	U_VHDR_DITHER_CTRL VHDR_DITHER_CTRL;
+	
+	VHDR_DITHER_CTRL.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_DITHER_CTRL.u32));
+	VHDR_DITHER_CTRL.bits.vhdr_dither_mode = vhdr_dither_mode;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_DITHER_CTRL.u32),VHDR_DITHER_CTRL.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVhdrDitherRound(HI_U32 vhdr_dither_round)
+{
+	U_VHDR_DITHER_CTRL VHDR_DITHER_CTRL;
+	
+	VHDR_DITHER_CTRL.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_DITHER_CTRL.u32));
+	VHDR_DITHER_CTRL.bits.vhdr_dither_round = vhdr_dither_round;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_DITHER_CTRL.u32),VHDR_DITHER_CTRL.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVhdrDitherDomainMode(HI_U32 vhdr_dither_domain_mode)
+{
+	U_VHDR_DITHER_CTRL VHDR_DITHER_CTRL;
+	
+	VHDR_DITHER_CTRL.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_DITHER_CTRL.u32));
+	VHDR_DITHER_CTRL.bits.vhdr_dither_domain_mode = vhdr_dither_domain_mode;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_DITHER_CTRL.u32),VHDR_DITHER_CTRL.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVhdrDitherTapMode(HI_U32 vhdr_dither_tap_mode)
+{
+	U_VHDR_DITHER_CTRL VHDR_DITHER_CTRL;
+	
+	VHDR_DITHER_CTRL.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_DITHER_CTRL.u32));
+	VHDR_DITHER_CTRL.bits.vhdr_dither_tap_mode = vhdr_dither_tap_mode;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_DITHER_CTRL.u32),VHDR_DITHER_CTRL.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVhdrDitherThrMax(HI_U32 vhdr_dither_thr_max)
+{
+	U_VHDR_DITHER_THR VHDR_DITHER_THR;
+	
+	VHDR_DITHER_THR.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_DITHER_THR.u32));
+	VHDR_DITHER_THR.bits.vhdr_dither_thr_max = vhdr_dither_thr_max;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_DITHER_THR.u32),VHDR_DITHER_THR.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVhdrDitherThrMin(HI_U32 vhdr_dither_thr_min)
+{
+	U_VHDR_DITHER_THR VHDR_DITHER_THR;
+	
+	VHDR_DITHER_THR.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_DITHER_THR.u32));
+	VHDR_DITHER_THR.bits.vhdr_dither_thr_min = vhdr_dither_thr_min;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_DITHER_THR.u32),VHDR_DITHER_THR.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVhdrDitherSedY0(HI_U32 vhdr_dither_sed_y0)
+{
+	U_VHDR_DITHER_SED_Y0 VHDR_DITHER_SED_Y0;
+	
+	VHDR_DITHER_SED_Y0.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_DITHER_SED_Y0.u32));
+	VHDR_DITHER_SED_Y0.bits.vhdr_dither_sed_y0 = vhdr_dither_sed_y0;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_DITHER_SED_Y0.u32),VHDR_DITHER_SED_Y0.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVhdrDitherSedU0(HI_U32 vhdr_dither_sed_u0)
+{
+	U_VHDR_DITHER_SED_U0 VHDR_DITHER_SED_U0;
+	
+	VHDR_DITHER_SED_U0.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_DITHER_SED_U0.u32));
+	VHDR_DITHER_SED_U0.bits.vhdr_dither_sed_u0 = vhdr_dither_sed_u0;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_DITHER_SED_U0.u32),VHDR_DITHER_SED_U0.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVhdrDitherSedV0(HI_U32 vhdr_dither_sed_v0)
+{
+	U_VHDR_DITHER_SED_V0 VHDR_DITHER_SED_V0;
+	
+	VHDR_DITHER_SED_V0.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_DITHER_SED_V0.u32));
+	VHDR_DITHER_SED_V0.bits.vhdr_dither_sed_v0 = vhdr_dither_sed_v0;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_DITHER_SED_V0.u32),VHDR_DITHER_SED_V0.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVhdrDitherSedW0(HI_U32 vhdr_dither_sed_w0)
+{
+	U_VHDR_DITHER_SED_W0 VHDR_DITHER_SED_W0;
+	
+	VHDR_DITHER_SED_W0.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_DITHER_SED_W0.u32));
+	VHDR_DITHER_SED_W0.bits.vhdr_dither_sed_w0 = vhdr_dither_sed_w0;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_DITHER_SED_W0.u32),VHDR_DITHER_SED_W0.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVhdrDitherSedY1(HI_U32 vhdr_dither_sed_y1)
+{
+	U_VHDR_DITHER_SED_Y1 VHDR_DITHER_SED_Y1;
+	
+	VHDR_DITHER_SED_Y1.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_DITHER_SED_Y1.u32));
+	VHDR_DITHER_SED_Y1.bits.vhdr_dither_sed_y1 = vhdr_dither_sed_y1;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_DITHER_SED_Y1.u32),VHDR_DITHER_SED_Y1.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVhdrDitherSedU1(HI_U32 vhdr_dither_sed_u1)
+{
+	U_VHDR_DITHER_SED_U1 VHDR_DITHER_SED_U1;
+	
+	VHDR_DITHER_SED_U1.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_DITHER_SED_U1.u32));
+	VHDR_DITHER_SED_U1.bits.vhdr_dither_sed_u1 = vhdr_dither_sed_u1;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_DITHER_SED_U1.u32),VHDR_DITHER_SED_U1.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVhdrDitherSedV1(HI_U32 vhdr_dither_sed_v1)
+{
+	U_VHDR_DITHER_SED_V1 VHDR_DITHER_SED_V1;
+	
+	VHDR_DITHER_SED_V1.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_DITHER_SED_V1.u32));
+	VHDR_DITHER_SED_V1.bits.vhdr_dither_sed_v1 = vhdr_dither_sed_v1;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_DITHER_SED_V1.u32),VHDR_DITHER_SED_V1.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVhdrDitherSedW1(HI_U32 vhdr_dither_sed_w1)
+{
+	U_VHDR_DITHER_SED_W1 VHDR_DITHER_SED_W1;
+	
+	VHDR_DITHER_SED_W1.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_DITHER_SED_W1.u32));
+	VHDR_DITHER_SED_W1.bits.vhdr_dither_sed_w1 = vhdr_dither_sed_w1;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_DITHER_SED_W1.u32),VHDR_DITHER_SED_W1.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVhdrCadjEn(HI_U32 vhdr_cadj_en)
+{
+	U_VHDR_RGB2YUV_CTRL VHDR_RGB2YUV_CTRL;
+	
+	VHDR_RGB2YUV_CTRL.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_RGB2YUV_CTRL.u32));
+	VHDR_RGB2YUV_CTRL.bits.vhdr_cadj_en = vhdr_cadj_en;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_RGB2YUV_CTRL.u32),VHDR_RGB2YUV_CTRL.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVhdrR2yEn(HI_U32 vhdr_r2y_en)
+{
+	U_VHDR_RGB2YUV_CTRL VHDR_RGB2YUV_CTRL;
+	
+	VHDR_RGB2YUV_CTRL.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_RGB2YUV_CTRL.u32));
+	VHDR_RGB2YUV_CTRL.bits.vhdr_r2y_en = vhdr_r2y_en;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_RGB2YUV_CTRL.u32),VHDR_RGB2YUV_CTRL.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVhdrR2yCoef00(HI_U32 vhdr_r2y_coef00)
+{
+	U_VHDR_RGB2YUV_COEF0 VHDR_RGB2YUV_COEF0;
+	
+	VHDR_RGB2YUV_COEF0.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_RGB2YUV_COEF0.u32));
+	VHDR_RGB2YUV_COEF0.bits.vhdr_r2y_coef00 = vhdr_r2y_coef00;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_RGB2YUV_COEF0.u32),VHDR_RGB2YUV_COEF0.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVhdrR2yCoef01(HI_U32 vhdr_r2y_coef01)
+{
+	U_VHDR_RGB2YUV_COEF1 VHDR_RGB2YUV_COEF1;
+	
+	VHDR_RGB2YUV_COEF1.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_RGB2YUV_COEF1.u32));
+	VHDR_RGB2YUV_COEF1.bits.vhdr_r2y_coef01 = vhdr_r2y_coef01;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_RGB2YUV_COEF1.u32),VHDR_RGB2YUV_COEF1.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVhdrR2yCoef02(HI_U32 vhdr_r2y_coef02)
+{
+	U_VHDR_RGB2YUV_COEF2 VHDR_RGB2YUV_COEF2;
+	
+	VHDR_RGB2YUV_COEF2.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_RGB2YUV_COEF2.u32));
+	VHDR_RGB2YUV_COEF2.bits.vhdr_r2y_coef02 = vhdr_r2y_coef02;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_RGB2YUV_COEF2.u32),VHDR_RGB2YUV_COEF2.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVhdrR2yCoef10(HI_U32 vhdr_r2y_coef10)
+{
+	U_VHDR_RGB2YUV_COEF3 VHDR_RGB2YUV_COEF3;
+	
+	VHDR_RGB2YUV_COEF3.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_RGB2YUV_COEF3.u32));
+	VHDR_RGB2YUV_COEF3.bits.vhdr_r2y_coef10 = vhdr_r2y_coef10;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_RGB2YUV_COEF3.u32),VHDR_RGB2YUV_COEF3.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVhdrR2yCoef11(HI_U32 vhdr_r2y_coef11)
+{
+	U_VHDR_RGB2YUV_COEF4 VHDR_RGB2YUV_COEF4;
+	
+	VHDR_RGB2YUV_COEF4.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_RGB2YUV_COEF4.u32));
+	VHDR_RGB2YUV_COEF4.bits.vhdr_r2y_coef11 = vhdr_r2y_coef11;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_RGB2YUV_COEF4.u32),VHDR_RGB2YUV_COEF4.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVhdrR2yCoef12(HI_U32 vhdr_r2y_coef12)
+{
+	U_VHDR_RGB2YUV_COEF5 VHDR_RGB2YUV_COEF5;
+	
+	VHDR_RGB2YUV_COEF5.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_RGB2YUV_COEF5.u32));
+	VHDR_RGB2YUV_COEF5.bits.vhdr_r2y_coef12 = vhdr_r2y_coef12;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_RGB2YUV_COEF5.u32),VHDR_RGB2YUV_COEF5.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVhdrR2yCoef20(HI_U32 vhdr_r2y_coef20)
+{
+	U_VHDR_RGB2YUV_COEF6 VHDR_RGB2YUV_COEF6;
+	
+	VHDR_RGB2YUV_COEF6.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_RGB2YUV_COEF6.u32));
+	VHDR_RGB2YUV_COEF6.bits.vhdr_r2y_coef20 = vhdr_r2y_coef20;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_RGB2YUV_COEF6.u32),VHDR_RGB2YUV_COEF6.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVhdrR2yCoef21(HI_U32 vhdr_r2y_coef21)
+{
+	U_VHDR_RGB2YUV_COEF7 VHDR_RGB2YUV_COEF7;
+	
+	VHDR_RGB2YUV_COEF7.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_RGB2YUV_COEF7.u32));
+	VHDR_RGB2YUV_COEF7.bits.vhdr_r2y_coef21 = vhdr_r2y_coef21;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_RGB2YUV_COEF7.u32),VHDR_RGB2YUV_COEF7.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVhdrR2yCoef22(HI_U32 vhdr_r2y_coef22)
+{
+	U_VHDR_RGB2YUV_COEF8 VHDR_RGB2YUV_COEF8;
+	
+	VHDR_RGB2YUV_COEF8.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_RGB2YUV_COEF8.u32));
+	VHDR_RGB2YUV_COEF8.bits.vhdr_r2y_coef22 = vhdr_r2y_coef22;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_RGB2YUV_COEF8.u32),VHDR_RGB2YUV_COEF8.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVhdrCadjScale2p(HI_U32 vhdr_cadj_scale2p)
+{
+	U_VHDR_RGB2YUV_SCALE2P VHDR_RGB2YUV_SCALE2P;
+	
+	VHDR_RGB2YUV_SCALE2P.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_RGB2YUV_SCALE2P.u32));
+	VHDR_RGB2YUV_SCALE2P.bits.vhdr_cadj_scale2p = vhdr_cadj_scale2p;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_RGB2YUV_SCALE2P.u32),VHDR_RGB2YUV_SCALE2P.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVhdrR2yScale2p(HI_U32 vhdr_r2y_scale2p)
+{
+	U_VHDR_RGB2YUV_SCALE2P VHDR_RGB2YUV_SCALE2P;
+	
+	VHDR_RGB2YUV_SCALE2P.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_RGB2YUV_SCALE2P.u32));
+	VHDR_RGB2YUV_SCALE2P.bits.vhdr_r2y_scale2p = vhdr_r2y_scale2p;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_RGB2YUV_SCALE2P.u32),VHDR_RGB2YUV_SCALE2P.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVhdrR2yIdc0(HI_U32 vhdr_r2y_idc0)
+{
+	U_VHDR_RGB2YUV_IDC0 VHDR_RGB2YUV_IDC0;
+	
+	VHDR_RGB2YUV_IDC0.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_RGB2YUV_IDC0.u32));
+	VHDR_RGB2YUV_IDC0.bits.vhdr_r2y_idc0 = vhdr_r2y_idc0;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_RGB2YUV_IDC0.u32),VHDR_RGB2YUV_IDC0.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVhdrR2yIdc1(HI_U32 vhdr_r2y_idc1)
+{
+	U_VHDR_RGB2YUV_IDC1 VHDR_RGB2YUV_IDC1;
+	
+	VHDR_RGB2YUV_IDC1.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_RGB2YUV_IDC1.u32));
+	VHDR_RGB2YUV_IDC1.bits.vhdr_r2y_idc1 = vhdr_r2y_idc1;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_RGB2YUV_IDC1.u32),VHDR_RGB2YUV_IDC1.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVhdrR2yIdc2(HI_U32 vhdr_r2y_idc2)
+{
+	U_VHDR_RGB2YUV_IDC2 VHDR_RGB2YUV_IDC2;
+	
+	VHDR_RGB2YUV_IDC2.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_RGB2YUV_IDC2.u32));
+	VHDR_RGB2YUV_IDC2.bits.vhdr_r2y_idc2 = vhdr_r2y_idc2;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_RGB2YUV_IDC2.u32),VHDR_RGB2YUV_IDC2.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVhdrR2yOdc0(HI_U32 vhdr_r2y_odc0)
+{
+	U_VHDR_RGB2YUV_ODC0 VHDR_RGB2YUV_ODC0;
+	
+	VHDR_RGB2YUV_ODC0.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_RGB2YUV_ODC0.u32));
+	VHDR_RGB2YUV_ODC0.bits.vhdr_r2y_odc0 = vhdr_r2y_odc0;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_RGB2YUV_ODC0.u32),VHDR_RGB2YUV_ODC0.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVhdrR2yOdc1(HI_U32 vhdr_r2y_odc1)
+{
+	U_VHDR_RGB2YUV_ODC1 VHDR_RGB2YUV_ODC1;
+	
+	VHDR_RGB2YUV_ODC1.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_RGB2YUV_ODC1.u32));
+	VHDR_RGB2YUV_ODC1.bits.vhdr_r2y_odc1 = vhdr_r2y_odc1;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_RGB2YUV_ODC1.u32),VHDR_RGB2YUV_ODC1.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVhdrR2yOdc2(HI_U32 vhdr_r2y_odc2)
+{
+	U_VHDR_RGB2YUV_ODC2 VHDR_RGB2YUV_ODC2;
+	
+	VHDR_RGB2YUV_ODC2.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_RGB2YUV_ODC2.u32));
+	VHDR_RGB2YUV_ODC2.bits.vhdr_r2y_odc2 = vhdr_r2y_odc2;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_RGB2YUV_ODC2.u32),VHDR_RGB2YUV_ODC2.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVhdrR2yClipCMin(HI_U32 vhdr_r2y_clip_c_min)
+{
+	U_VHDR_RGB2YUV_MIN VHDR_RGB2YUV_MIN;
+	
+	VHDR_RGB2YUV_MIN.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_RGB2YUV_MIN.u32));
+	VHDR_RGB2YUV_MIN.bits.vhdr_r2y_clip_c_min = vhdr_r2y_clip_c_min;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_RGB2YUV_MIN.u32),VHDR_RGB2YUV_MIN.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVhdrR2yClipYMin(HI_U32 vhdr_r2y_clip_y_min)
+{
+	U_VHDR_RGB2YUV_MIN VHDR_RGB2YUV_MIN;
+	
+	VHDR_RGB2YUV_MIN.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_RGB2YUV_MIN.u32));
+	VHDR_RGB2YUV_MIN.bits.vhdr_r2y_clip_y_min = vhdr_r2y_clip_y_min;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_RGB2YUV_MIN.u32),VHDR_RGB2YUV_MIN.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVhdrR2yClipCMax(HI_U32 vhdr_r2y_clip_c_max)
+{
+	U_VHDR_RGB2YUV_MAX VHDR_RGB2YUV_MAX;
+	
+	VHDR_RGB2YUV_MAX.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_RGB2YUV_MAX.u32));
+	VHDR_RGB2YUV_MAX.bits.vhdr_r2y_clip_c_max = vhdr_r2y_clip_c_max;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_RGB2YUV_MAX.u32),VHDR_RGB2YUV_MAX.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_HIHDR_V_SetVhdrR2yClipYMax(HI_U32 vhdr_r2y_clip_y_max)
+{
+	U_VHDR_RGB2YUV_MAX VHDR_RGB2YUV_MAX;
+	
+	VHDR_RGB2YUV_MAX.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDR_RGB2YUV_MAX.u32));
+	VHDR_RGB2YUV_MAX.bits.vhdr_r2y_clip_y_max = vhdr_r2y_clip_y_max;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDR_RGB2YUV_MAX.u32),VHDR_RGB2YUV_MAX.u32);
+	
+	return ;
+}
+
+//layer_name  : VDP
+//module_name : HIHDR_V
+
+
+
+
+

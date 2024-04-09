@@ -1,0 +1,24 @@
+menu "CI Config"
+    depends on HI3796MV200 || HI3716MV450
+
+menuconfig HI_CI_SUPPORT
+    bool "CI Support"
+    help
+        when enabled, CI is supported. CI(Common Interface) is used by chipset to communicate with CAM card
+    depends on HI3796MV200 || HI3716MV450
+    default n
+
+choice
+    prompt "Device type"
+    depends on HI_CI_SUPPORT
+    default HI_CI_DEV_HICI
+
+config HI_CI_DEV_HICI
+    bool "HICI"
+    help
+        when enabled, HICI is supported, HICI is an internal module of chipset to support Common Interface (CI)
+
+endchoice
+
+endmenu
+

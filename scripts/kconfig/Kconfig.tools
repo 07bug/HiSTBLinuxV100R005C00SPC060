@@ -1,0 +1,91 @@
+menuconfig HI_NTFS_SUPPORT
+    bool "NTFS Support"
+    default n
+
+config  HI_NTFS_TOOLS_SUPPORT
+    bool "NTFS Tools Support"
+    depends on HI_NTFS_SUPPORT
+    default y
+
+config HI_EXFAT_SUPPORT
+    bool "exFAT Support"
+    default n
+
+config HI_TOOL_DOSFS_SUPPORT
+    bool "Dosfs Tools Support"
+    help
+        Customers need to download the source package by themselves.
+        If not, choose this option will result in compile error. Please see the readme in source/rootfs/dosfstools.
+    default n
+
+config HI_TOOL_E2FSPROGS_SUPPORT
+    bool "Ext2/Ext3 Tools Support"
+    default n
+
+config HI_TOOL_FILECAP_SUPPORT
+    bool "Filecap Tools Support"
+    default n
+    help
+        Filecap is used to change permission of files/dirs.
+        Only for CA user, if don't use CA, say n here.
+
+config HI_TOOL_GDB_SUPPORT
+    bool "GDB/GDBServer Tools Support"
+    depends on HI_ENG_MODE
+    help
+        Customers need to download the source package by themselves.
+        If not, choose this option will result in compile error. Please see the readme in source/rootfs/gdb.
+    default n
+
+config HI_TOOL_IPTABLES_SUPPORT
+    bool "Iptables Tools Support"
+    default n
+
+config HI_TOOL_MTDUTILS_SUPPORT
+    bool "Mtdutils Tools Support"
+    default n
+
+config HI_TOOL_REG_SUPPORT
+    bool "Read/Write Registers Tools Support"
+    depends on HI_ENG_MODE
+    default y
+
+config HI_TOOL_SANDBOX_SUPPORT
+    bool "Sandbox Tool(Chroot) Support"
+    default y
+    depends on HI_ADVCA_SANDBOX_TYPE = CHROOT
+    help
+        This tools is used only for CA, if no CA,say n here.
+
+config HI_TOOL_PPPD_SUPPORT
+    bool "PPPD Tool Support"
+    default n
+
+config HI_TOOL_MIITOOLS_SUPPORT
+    bool "Mii Tool Support"
+    default n
+
+config HI_TOOL_IPERF_SUPPORT
+    bool "Iperf Support"
+    default n
+
+config  HI_TOOL_LXC_CONTAINER_SUPPORT
+    bool "LXC Container Tools Support"
+    default y
+    depends on HI_ADVCA_SANDBOX_TYPE = LXC
+
+config HI_TOOL_SYSSTAT_SUPPORT
+    bool "Sysstat Tool Support"
+    default n
+
+config HI_TOOL_SOC_SERVER
+    bool "SOC Server Tool Support"
+    default n
+
+config HI_TOOL_MSP_DEBUG_SUPPORT
+    bool "Msp Debug Tool Support"
+    default n
+
+config HI_TOOL_PQ_DEBUG_SUPPORT
+    bool "PQ Debug Tool Support"
+    default y

@@ -1,0 +1,352 @@
+
+/******************************************************************************
+  Copyright (C), 2001-2011, Hisilicon Tech. Co., Ltd.
+******************************************************************************
+File Name     : drv_disp_osal.c
+Version       : Initial Draft
+Author        : Hisilicon multimedia software group
+Created       : 2012/12/30
+Last Modified :
+Description   :
+Function List :
+History       :
+******************************************************************************/
+
+#include "drv_disp_osal.h"
+
+#ifdef __cplusplus
+ #if __cplusplus
+extern "C" {
+ #endif
+#endif /* __cplusplus */
+
+
+HI_S32 DISP_OS_GetTime(HI_U32 *t_ms)
+{
+#ifdef __DISP_PLATFORM_SDK__
+
+    if (HI_SUCCESS != HI_DRV_SYS_GetTimeStampMs(t_ms))
+    {
+        DISP_ERROR("Get sys time failed, maybe not sys init.\n");
+        return HI_FAILURE;
+    }
+    return HI_SUCCESS;
+
+#else
+
+    return HI_SUCCESS;
+#endif
+}
+
+
+HI_S32  DISP_OS_MMZ_Alloc(const char *bufname, char *zone_name, HI_U32 size, int align, DISP_MMZ_BUF_S *pstMBuf)
+{
+#ifdef __DISP_PLATFORM_SDK__
+    HI_S32      Ret = HI_FAILURE;
+    HI_BOOL     bSmmu = HI_FALSE;
+
+    if ((size > VDP_MEM_MAX) || (0 == size))
+    {
+        DISP_ERROR(" alloc mem size (%d) more than MAX or equals to 0.\n", size);
+        return HI_ERR_VO_MALLOC_FAILED;
+    }
+
+#ifdef CFG_VDP_MMU_SUPPORT
+    if (zone_name)
+    {
+        if (0 == strncmp(zone_name, "iommu", strlen("iommu")))
+        {
+            bSmmu = HI_TRUE;
+        }
+    }
+#endif
+
+    if (!bSmmu)
+    {
+        MMZ_BUFFER_S MmzBuf = {0};
+
+        Ret = HI_DRV_MMZ_Alloc(bufname, zone_name, size, align, &MmzBuf);
+        if (HI_SUCCESS == Ret)
+        {
+            pstMBuf->pu8StartVirAddr = MmzBuf.pu8StartVirAddr;
+            pstMBuf->u32StartPhyAddr = MmzBuf.u32StartPhyAddr;
+            pstMBuf->u32Size = MmzBuf.u32Size;
+            pstMBuf->bSmmu = HI_FALSE;
+        }
+        else
+        {
+            pstMBuf->pu8StartVirAddr = 0;
+            pstMBuf->u32StartPhyAddr = 0;
+            pstMBuf->u32Size = 0;
+            pstMBuf->bSmmu = HI_FALSE;
+        }
+    }
+#ifdef CFG_VDP_MMU_SUPPORT
+    else
+    {
+        SMMU_BUFFER_S SmmuBuf;
+
+        Ret = HI_DRV_SMMU_Alloc(bufname, size, align, &SmmuBuf);
+        if (HI_SUCCESS == Ret)
+        {
+            pstMBuf->pu8StartVirAddr = SmmuBuf.pu8StartVirAddr;
+            pstMBuf->u32StartPhyAddr = SmmuBuf.u32StartSmmuAddr;
+            pstMBuf->u32Size = SmmuBuf.u32Size;
+            pstMBuf->bSmmu = HI_TRUE;
+        }
+        else
+        {
+            pstMBuf->pu8StartVirAddr = 0;
+            pstMBuf->u32StartPhyAddr = 0;
+            pstMBuf->u32Size = 0;
+            pstMBuf->bSmmu = HI_TRUE;
+        }
+    }
+#endif
+
+    return Ret;
+#else
+    return HI_FAILURE;
+#endif
+}
+
+HI_S32  DISP_OS_MMZ_Map(DISP_MMZ_BUF_S *pstMBuf)
+{
+#ifdef __DISP_PLATFORM_SDK__
+    HI_S32 Ret = HI_FAILURE;
+
+    if (!pstMBuf->bSmmu)
+    {
+        MMZ_BUFFER_S MmzBuf = {0};
+
+        MmzBuf.u32StartPhyAddr = pstMBuf->u32StartPhyAddr;
+        MmzBuf.u32Size = pstMBuf->u32Size;
+
+        Ret = HI_DRV_MMZ_Map(&MmzBuf);
+        if (HI_SUCCESS == Ret)
+        {
+            pstMBuf->pu8StartVirAddr = MmzBuf.pu8StartVirAddr;
+        }
+        else
+        {
+            pstMBuf->pu8StartVirAddr = 0;
+        }
+    }
+#ifdef  CFG_VDP_MMU_SUPPORT
+    else
+    {
+        SMMU_BUFFER_S SmmuBuf = {0};
+
+        SmmuBuf.u32StartSmmuAddr = pstMBuf->u32StartPhyAddr;
+        SmmuBuf.u32Size = pstMBuf->u32Size;
+
+        Ret = HI_DRV_SMMU_Map(&SmmuBuf);
+        if (HI_SUCCESS == Ret)
+        {
+            pstMBuf->pu8StartVirAddr = SmmuBuf.pu8StartVirAddr;
+        }
+        else
+        {
+            pstMBuf->pu8StartVirAddr = 0;
+        }
+    }
+#endif
+
+    return Ret;
+#else
+
+    return HI_FAILURE;
+#endif
+}
+
+HI_S32  DISP_OS_MMZ_UnMap(DISP_MMZ_BUF_S *pstMBuf)
+{
+    if (HI_NULL == pstMBuf)
+    {
+        DISP_ERROR("Pass null ptr to unmap.\n");
+        return HI_ERR_DISP_NULL_PTR;
+    }
+
+#ifdef __DISP_PLATFORM_SDK__
+    if (!pstMBuf->bSmmu)
+    {
+        MMZ_BUFFER_S MmzBuf = {0};
+
+        MmzBuf.pu8StartVirAddr = pstMBuf->pu8StartVirAddr;
+        MmzBuf.u32StartPhyAddr = pstMBuf->u32StartPhyAddr;
+        MmzBuf.u32Size = pstMBuf->u32Size;
+
+        HI_DRV_MMZ_Unmap(&MmzBuf);
+    }
+#ifdef  CFG_VDP_MMU_SUPPORT
+    else
+    {
+        SMMU_BUFFER_S SmmuBuf = {0};
+
+        SmmuBuf.pu8StartVirAddr = pstMBuf->pu8StartVirAddr;
+        SmmuBuf.u32StartSmmuAddr = pstMBuf->u32StartPhyAddr;
+        SmmuBuf.u32Size = pstMBuf->u32Size;
+
+        HI_DRV_SMMU_Unmap(&SmmuBuf);
+    }
+#endif
+
+    return HI_SUCCESS;
+#else
+
+    return HI_FAILURE;
+#endif
+}
+
+HI_VOID DISP_OS_MMZ_Release(DISP_MMZ_BUF_S *pstMBuf)
+{
+    if (HI_NULL == pstMBuf)
+    {
+        DISP_ERROR("pstMBuf is null !\n");
+        return;
+    }
+
+#ifdef __DISP_PLATFORM_SDK__
+    if (!pstMBuf->bSmmu)
+    {
+        MMZ_BUFFER_S MmzBuf = {0};
+
+        MmzBuf.pu8StartVirAddr = pstMBuf->pu8StartVirAddr;
+        MmzBuf.u32StartPhyAddr = pstMBuf->u32StartPhyAddr;
+        MmzBuf.u32Size = pstMBuf->u32Size;
+
+        HI_DRV_MMZ_Release(&MmzBuf);
+    }
+#ifdef  CFG_VDP_MMU_SUPPORT
+    else
+    {
+        SMMU_BUFFER_S SmmuBuf = {0};
+
+        SmmuBuf.pu8StartVirAddr = pstMBuf->pu8StartVirAddr;
+        SmmuBuf.u32StartSmmuAddr = pstMBuf->u32StartPhyAddr;
+        SmmuBuf.u32Size = pstMBuf->u32Size;
+
+        HI_DRV_SMMU_Release(&SmmuBuf);
+    }
+#endif
+    return;
+#else
+    return;
+#endif
+}
+
+HI_S32 DISP_OS_MMZ_AllocAndMap(const char *bufname, char *zone_name, HI_U32 size, int align, DISP_MMZ_BUF_S *pstMBuf)
+{
+#ifdef __DISP_PLATFORM_SDK__
+    HI_S32      Ret = HI_FAILURE;
+    HI_BOOL     Smmu = HI_FALSE;
+
+    if ((size > VDP_MEM_MAX) || (0 == size))
+    {
+        DISP_ERROR(" alloc mem size (%d) more than MAX or equals to 0.\n", size);
+        return HI_ERR_VO_MALLOC_FAILED;
+    }
+
+#ifdef CFG_VDP_MMU_SUPPORT
+    if (zone_name)
+    {
+        if (0 == strncmp(zone_name, "iommu", strlen("iommu")))
+        {
+            Smmu = HI_TRUE;
+        }
+    }
+#endif
+
+    if (!Smmu)
+    {
+        MMZ_BUFFER_S MmzBuf = {0};
+
+        Ret = HI_DRV_MMZ_AllocAndMap(bufname, zone_name, size, align, &MmzBuf);
+        if (HI_SUCCESS == Ret)
+        {
+            pstMBuf->pu8StartVirAddr = MmzBuf.pu8StartVirAddr;
+            pstMBuf->u32StartPhyAddr = MmzBuf.u32StartPhyAddr;
+            pstMBuf->u32Size = MmzBuf.u32Size;
+            pstMBuf->bSmmu = HI_FALSE;
+        }
+        else
+        {
+            pstMBuf->pu8StartVirAddr = 0;
+            pstMBuf->u32StartPhyAddr = 0;
+            pstMBuf->u32Size = 0;
+            pstMBuf->bSmmu = HI_FALSE;
+        }
+    }
+#ifdef CFG_VDP_MMU_SUPPORT
+    else
+    {
+        SMMU_BUFFER_S SmmuBuf = {0};
+
+        Ret = HI_DRV_SMMU_AllocAndMap(bufname, size, align, &SmmuBuf);
+        if (HI_SUCCESS == Ret)
+        {
+            pstMBuf->pu8StartVirAddr = SmmuBuf.pu8StartVirAddr;
+            pstMBuf->u32StartPhyAddr = SmmuBuf.u32StartSmmuAddr;
+            pstMBuf->u32Size = SmmuBuf.u32Size;
+            pstMBuf->bSmmu = HI_TRUE;
+        }
+        else
+        {
+            pstMBuf->pu8StartVirAddr = 0;
+            pstMBuf->u32StartPhyAddr = 0;
+            pstMBuf->u32Size = 0;
+            pstMBuf->bSmmu = HI_TRUE;
+        }
+    }
+#endif
+    return Ret;
+#else
+    return HI_FAILURE;
+#endif
+}
+
+HI_VOID DISP_OS_MMZ_UnmapAndRelease(DISP_MMZ_BUF_S *pstMBuf)
+{
+    if (HI_NULL == pstMBuf)
+    {
+        DISP_ERROR("pstMBuf is null !\n");
+        return;
+    }
+
+#ifdef __DISP_PLATFORM_SDK__
+    if (!pstMBuf->bSmmu)
+    {
+        MMZ_BUFFER_S MmzBuf = {0};
+
+        MmzBuf.pu8StartVirAddr = pstMBuf->pu8StartVirAddr;
+        MmzBuf.u32StartPhyAddr = pstMBuf->u32StartPhyAddr;
+        MmzBuf.u32Size = pstMBuf->u32Size;
+
+        HI_DRV_MMZ_UnmapAndRelease(&MmzBuf);
+    }
+#ifdef CFG_VDP_MMU_SUPPORT
+    else
+    {
+        SMMU_BUFFER_S SmmuBuf = {0};
+
+        SmmuBuf.pu8StartVirAddr = pstMBuf->pu8StartVirAddr;
+        SmmuBuf.u32StartSmmuAddr = pstMBuf->u32StartPhyAddr;
+        SmmuBuf.u32Size = pstMBuf->u32Size;
+
+        HI_DRV_SMMU_UnmapAndRelease(&SmmuBuf);
+    }
+#endif
+
+    return;
+#else
+    return;
+#endif
+}
+
+
+
+#ifdef __cplusplus
+ #if __cplusplus
+}
+ #endif
+#endif /* __cplusplus */

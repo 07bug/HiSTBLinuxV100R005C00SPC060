@@ -1,0 +1,22 @@
+#+++++++++++++++++++++++++++++++++++++++++++++++++++
+menu "Tuner Config"
+    depends on !HI3798MV100
+
+config HI_TUNER_NUMBER
+    int "Tuner Number"
+    default 1
+    range 0 8
+    help
+       Configure the number of tuner on the board
+
+source "scripts/kconfig/Kconfig.board.tuner0"
+source "scripts/kconfig/Kconfig.board.tuner1"
+source "scripts/kconfig/Kconfig.board.tuner2"
+source "scripts/kconfig/Kconfig.board.tuner3"
+source "scripts/kconfig/Kconfig.board.tuner4"
+source "scripts/kconfig/Kconfig.board.tuner5"
+source "scripts/kconfig/Kconfig.board.tuner6"
+#source "scripts/kconfig/Kconfig.board.tuner7"
+
+endmenu
+#+++++++++++++++++++++++++++++++++++++++++++++++++++

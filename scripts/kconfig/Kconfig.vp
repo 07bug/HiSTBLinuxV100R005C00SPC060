@@ -1,0 +1,6 @@
+config  HI_VP_SUPPORT
+    depends on HI_VI_SUPPORT && HI_VENC_SUPPORT && !HI_VO_SINGLE_VIDEO_SUPPORT && HI_VDEC_MJPEG_SUPPORT
+    bool "VP Support"
+    help
+        when enabled, video phone is supported
+    default n

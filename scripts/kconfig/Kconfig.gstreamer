@@ -1,0 +1,15 @@
+#+++++++++++++++++++++++++++++++++++++++++++++++++++
+config GSTREAMER_SUPPORT
+    bool "Gstreamer Support"
+    depends on HI3798MV200
+    select HI_OMX_SUPPORT
+    default n
+    help
+      If you want to choose Gstreamer support in SDK, Select this option.
+      It will select omx audio support automatically.
+
+#config  GSTREAMER_FULL_SUPPORT
+#   bool "Gstreamer Full Support"
+#   depends on GSTREAMER_SUPPORT
+#   default n
+#+++++++++++++++++++++++++++++++++++++++++++++++++++

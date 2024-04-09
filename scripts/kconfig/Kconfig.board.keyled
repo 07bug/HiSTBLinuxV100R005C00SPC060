@@ -1,0 +1,50 @@
+choice
+    prompt "Keyled Device Used"
+    default HI_KEYLED_CT1642_SELECT
+config  HI_KEYLED_74HC164_SELECT
+    bool "74HC164"
+    depends on HI_KEYLED_74HC164_SUPPORT
+config  HI_KEYLED_GPIOKEY_SELECT
+    bool "GPIO KEY"
+    depends on HI_KEYLED_GPIOKEY_SUPPORT
+config  HI_KEYLED_CT1642_SELECT
+    bool "CT1642"
+    depends on HI_KEYLED_CT1642_SUPPORT
+config  HI_KEYLED_PT6961_SELECT
+    bool "PT6961"
+    depends on HI_KEYLED_PT6961_SUPPORT
+config  HI_KEYLED_PT6964_SELECT
+    bool "PT6964"
+    depends on HI_KEYLED_PT6964_SUPPORT
+config  HI_KEYLED_FD650_SELECT
+    bool "FD650"
+    depends on HI_KEYLED_FD650_SUPPORT
+endchoice
+
+config  HI_GPIO_LIGHT_SUPPORT
+    bool "Gpio Light Support"
+    default n
+    help
+        When this option is 'y', it means supporting the gpio-LED control during standby & resume process.
+
+config  HI_POSITIVE_GPIO_LIGHT_NUMBER
+    depends on HI_GPIO_LIGHT_SUPPORT
+    hex "Positive Gpio Number"
+    default 0x2f
+    help
+        The gpio port of the LED whose electrical level is set to be low when standby, and set to be high when resume.
+
+config  HI_NEGATIVE_GPIO_LIGHT_NUMBER
+    depends on HI_GPIO_LIGHT_SUPPORT
+    hex "Negative Gpio Number"
+    default 0x2f
+    help
+        The gpio port of the LED whose electrical level is set to be high when standby, and set to be low when resume.
+
+config  HI_POSITIVE_GPIO_LIGHT_NUMBER_QFP
+    depends on HI_GPIO_LIGHT_SUPPORT && HI3798MV100
+    hex "Positive Gpio Number For QFP"
+    default 0x2a
+    help
+        The gpio port of the LED whose electrical level is set to be high when standby, and set to be low when resume
+        in Hi3798MV100 QFP package chip.

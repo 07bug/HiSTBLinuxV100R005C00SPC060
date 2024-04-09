@@ -1,0 +1,15 @@
+menu "Crypto Config"
+
+config HI_PLCIPHER_SUPPORT
+    bool "PLCipher support"
+    help
+        PLCipher is used to decrypt ts packages in payload mode and then generate clear ts packages
+    depends on HI3796MV200 || HI3716MV450 || ((HI3716MV410 || HI3716MV420) && ADVCA_NAGRA)
+    default y
+
+config HI_OPENSSL_SUPPORT
+    bool "Openssl Support"
+    depends on LINUX_PRODUCT
+    default n
+
+endmenu

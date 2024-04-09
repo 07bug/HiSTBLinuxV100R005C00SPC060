@@ -1,0 +1,99 @@
+#ifndef __VPSS_HAL_CMP_FRM_NR_CF_H__
+#define __VPSS_HAL_CMP_FRM_NR_CF_H__
+
+#include "hi_reg_common.h"
+#include "vpss_define.h"
+
+HI_VOID VPSS_ICE_SetNrCfyQpForceEn            ( S_VPSS_REGS_TYPE *pstReg, HI_U32 nr_cfy_qp_force_en);
+HI_VOID VPSS_ICE_SetNrCfyGrphEn               ( S_VPSS_REGS_TYPE *pstReg, HI_U32 nr_cfy_grph_en);
+HI_VOID VPSS_ICE_SetNrCfyPartCmpEn            ( S_VPSS_REGS_TYPE *pstReg, HI_U32 nr_cfy_part_cmp_en);
+HI_VOID VPSS_ICE_SetNrCfyPixelFormat          ( S_VPSS_REGS_TYPE *pstReg, HI_U32 nr_cfy_pixel_format);
+HI_VOID VPSS_ICE_SetNrCfyFrameBitdepth        ( S_VPSS_REGS_TYPE *pstReg, HI_U32 nr_cfy_frame_bitdepth);
+HI_VOID VPSS_ICE_SetNrCfyCmpMode              ( S_VPSS_REGS_TYPE *pstReg, HI_U32 nr_cfy_cmp_mode);
+HI_VOID VPSS_ICE_SetNrCfyIsLossless           ( S_VPSS_REGS_TYPE *pstReg, HI_U32 nr_cfy_is_lossless);
+HI_VOID VPSS_ICE_SetNrCfyCmpEn                ( S_VPSS_REGS_TYPE *pstReg, HI_U32 nr_cfy_cmp_en);
+HI_VOID VPSS_ICE_SetNrCfyFrameHeight          ( S_VPSS_REGS_TYPE *pstReg, HI_U32 nr_cfy_frame_height);
+HI_VOID VPSS_ICE_SetNrCfyFrameWidth           ( S_VPSS_REGS_TYPE *pstReg, HI_U32 nr_cfy_frame_width);
+HI_VOID VPSS_ICE_SetNrCfyPcmpEndHpos          ( S_VPSS_REGS_TYPE *pstReg, HI_U32 nr_cfy_pcmp_end_hpos);
+HI_VOID VPSS_ICE_SetNrCfyPcmpStartHpos        ( S_VPSS_REGS_TYPE *pstReg, HI_U32 nr_cfy_pcmp_start_hpos);
+HI_VOID VPSS_ICE_SetNrCfyMinMbBits            ( S_VPSS_REGS_TYPE *pstReg, HI_U32 nr_cfy_min_mb_bits);
+HI_VOID VPSS_ICE_SetNrCfyMbBits               ( S_VPSS_REGS_TYPE *pstReg, HI_U32 nr_cfy_mb_bits);
+HI_VOID VPSS_ICE_SetNrCfyFirstColAdjBits      ( S_VPSS_REGS_TYPE *pstReg, HI_U32 nr_cfy_first_col_adj_bits);
+HI_VOID VPSS_ICE_SetNrCfyFirstRowAdjBits      ( S_VPSS_REGS_TYPE *pstReg, HI_U32 nr_cfy_first_row_adj_bits);
+HI_VOID VPSS_ICE_SetNrCfySmoothStatusThr      ( S_VPSS_REGS_TYPE *pstReg, HI_U32 nr_cfy_smooth_status_thr);
+HI_VOID VPSS_ICE_SetNrCfyFirstMbAdjBits       ( S_VPSS_REGS_TYPE *pstReg, HI_U32 nr_cfy_first_mb_adj_bits);
+HI_VOID VPSS_ICE_SetNrCfyDiffThr              ( S_VPSS_REGS_TYPE *pstReg, HI_U32 nr_cfy_diff_thr);
+HI_VOID VPSS_ICE_SetNrCfyBigGradThr           ( S_VPSS_REGS_TYPE *pstReg, HI_U32 nr_cfy_big_grad_thr);
+HI_VOID VPSS_ICE_SetNrCfyStillThr             ( S_VPSS_REGS_TYPE *pstReg, HI_U32 nr_cfy_still_thr);
+HI_VOID VPSS_ICE_SetNrCfySmthThr              ( S_VPSS_REGS_TYPE *pstReg, HI_U32 nr_cfy_smth_thr);
+HI_VOID VPSS_ICE_SetNrCfyNoisePixNumThr       ( S_VPSS_REGS_TYPE *pstReg, HI_U32 nr_cfy_noise_pix_num_thr);
+HI_VOID VPSS_ICE_SetNrCfyStillPixNumThr       ( S_VPSS_REGS_TYPE *pstReg, HI_U32 nr_cfy_still_pix_num_thr);
+HI_VOID VPSS_ICE_SetNrCfySmthPixNumThr        ( S_VPSS_REGS_TYPE *pstReg, HI_U32 nr_cfy_smth_pix_num_thr);
+HI_VOID VPSS_ICE_SetNrCfyQpDec2BitsThr        ( S_VPSS_REGS_TYPE *pstReg, HI_U32 nr_cfy_qp_dec2_bits_thr);
+HI_VOID VPSS_ICE_SetNrCfyQpDec1BitsThr        ( S_VPSS_REGS_TYPE *pstReg, HI_U32 nr_cfy_qp_dec1_bits_thr);
+HI_VOID VPSS_ICE_SetNrCfyQpInc2BitsThr        ( S_VPSS_REGS_TYPE *pstReg, HI_U32 nr_cfy_qp_inc2_bits_thr);
+HI_VOID VPSS_ICE_SetNrCfyQpInc1BitsThr        ( S_VPSS_REGS_TYPE *pstReg, HI_U32 nr_cfy_qp_inc1_bits_thr);
+HI_VOID VPSS_ICE_SetNrCfyGrphBitsPenalty      ( S_VPSS_REGS_TYPE *pstReg, HI_U32 nr_cfy_grph_bits_penalty);
+HI_VOID VPSS_ICE_SetNrCfyBufFullnessThrReg0   ( S_VPSS_REGS_TYPE *pstReg, HI_U32 nr_cfy_buf_fullness_thr_reg0);
+HI_VOID VPSS_ICE_SetNrCfyBufFullnessThrReg1   ( S_VPSS_REGS_TYPE *pstReg, HI_U32 nr_cfy_buf_fullness_thr_reg1);
+HI_VOID VPSS_ICE_SetNrCfyBufFullnessThrReg2   ( S_VPSS_REGS_TYPE *pstReg, HI_U32 nr_cfy_buf_fullness_thr_reg2);
+HI_VOID VPSS_ICE_SetNrCfyQpRgeReg0            ( S_VPSS_REGS_TYPE *pstReg, HI_U32 nr_cfy_qp_rge_reg0);
+HI_VOID VPSS_ICE_SetNrCfyQpRgeReg1            ( S_VPSS_REGS_TYPE *pstReg, HI_U32 nr_cfy_qp_rge_reg1);
+HI_VOID VPSS_ICE_SetNrCfyQpRgeReg2            ( S_VPSS_REGS_TYPE *pstReg, HI_U32 nr_cfy_qp_rge_reg2);
+HI_VOID VPSS_ICE_SetNrCfyBitsOffsetReg0       ( S_VPSS_REGS_TYPE *pstReg, HI_U32 nr_cfy_bits_offset_reg0);
+HI_VOID VPSS_ICE_SetNrCfyBitsOffsetReg1       ( S_VPSS_REGS_TYPE *pstReg, HI_U32 nr_cfy_bits_offset_reg1);
+HI_VOID VPSS_ICE_SetNrCfyBitsOffsetReg2       ( S_VPSS_REGS_TYPE *pstReg, HI_U32 nr_cfy_bits_offset_reg2);
+HI_VOID VPSS_ICE_SetNrCfyGrphIdealBits        ( S_VPSS_REGS_TYPE *pstReg, HI_U32 nr_cfy_grph_ideal_bits);
+HI_VOID VPSS_ICE_SetNrCfyEstErrGainMap        ( S_VPSS_REGS_TYPE *pstReg, HI_U32 nr_cfy_est_err_gain_map);
+HI_VOID VPSS_ICE_SetNrCfyBufferInitBits       ( S_VPSS_REGS_TYPE *pstReg, HI_U32 nr_cfy_buffer_init_bits);
+HI_VOID VPSS_ICE_SetNrCfyFrameSizeReg         ( S_VPSS_REGS_TYPE *pstReg, HI_U32 nr_cfy_frame_size_reg);
+HI_VOID VPSS_ICE_SetNrCfyMaxLeftBitsBufferReg ( S_VPSS_REGS_TYPE *pstReg, HI_U32 nr_cfy_max_left_bits_buffer_reg);
+HI_VOID VPSS_ICE_SetNrCfyGlbSt                ( S_VPSS_REGS_TYPE *pstReg, HI_U32 nr_cfy_glb_st);
+HI_VOID VPSS_ICE_SetNrCfcQpForceEn            ( S_VPSS_REGS_TYPE *pstReg, HI_U32 nr_cfc_qp_force_en);
+HI_VOID VPSS_ICE_SetNrCfcGrphEn               ( S_VPSS_REGS_TYPE *pstReg, HI_U32 nr_cfc_grph_en);
+HI_VOID VPSS_ICE_SetNrCfcPartCmpEn            ( S_VPSS_REGS_TYPE *pstReg, HI_U32 nr_cfc_part_cmp_en);
+HI_VOID VPSS_ICE_SetNrCfcPixelFormat          ( S_VPSS_REGS_TYPE *pstReg, HI_U32 nr_cfc_pixel_format);
+HI_VOID VPSS_ICE_SetNrCfcFrameBitdepth        ( S_VPSS_REGS_TYPE *pstReg, HI_U32 nr_cfc_frame_bitdepth);
+HI_VOID VPSS_ICE_SetNrCfcCmpMode              ( S_VPSS_REGS_TYPE *pstReg, HI_U32 nr_cfc_cmp_mode);
+HI_VOID VPSS_ICE_SetNrCfcIsLossless           ( S_VPSS_REGS_TYPE *pstReg, HI_U32 nr_cfc_is_lossless);
+HI_VOID VPSS_ICE_SetNrCfcCmpEn                ( S_VPSS_REGS_TYPE *pstReg, HI_U32 nr_cfc_cmp_en);
+HI_VOID VPSS_ICE_SetNrCfcFrameHeight          ( S_VPSS_REGS_TYPE *pstReg, HI_U32 nr_cfc_frame_height);
+HI_VOID VPSS_ICE_SetNrCfcFrameWidth           ( S_VPSS_REGS_TYPE *pstReg, HI_U32 nr_cfc_frame_width);
+HI_VOID VPSS_ICE_SetNrCfcPcmpEndHpos          ( S_VPSS_REGS_TYPE *pstReg, HI_U32 nr_cfc_pcmp_end_hpos);
+HI_VOID VPSS_ICE_SetNrCfcPcmpStartHpos        ( S_VPSS_REGS_TYPE *pstReg, HI_U32 nr_cfc_pcmp_start_hpos);
+HI_VOID VPSS_ICE_SetNrCfcMinMbBits            ( S_VPSS_REGS_TYPE *pstReg, HI_U32 nr_cfc_min_mb_bits);
+HI_VOID VPSS_ICE_SetNrCfcMbBits               ( S_VPSS_REGS_TYPE *pstReg, HI_U32 nr_cfc_mb_bits);
+HI_VOID VPSS_ICE_SetNrCfcFirstColAdjBits      ( S_VPSS_REGS_TYPE *pstReg, HI_U32 nr_cfc_first_col_adj_bits);
+HI_VOID VPSS_ICE_SetNrCfcFirstRowAdjBits      ( S_VPSS_REGS_TYPE *pstReg, HI_U32 nr_cfc_first_row_adj_bits);
+HI_VOID VPSS_ICE_SetNrCfcSmoothStatusThr      ( S_VPSS_REGS_TYPE *pstReg, HI_U32 nr_cfc_smooth_status_thr);
+HI_VOID VPSS_ICE_SetNrCfcFirstMbAdjBits       ( S_VPSS_REGS_TYPE *pstReg, HI_U32 nr_cfc_first_mb_adj_bits);
+HI_VOID VPSS_ICE_SetNrCfcDiffThr              ( S_VPSS_REGS_TYPE *pstReg, HI_U32 nr_cfc_diff_thr);
+HI_VOID VPSS_ICE_SetNrCfcBigGradThr           ( S_VPSS_REGS_TYPE *pstReg, HI_U32 nr_cfc_big_grad_thr);
+HI_VOID VPSS_ICE_SetNrCfcStillThr             ( S_VPSS_REGS_TYPE *pstReg, HI_U32 nr_cfc_still_thr);
+HI_VOID VPSS_ICE_SetNrCfcSmthThr              ( S_VPSS_REGS_TYPE *pstReg, HI_U32 nr_cfc_smth_thr);
+HI_VOID VPSS_ICE_SetNrCfcNoisePixNumThr       ( S_VPSS_REGS_TYPE *pstReg, HI_U32 nr_cfc_noise_pix_num_thr);
+HI_VOID VPSS_ICE_SetNrCfcStillPixNumThr       ( S_VPSS_REGS_TYPE *pstReg, HI_U32 nr_cfc_still_pix_num_thr);
+HI_VOID VPSS_ICE_SetNrCfcSmthPixNumThr        ( S_VPSS_REGS_TYPE *pstReg, HI_U32 nr_cfc_smth_pix_num_thr);
+HI_VOID VPSS_ICE_SetNrCfcQpDec2BitsThr        ( S_VPSS_REGS_TYPE *pstReg, HI_U32 nr_cfc_qp_dec2_bits_thr);
+HI_VOID VPSS_ICE_SetNrCfcQpDec1BitsThr        ( S_VPSS_REGS_TYPE *pstReg, HI_U32 nr_cfc_qp_dec1_bits_thr);
+HI_VOID VPSS_ICE_SetNrCfcQpInc2BitsThr        ( S_VPSS_REGS_TYPE *pstReg, HI_U32 nr_cfc_qp_inc2_bits_thr);
+HI_VOID VPSS_ICE_SetNrCfcQpInc1BitsThr        ( S_VPSS_REGS_TYPE *pstReg, HI_U32 nr_cfc_qp_inc1_bits_thr);
+HI_VOID VPSS_ICE_SetNrCfcGrphBitsPenalty      ( S_VPSS_REGS_TYPE *pstReg, HI_U32 nr_cfc_grph_bits_penalty);
+HI_VOID VPSS_ICE_SetNrCfcBufFullnessThrReg0   ( S_VPSS_REGS_TYPE *pstReg, HI_U32 nr_cfc_buf_fullness_thr_reg0);
+HI_VOID VPSS_ICE_SetNrCfcBufFullnessThrReg1   ( S_VPSS_REGS_TYPE *pstReg, HI_U32 nr_cfc_buf_fullness_thr_reg1);
+HI_VOID VPSS_ICE_SetNrCfcBufFullnessThrReg2   ( S_VPSS_REGS_TYPE *pstReg, HI_U32 nr_cfc_buf_fullness_thr_reg2);
+HI_VOID VPSS_ICE_SetNrCfcQpRgeReg0            ( S_VPSS_REGS_TYPE *pstReg, HI_U32 nr_cfc_qp_rge_reg0);
+HI_VOID VPSS_ICE_SetNrCfcQpRgeReg1            ( S_VPSS_REGS_TYPE *pstReg, HI_U32 nr_cfc_qp_rge_reg1);
+HI_VOID VPSS_ICE_SetNrCfcQpRgeReg2            ( S_VPSS_REGS_TYPE *pstReg, HI_U32 nr_cfc_qp_rge_reg2);
+HI_VOID VPSS_ICE_SetNrCfcBitsOffsetReg0       ( S_VPSS_REGS_TYPE *pstReg, HI_U32 nr_cfc_bits_offset_reg0);
+HI_VOID VPSS_ICE_SetNrCfcBitsOffsetReg1       ( S_VPSS_REGS_TYPE *pstReg, HI_U32 nr_cfc_bits_offset_reg1);
+HI_VOID VPSS_ICE_SetNrCfcBitsOffsetReg2       ( S_VPSS_REGS_TYPE *pstReg, HI_U32 nr_cfc_bits_offset_reg2);
+HI_VOID VPSS_ICE_SetNrCfcGrphIdealBits        ( S_VPSS_REGS_TYPE *pstReg, HI_U32 nr_cfc_grph_ideal_bits);
+HI_VOID VPSS_ICE_SetNrCfcEstErrGainMap        ( S_VPSS_REGS_TYPE *pstReg, HI_U32 nr_cfc_est_err_gain_map);
+HI_VOID VPSS_ICE_SetNrCfcBufferInitBits       ( S_VPSS_REGS_TYPE *pstReg, HI_U32 nr_cfc_buffer_init_bits);
+HI_VOID VPSS_ICE_SetNrCfcFrameSizeReg         ( S_VPSS_REGS_TYPE *pstReg, HI_U32 nr_cfc_frame_size_reg);
+HI_VOID VPSS_ICE_SetNrCfcMaxLeftBitsBufferReg ( S_VPSS_REGS_TYPE *pstReg, HI_U32 nr_cfc_max_left_bits_buffer_reg);
+HI_VOID VPSS_ICE_SetNrCfcGlbSt                ( S_VPSS_REGS_TYPE *pstReg, HI_U32 nr_cfc_glb_st);
+
+#endif
+

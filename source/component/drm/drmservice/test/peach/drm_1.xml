@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Peach xmlns="http://peachfuzzer.com/2012/Peach"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://peachfuzzer.com/2012/Peach D:\peach-3.2.38\peach\peach.xsd"
+       author="WangHao"
+       description="Fuzz android c"
+       version="0.0.1">
+  
+  <StateModel name="Fuzzing_ModelA_State" initialState="call_func">
+        <State name="call_func">
+
+            <!-- <Action name="call_print" type="call" method="call_print">
+                <Param name="print_string">
+                    <DataModel name="print_string"> -->
+                        <!-- 这里必须要空格结尾 -->
+                        <!-- <String value="hello world!!!"  nullTerminated="true"/>
+                    </DataModel>
+                </Param>
+                
+                <Param name="print_num">
+                    <DataModel name="print_num">
+                        <Number size="32" value="8888" />
+                    </DataModel>
+                </Param> -->
+                
+                <!-- <Result>
+                    <DataModel name="Result">
+                        <Number size="32" signed="true" />
+                    </DataModel>
+                </Result> -->
+            <!-- </Action> -->
+			
+			<Action name="call_removeKeys_func" type="call" method="call_removeKeys">
+				<Param name="func_str_removeKeys_scope">
+					<DataModel name="func_str_removeKeys_scope">
+						<String value="AmfjCTOPbEOl3WD/5mcecA==" nullTerminated="true" mutable="true"/>
+					</DataModel>
+				</Param>
+			</Action>
+			
+			<Action name="call_restoreKeys_func" type="call" method="call_restoreKeys">
+				<Param name="func_str_restoreKeys_scope">
+					<DataModel name="func_str_restoreKeys_scope">
+						<String value="AmfjCTOPbEOl3WD/5mcecA==" nullTerminated="true" mutable="true"/>
+					</DataModel>
+				</Param>
+				
+				<Param name="func_str_restoreKeys_keySetId">
+					<DataModel name="func_str_restoreKeys_keySetId">
+						<String value="aBcDEfg123456789" nullTerminated="true" mutable="true"/>
+					</DataModel>
+				</Param>
+			</Action>
+			
+			<Action name="call_queryKeyStatus_func" type="call" method="call_queryKeyStatus">
+				<Param name="func_str_queryKeyStatus_scope">
+					<DataModel name="func_str_queryKeyStatus_scope">
+						<String value="AH+03juKbUGbHl1V/QIwRA==" nullTerminated="true" mutable="true"/>
+					</DataModel>
+				</Param>
+			</Action>
+			
+			<Action name="call_ModularDrmInterfaceCreate_func" type="call" method="call_ModularDrmInterfaceCreate">
+				<Param name="func_str_ModularDrmInterfaceCreate_uuidArr">
+					<DataModel name="func_str_ModularDrmInterfaceCreate_uuidArr">
+						<String value="AmfjCTOPbEOl3WD/5mcecA==AmfjCTOPbEOl3WD/5mcecA==" nullTerminated="true" mutable="true"/>
+					</DataModel>
+				</Param>
+			</Action>
+
+			<Action name="call_isCryptoSchemeSupported_func" type="call" method="call_isCryptoSchemeSupported">
+				<Param name="func_str_isCryptoSchemeSupported_uuidArr">
+					<DataModel name="func_str_isCryptoSchemeSupported_uuidArr">
+						<String value="AmfjCTOPbEOl3WD/5mcecA==AmfjCTOPbEOl3WD/5mcecA==" nullTerminated="true" mutable="true"/>
+					</DataModel>
+				</Param>
+				
+				<Param name="func_str_isCryptoSchemeSupported_mimeType">
+					<DataModel name="func_str_isCryptoSchemeSupported_mimeType">
+						<String value="AmfjCTOPbEOl3WD/5mcecA==AmfjCTOPbEOl3WD/5mcecA==" nullTerminated="true" mutable="true"/>
+					</DataModel>
+				</Param>
+			</Action>
+			
+			<Action name="call_getKeyRequest_func" type="call" method="call_getKeyRequest">
+				<Param name="func_str_getKeyRequest_scope">
+					<DataModel name="func_str_getKeyRequest_scope">
+						<String value="AmfjCTOPbEOl3WD/5mcecA==AmfjCTOPbEOl3WD/5mcecA==" nullTerminated="true" mutable="true"/>
+					</DataModel>
+				</Param>
+				
+				<Param name="func_str_getKeyRequest_initData">
+					<DataModel name="func_str_getKeyRequest_initData">
+						<String value="AmfjCTOPbEOl3WD/5mcecA==AmfjCTOPbEOl3WD/5mcecA==" nullTerminated="true" mutable="true"/>
+					</DataModel>
+				</Param>
+				
+				<Param name="func_str_getKeyRequest_mimeType">
+					<DataModel name="func_str_getKeyRequest_mimeType">
+						<String value="AmfjCTOPbEOl3WD/5mcecA==AmfjCTOPbEOl3WD/5mcecA==" nullTerminated="true" mutable="true"/>
+					</DataModel>
+				</Param>
+				
+				<Param name="func_str_getKeyRequest_keyType">
+					<DataModel name="func_str_getKeyRequest_keyType">
+						<Number size="32" signed="false" value="1" mutable="true"/>
+					</DataModel>
+				</Param>
+				
+				<Param name="func_str_getKeyRequest_optionalParameters">
+					<DataModel name="func_str_getKeyRequest_optionalParameters">
+						<String value="AmfjCTOPbEOl3WD/5mcecA==AmfjCTOPbEOl3WD/5mcecA==" nullTerminated="true" mutable="true"/>
+					</DataModel>
+				</Param>
+				<Param name="func_str_getKeyRequest_optionalParameters2">
+					<DataModel name="func_str_getKeyRequest_optionalParameters2">
+						<String value="AmfjCTOPbEOl3WD/5mcecA==AmfjCTOPbEOl3WD/5mcecA==" nullTerminated="true" mutable="true"/>
+					</DataModel>
+				</Param>
+				
+				<Param name="func_str_getKeyRequest_optionalParameters3">
+					<DataModel name="func_str_getKeyRequest_optionalParameters3">
+						<String value="AmfjCTOPbEOl3WD/5mcecA==AmfjCTOPbEOl3WD/5mcecA==" nullTerminated="true" mutable="true"/>
+					</DataModel>
+				</Param>
+				<Param name="func_str_getKeyRequest_optionalParameters4">
+					<DataModel name="func_str_getKeyRequest_optionalParameters4">
+						<String value="AmfjCTOPbEOl3WD/5mcecA==AmfjCTOPbEOl3WD/5mcecA==" nullTerminated="true" mutable="true"/>
+					</DataModel>
+				</Param>
+				
+				<Param name="func_enum_getKeyRequest_num">
+					<DataModel name="func_enum_getKeyRequest_num">
+						<Number name="modeenum" size="32" value="3" mutable="false">
+						<Hint name="Fuzzing_enum_max" value="10"/>
+						<Hint name="Fuzzing_enum_min" value="3"/>
+						</Number>
+					</DataModel>
+				</Param>
+			</Action>
+			
+			<Action name="call_provideKeyResponse_func" type="call" method="call_provideKeyResponse">
+				<Param name="func_str_provideKeyResponse_scope">
+					<DataModel name="func_str_provideKeyResponse_scope">
+						<String value="AmfjCTOPbEOl3WD/5mcecA==AmfjCTOPbEOl3WD/5mcecA==" nullTerminated="true" mutable="true"/>
+					</DataModel>
+				</Param>
+				
+				<Param name="func_str_provideKeyResponse_response">
+					<DataModel name="func_str_provideKeyResponse_response">
+						<String value="AmfjCTOPbEOl3WD/5mcecA==AmfjCTOPbEOl3WD/5mcecA==" nullTerminated="true" mutable="true"/>
+					</DataModel>
+				</Param>
+			</Action>
+        </State>
+        
+
+
+	</StateModel>
+  
+  
+	
+	<!-- Only used for remote publisher -->
+	<Agent name="Remote" location="http://##TargetIPv4##:##port##">
+		<Monitor name="mmmmmmmmmmmmm" class="Caaaaaaa">
+			  <Param name="Pbbbbb" value="Pbvalue"/>
+			  <Param name="Pccccc" value="Pcvalue" />
+		</Monitor>
+	</Agent>
+	
+
+	<Test name="Default" >
+		<StateModel ref="Fuzzing_ModelA_State" />
+		<Agent ref="Remote"/>
+		<!-- <Agent ref="Local" /> -->
+        
+		<Publisher name="PPP" class="Remote">
+			<Param name="Agent" value="Remote"/>
+			<Param name="Class" value="Ioctl" />
+		</Publisher>
+        
+        <!-- 通过下面命令可以控制仅fuzzing某协议函数的某些字段-->
+        <!-- <Exclude />
+        <Include xpath="//msgID"/> -->
+		
+		<!-- 这个变异算法用来移除元素，在API fuzzing里不适用 -->
+		<Mutators mode="exclude">
+			<Mutator class="DataElementRemove" />
+		</Mutators>
+        
+        <!-- Sequential Random-->
+        <Strategy class="Random">
+		<!-- 设置可变异的最大字段数，提高变异的频率 -->
+		<Param name="MaxFieldsToMutate" value="1000" />
+		</Strategy>
+  
+		<Logger class="File" >
+		  <Param name="Path" value="D:\Logs"/>
+		</Logger>
+
+	</Test>
+</Peach>

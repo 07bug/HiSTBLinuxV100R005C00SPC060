@@ -1,0 +1,8 @@
+#ifndef __VFMW_SOS_KERNEL_PROC_HEADER__
+#define  __VFMW_SOS_KERNEL_PROC_HEADER__
+
+SINT32 SOS_PROC_Read(SINT8 *Page, SINT32 PageSize);
+SINT32 SOS_PROC_Write(UINT32 Option, SINT32 Value);
+
+#endif
+

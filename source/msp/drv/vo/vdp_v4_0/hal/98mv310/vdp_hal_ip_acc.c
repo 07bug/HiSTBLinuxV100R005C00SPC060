@@ -1,0 +1,1285 @@
+
+#include "vdp_hal_ip_acc.h"
+#include "vdp_hal_comm.h"
+
+
+extern volatile S_VDP_REGS_TYPE* pVdpReg;
+
+HI_VOID VDP_XDP_ACC_SetAccEn(HI_U32 acc_en)
+{
+	U_VHDACCTHD1 VHDACCTHD1;
+	
+	VHDACCTHD1.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACCTHD1.u32));
+	VHDACCTHD1.bits.acc_en = acc_en;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACCTHD1.u32),VHDACCTHD1.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetAccMode(HI_U32 acc_mode)
+{
+	U_VHDACCTHD1 VHDACCTHD1;
+	
+	VHDACCTHD1.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACCTHD1.u32));
+	VHDACCTHD1.bits.acc_mode = acc_mode;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACCTHD1.u32),VHDACCTHD1.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetThdMedLow(HI_U32 thd_med_low)
+{
+	U_VHDACCTHD1 VHDACCTHD1;
+	
+	VHDACCTHD1.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACCTHD1.u32));
+	VHDACCTHD1.bits.thd_med_low = thd_med_low;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACCTHD1.u32),VHDACCTHD1.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetThdHigh(HI_U32 thd_high)
+{
+	U_VHDACCTHD1 VHDACCTHD1;
+	
+	VHDACCTHD1.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACCTHD1.u32));
+	VHDACCTHD1.bits.thd_high = thd_high;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACCTHD1.u32),VHDACCTHD1.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetThdLow(HI_U32 thd_low)
+{
+	U_VHDACCTHD1 VHDACCTHD1;
+	
+	VHDACCTHD1.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACCTHD1.u32));
+	VHDACCTHD1.bits.thd_low = thd_low;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACCTHD1.u32),VHDACCTHD1.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetCkGtEn(HI_U32 ck_gt_en)
+{
+	U_VHDACCTHD2 VHDACCTHD2;
+	
+	VHDACCTHD2.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACCTHD2.u32));
+	VHDACCTHD2.bits.ck_gt_en = ck_gt_en;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACCTHD2.u32),VHDACCTHD2.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetAccRst(HI_U32 acc_rst)
+{
+	U_VHDACCTHD2 VHDACCTHD2;
+	
+	VHDACCTHD2.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACCTHD2.u32));
+	VHDACCTHD2.bits.acc_rst = acc_rst;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACCTHD2.u32),VHDACCTHD2.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetThdMedHigh(HI_U32 thd_med_high)
+{
+	U_VHDACCTHD2 VHDACCTHD2;
+	
+	VHDACCTHD2.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACCTHD2.u32));
+	VHDACCTHD2.bits.thd_med_high = thd_med_high;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACCTHD2.u32),VHDACCTHD2.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetDemoSplitPoint(HI_U32 demo_split_point)
+{
+	U_VHDACCDEMO VHDACCDEMO;
+	
+	VHDACCDEMO.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACCDEMO.u32));
+	VHDACCDEMO.bits.demo_split_point = demo_split_point;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACCDEMO.u32),VHDACCDEMO.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetDemoMode(HI_U32 demo_mode)
+{
+	U_VHDACCDEMO VHDACCDEMO;
+	
+	VHDACCDEMO.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACCDEMO.u32));
+	VHDACCDEMO.bits.demo_mode = demo_mode;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACCDEMO.u32),VHDACCDEMO.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetDemoEn(HI_U32 demo_en)
+{
+	U_VHDACCDEMO VHDACCDEMO;
+	
+	VHDACCDEMO.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACCDEMO.u32));
+	VHDACCDEMO.bits.demo_en = demo_en;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACCDEMO.u32),VHDACCDEMO.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetLowTableData2(HI_U32 low_table_data2)
+{
+	U_VHDACCLOW1 VHDACCLOW1;
+	
+	VHDACCLOW1.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACCLOW1.u32));
+	VHDACCLOW1.bits.low_table_data2 = low_table_data2;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACCLOW1.u32),VHDACCLOW1.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetLowTableData1(HI_U32 low_table_data1)
+{
+	U_VHDACCLOW1 VHDACCLOW1;
+	
+	VHDACCLOW1.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACCLOW1.u32));
+	VHDACCLOW1.bits.low_table_data1 = low_table_data1;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACCLOW1.u32),VHDACCLOW1.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetLowTableData0(HI_U32 low_table_data0)
+{
+	U_VHDACCLOW1 VHDACCLOW1;
+	
+	VHDACCLOW1.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACCLOW1.u32));
+	VHDACCLOW1.bits.low_table_data0 = low_table_data0;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACCLOW1.u32),VHDACCLOW1.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetLowTableData5(HI_U32 low_table_data5)
+{
+	U_VHDACCLOW2 VHDACCLOW2;
+	
+	VHDACCLOW2.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACCLOW2.u32));
+	VHDACCLOW2.bits.low_table_data5 = low_table_data5;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACCLOW2.u32),VHDACCLOW2.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetLowTableData4(HI_U32 low_table_data4)
+{
+	U_VHDACCLOW2 VHDACCLOW2;
+	
+	VHDACCLOW2.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACCLOW2.u32));
+	VHDACCLOW2.bits.low_table_data4 = low_table_data4;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACCLOW2.u32),VHDACCLOW2.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetLowTableData3(HI_U32 low_table_data3)
+{
+	U_VHDACCLOW2 VHDACCLOW2;
+	
+	VHDACCLOW2.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACCLOW2.u32));
+	VHDACCLOW2.bits.low_table_data3 = low_table_data3;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACCLOW2.u32),VHDACCLOW2.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetLowTableData8(HI_U32 low_table_data8)
+{
+	U_VHDACCLOW3 VHDACCLOW3;
+	
+	VHDACCLOW3.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACCLOW3.u32));
+	VHDACCLOW3.bits.low_table_data8 = low_table_data8;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACCLOW3.u32),VHDACCLOW3.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetLowTableData7(HI_U32 low_table_data7)
+{
+	U_VHDACCLOW3 VHDACCLOW3;
+	
+	VHDACCLOW3.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACCLOW3.u32));
+	VHDACCLOW3.bits.low_table_data7 = low_table_data7;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACCLOW3.u32),VHDACCLOW3.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetLowTableData6(HI_U32 low_table_data6)
+{
+	U_VHDACCLOW3 VHDACCLOW3;
+	
+	VHDACCLOW3.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACCLOW3.u32));
+	VHDACCLOW3.bits.low_table_data6 = low_table_data6;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACCLOW3.u32),VHDACCLOW3.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetMidTableData2(HI_U32 mid_table_data2)
+{
+	U_VHDACCMED1 VHDACCMED1;
+	
+	VHDACCMED1.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACCMED1.u32));
+	VHDACCMED1.bits.mid_table_data2 = mid_table_data2;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACCMED1.u32),VHDACCMED1.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetMidTableData1(HI_U32 mid_table_data1)
+{
+	U_VHDACCMED1 VHDACCMED1;
+	
+	VHDACCMED1.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACCMED1.u32));
+	VHDACCMED1.bits.mid_table_data1 = mid_table_data1;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACCMED1.u32),VHDACCMED1.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetMidTableData0(HI_U32 mid_table_data0)
+{
+	U_VHDACCMED1 VHDACCMED1;
+	
+	VHDACCMED1.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACCMED1.u32));
+	VHDACCMED1.bits.mid_table_data0 = mid_table_data0;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACCMED1.u32),VHDACCMED1.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetMidTableData5(HI_U32 mid_table_data5)
+{
+	U_VHDACCMED2 VHDACCMED2;
+	
+	VHDACCMED2.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACCMED2.u32));
+	VHDACCMED2.bits.mid_table_data5 = mid_table_data5;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACCMED2.u32),VHDACCMED2.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetMidTableData4(HI_U32 mid_table_data4)
+{
+	U_VHDACCMED2 VHDACCMED2;
+	
+	VHDACCMED2.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACCMED2.u32));
+	VHDACCMED2.bits.mid_table_data4 = mid_table_data4;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACCMED2.u32),VHDACCMED2.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetMidTableData3(HI_U32 mid_table_data3)
+{
+	U_VHDACCMED2 VHDACCMED2;
+	
+	VHDACCMED2.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACCMED2.u32));
+	VHDACCMED2.bits.mid_table_data3 = mid_table_data3;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACCMED2.u32),VHDACCMED2.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetMidTableData8(HI_U32 mid_table_data8)
+{
+	U_VHDACCMED3 VHDACCMED3;
+	
+	VHDACCMED3.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACCMED3.u32));
+	VHDACCMED3.bits.mid_table_data8 = mid_table_data8;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACCMED3.u32),VHDACCMED3.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetMidTableData7(HI_U32 mid_table_data7)
+{
+	U_VHDACCMED3 VHDACCMED3;
+	
+	VHDACCMED3.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACCMED3.u32));
+	VHDACCMED3.bits.mid_table_data7 = mid_table_data7;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACCMED3.u32),VHDACCMED3.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetMidTableData6(HI_U32 mid_table_data6)
+{
+	U_VHDACCMED3 VHDACCMED3;
+	
+	VHDACCMED3.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACCMED3.u32));
+	VHDACCMED3.bits.mid_table_data6 = mid_table_data6;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACCMED3.u32),VHDACCMED3.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetHighTableData2(HI_U32 high_table_data2)
+{
+	U_VHDACCHIGH1 VHDACCHIGH1;
+	
+	VHDACCHIGH1.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACCHIGH1.u32));
+	VHDACCHIGH1.bits.high_table_data2 = high_table_data2;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACCHIGH1.u32),VHDACCHIGH1.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetHighTableData1(HI_U32 high_table_data1)
+{
+	U_VHDACCHIGH1 VHDACCHIGH1;
+	
+	VHDACCHIGH1.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACCHIGH1.u32));
+	VHDACCHIGH1.bits.high_table_data1 = high_table_data1;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACCHIGH1.u32),VHDACCHIGH1.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetHighTableData0(HI_U32 high_table_data0)
+{
+	U_VHDACCHIGH1 VHDACCHIGH1;
+	
+	VHDACCHIGH1.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACCHIGH1.u32));
+	VHDACCHIGH1.bits.high_table_data0 = high_table_data0;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACCHIGH1.u32),VHDACCHIGH1.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetHighTableData5(HI_U32 high_table_data5)
+{
+	U_VHDACCHIGH2 VHDACCHIGH2;
+	
+	VHDACCHIGH2.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACCHIGH2.u32));
+	VHDACCHIGH2.bits.high_table_data5 = high_table_data5;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACCHIGH2.u32),VHDACCHIGH2.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetHighTableData4(HI_U32 high_table_data4)
+{
+	U_VHDACCHIGH2 VHDACCHIGH2;
+	
+	VHDACCHIGH2.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACCHIGH2.u32));
+	VHDACCHIGH2.bits.high_table_data4 = high_table_data4;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACCHIGH2.u32),VHDACCHIGH2.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetHighTableData3(HI_U32 high_table_data3)
+{
+	U_VHDACCHIGH2 VHDACCHIGH2;
+	
+	VHDACCHIGH2.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACCHIGH2.u32));
+	VHDACCHIGH2.bits.high_table_data3 = high_table_data3;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACCHIGH2.u32),VHDACCHIGH2.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetHighTableData8(HI_U32 high_table_data8)
+{
+	U_VHDACCHIGH3 VHDACCHIGH3;
+	
+	VHDACCHIGH3.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACCHIGH3.u32));
+	VHDACCHIGH3.bits.high_table_data8 = high_table_data8;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACCHIGH3.u32),VHDACCHIGH3.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetHighTableData7(HI_U32 high_table_data7)
+{
+	U_VHDACCHIGH3 VHDACCHIGH3;
+	
+	VHDACCHIGH3.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACCHIGH3.u32));
+	VHDACCHIGH3.bits.high_table_data7 = high_table_data7;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACCHIGH3.u32),VHDACCHIGH3.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetHighTableData6(HI_U32 high_table_data6)
+{
+	U_VHDACCHIGH3 VHDACCHIGH3;
+	
+	VHDACCHIGH3.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACCHIGH3.u32));
+	VHDACCHIGH3.bits.high_table_data6 = high_table_data6;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACCHIGH3.u32),VHDACCHIGH3.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetCnt3Low(HI_U32 cnt3_low)
+{
+	U_VHDACC3LOW VHDACC3LOW;
+	
+	VHDACC3LOW.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACC3LOW.u32));
+	VHDACC3LOW.bits.cnt3_low = cnt3_low;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACC3LOW.u32),VHDACC3LOW.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetCnt3Med(HI_U32 cnt3_med)
+{
+	U_VHDACC3MED VHDACC3MED;
+	
+	VHDACC3MED.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACC3MED.u32));
+	VHDACC3MED.bits.cnt3_med = cnt3_med;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACC3MED.u32),VHDACC3MED.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetCnt3High(HI_U32 cnt3_high)
+{
+	U_VHDACC3HIGH VHDACC3HIGH;
+	
+	VHDACC3HIGH.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACC3HIGH.u32));
+	VHDACC3HIGH.bits.cnt3_high = cnt3_high;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACC3HIGH.u32),VHDACC3HIGH.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetAccPixTotal(HI_U32 acc_pix_total)
+{
+	U_VHDACCTOTAL VHDACCTOTAL;
+	
+	VHDACCTOTAL.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACCTOTAL.u32));
+	VHDACCTOTAL.bits.acc_pix_total = acc_pix_total;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACCTOTAL.u32),VHDACCTOTAL.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetCnt64Hist0(HI_U32 cnt64_hist0)
+{
+	U_VHDACC64HIST_0 VHDACC64HIST_0;
+	
+	VHDACC64HIST_0.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACC64HIST_0.u32));
+	VHDACC64HIST_0.bits.cnt64_hist0 = cnt64_hist0;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACC64HIST_0.u32),VHDACC64HIST_0.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetCnt64Hist1(HI_U32 cnt64_hist1)
+{
+	U_VHDACC64HIST_1 VHDACC64HIST_1;
+	
+	VHDACC64HIST_1.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACC64HIST_1.u32));
+	VHDACC64HIST_1.bits.cnt64_hist1 = cnt64_hist1;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACC64HIST_1.u32),VHDACC64HIST_1.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetCnt64Hist2(HI_U32 cnt64_hist2)
+{
+	U_VHDACC64HIST_2 VHDACC64HIST_2;
+	
+	VHDACC64HIST_2.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACC64HIST_2.u32));
+	VHDACC64HIST_2.bits.cnt64_hist2 = cnt64_hist2;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACC64HIST_2.u32),VHDACC64HIST_2.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetCnt64Hist3(HI_U32 cnt64_hist3)
+{
+	U_VHDACC64HIST_3 VHDACC64HIST_3;
+	
+	VHDACC64HIST_3.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACC64HIST_3.u32));
+	VHDACC64HIST_3.bits.cnt64_hist3 = cnt64_hist3;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACC64HIST_3.u32),VHDACC64HIST_3.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetCnt64Hist4(HI_U32 cnt64_hist4)
+{
+	U_VHDACC64HIST_4 VHDACC64HIST_4;
+	
+	VHDACC64HIST_4.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACC64HIST_4.u32));
+	VHDACC64HIST_4.bits.cnt64_hist4 = cnt64_hist4;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACC64HIST_4.u32),VHDACC64HIST_4.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetCnt64Hist5(HI_U32 cnt64_hist5)
+{
+	U_VHDACC64HIST_5 VHDACC64HIST_5;
+	
+	VHDACC64HIST_5.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACC64HIST_5.u32));
+	VHDACC64HIST_5.bits.cnt64_hist5 = cnt64_hist5;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACC64HIST_5.u32),VHDACC64HIST_5.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetCnt64Hist6(HI_U32 cnt64_hist6)
+{
+	U_VHDACC64HIST_6 VHDACC64HIST_6;
+	
+	VHDACC64HIST_6.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACC64HIST_6.u32));
+	VHDACC64HIST_6.bits.cnt64_hist6 = cnt64_hist6;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACC64HIST_6.u32),VHDACC64HIST_6.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetCnt64Hist7(HI_U32 cnt64_hist7)
+{
+	U_VHDACC64HIST_7 VHDACC64HIST_7;
+	
+	VHDACC64HIST_7.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACC64HIST_7.u32));
+	VHDACC64HIST_7.bits.cnt64_hist7 = cnt64_hist7;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACC64HIST_7.u32),VHDACC64HIST_7.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetCnt64Hist8(HI_U32 cnt64_hist8)
+{
+	U_VHDACC64HIST_8 VHDACC64HIST_8;
+	
+	VHDACC64HIST_8.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACC64HIST_8.u32));
+	VHDACC64HIST_8.bits.cnt64_hist8 = cnt64_hist8;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACC64HIST_8.u32),VHDACC64HIST_8.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetCnt64Hist9(HI_U32 cnt64_hist9)
+{
+	U_VHDACC64HIST_9 VHDACC64HIST_9;
+	
+	VHDACC64HIST_9.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACC64HIST_9.u32));
+	VHDACC64HIST_9.bits.cnt64_hist9 = cnt64_hist9;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACC64HIST_9.u32),VHDACC64HIST_9.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetCnt64Hist10(HI_U32 cnt64_hist10)
+{
+	U_VHDACC64HIST_10 VHDACC64HIST_10;
+	
+	VHDACC64HIST_10.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACC64HIST_10.u32));
+	VHDACC64HIST_10.bits.cnt64_hist10 = cnt64_hist10;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACC64HIST_10.u32),VHDACC64HIST_10.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetCnt64Hist11(HI_U32 cnt64_hist11)
+{
+	U_VHDACC64HIST_11 VHDACC64HIST_11;
+	
+	VHDACC64HIST_11.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACC64HIST_11.u32));
+	VHDACC64HIST_11.bits.cnt64_hist11 = cnt64_hist11;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACC64HIST_11.u32),VHDACC64HIST_11.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetCnt64Hist12(HI_U32 cnt64_hist12)
+{
+	U_VHDACC64HIST_12 VHDACC64HIST_12;
+	
+	VHDACC64HIST_12.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACC64HIST_12.u32));
+	VHDACC64HIST_12.bits.cnt64_hist12 = cnt64_hist12;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACC64HIST_12.u32),VHDACC64HIST_12.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetCnt64Hist13(HI_U32 cnt64_hist13)
+{
+	U_VHDACC64HIST_13 VHDACC64HIST_13;
+	
+	VHDACC64HIST_13.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACC64HIST_13.u32));
+	VHDACC64HIST_13.bits.cnt64_hist13 = cnt64_hist13;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACC64HIST_13.u32),VHDACC64HIST_13.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetCnt64Hist14(HI_U32 cnt64_hist14)
+{
+	U_VHDACC64HIST_14 VHDACC64HIST_14;
+	
+	VHDACC64HIST_14.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACC64HIST_14.u32));
+	VHDACC64HIST_14.bits.cnt64_hist14 = cnt64_hist14;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACC64HIST_14.u32),VHDACC64HIST_14.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetCnt64Hist15(HI_U32 cnt64_hist15)
+{
+	U_VHDACC64HIST_15 VHDACC64HIST_15;
+	
+	VHDACC64HIST_15.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACC64HIST_15.u32));
+	VHDACC64HIST_15.bits.cnt64_hist15 = cnt64_hist15;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACC64HIST_15.u32),VHDACC64HIST_15.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetCnt64Hist16(HI_U32 cnt64_hist16)
+{
+	U_VHDACC64HIST_16 VHDACC64HIST_16;
+	
+	VHDACC64HIST_16.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACC64HIST_16.u32));
+	VHDACC64HIST_16.bits.cnt64_hist16 = cnt64_hist16;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACC64HIST_16.u32),VHDACC64HIST_16.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetCnt64Hist17(HI_U32 cnt64_hist17)
+{
+	U_VHDACC64HIST_17 VHDACC64HIST_17;
+	
+	VHDACC64HIST_17.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACC64HIST_17.u32));
+	VHDACC64HIST_17.bits.cnt64_hist17 = cnt64_hist17;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACC64HIST_17.u32),VHDACC64HIST_17.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetCnt64Hist18(HI_U32 cnt64_hist18)
+{
+	U_VHDACC64HIST_18 VHDACC64HIST_18;
+	
+	VHDACC64HIST_18.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACC64HIST_18.u32));
+	VHDACC64HIST_18.bits.cnt64_hist18 = cnt64_hist18;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACC64HIST_18.u32),VHDACC64HIST_18.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetCnt64Hist19(HI_U32 cnt64_hist19)
+{
+	U_VHDACC64HIST_19 VHDACC64HIST_19;
+	
+	VHDACC64HIST_19.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACC64HIST_19.u32));
+	VHDACC64HIST_19.bits.cnt64_hist19 = cnt64_hist19;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACC64HIST_19.u32),VHDACC64HIST_19.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetCnt64Hist20(HI_U32 cnt64_hist20)
+{
+	U_VHDACC64HIST_20 VHDACC64HIST_20;
+	
+	VHDACC64HIST_20.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACC64HIST_20.u32));
+	VHDACC64HIST_20.bits.cnt64_hist20 = cnt64_hist20;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACC64HIST_20.u32),VHDACC64HIST_20.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetCnt64Hist21(HI_U32 cnt64_hist21)
+{
+	U_VHDACC64HIST_21 VHDACC64HIST_21;
+	
+	VHDACC64HIST_21.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACC64HIST_21.u32));
+	VHDACC64HIST_21.bits.cnt64_hist21 = cnt64_hist21;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACC64HIST_21.u32),VHDACC64HIST_21.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetCnt64Hist22(HI_U32 cnt64_hist22)
+{
+	U_VHDACC64HIST_22 VHDACC64HIST_22;
+	
+	VHDACC64HIST_22.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACC64HIST_22.u32));
+	VHDACC64HIST_22.bits.cnt64_hist22 = cnt64_hist22;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACC64HIST_22.u32),VHDACC64HIST_22.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetCnt64Hist23(HI_U32 cnt64_hist23)
+{
+	U_VHDACC64HIST_23 VHDACC64HIST_23;
+	
+	VHDACC64HIST_23.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACC64HIST_23.u32));
+	VHDACC64HIST_23.bits.cnt64_hist23 = cnt64_hist23;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACC64HIST_23.u32),VHDACC64HIST_23.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetCnt64Hist24(HI_U32 cnt64_hist24)
+{
+	U_VHDACC64HIST_24 VHDACC64HIST_24;
+	
+	VHDACC64HIST_24.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACC64HIST_24.u32));
+	VHDACC64HIST_24.bits.cnt64_hist24 = cnt64_hist24;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACC64HIST_24.u32),VHDACC64HIST_24.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetCnt64Hist25(HI_U32 cnt64_hist25)
+{
+	U_VHDACC64HIST_25 VHDACC64HIST_25;
+	
+	VHDACC64HIST_25.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACC64HIST_25.u32));
+	VHDACC64HIST_25.bits.cnt64_hist25 = cnt64_hist25;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACC64HIST_25.u32),VHDACC64HIST_25.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetCnt64Hist26(HI_U32 cnt64_hist26)
+{
+	U_VHDACC64HIST_26 VHDACC64HIST_26;
+	
+	VHDACC64HIST_26.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACC64HIST_26.u32));
+	VHDACC64HIST_26.bits.cnt64_hist26 = cnt64_hist26;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACC64HIST_26.u32),VHDACC64HIST_26.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetCnt64Hist27(HI_U32 cnt64_hist27)
+{
+	U_VHDACC64HIST_27 VHDACC64HIST_27;
+	
+	VHDACC64HIST_27.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACC64HIST_27.u32));
+	VHDACC64HIST_27.bits.cnt64_hist27 = cnt64_hist27;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACC64HIST_27.u32),VHDACC64HIST_27.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetCnt64Hist28(HI_U32 cnt64_hist28)
+{
+	U_VHDACC64HIST_28 VHDACC64HIST_28;
+	
+	VHDACC64HIST_28.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACC64HIST_28.u32));
+	VHDACC64HIST_28.bits.cnt64_hist28 = cnt64_hist28;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACC64HIST_28.u32),VHDACC64HIST_28.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetCnt64Hist29(HI_U32 cnt64_hist29)
+{
+	U_VHDACC64HIST_29 VHDACC64HIST_29;
+	
+	VHDACC64HIST_29.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACC64HIST_29.u32));
+	VHDACC64HIST_29.bits.cnt64_hist29 = cnt64_hist29;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACC64HIST_29.u32),VHDACC64HIST_29.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetCnt64Hist30(HI_U32 cnt64_hist30)
+{
+	U_VHDACC64HIST_30 VHDACC64HIST_30;
+	
+	VHDACC64HIST_30.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACC64HIST_30.u32));
+	VHDACC64HIST_30.bits.cnt64_hist30 = cnt64_hist30;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACC64HIST_30.u32),VHDACC64HIST_30.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetCnt64Hist31(HI_U32 cnt64_hist31)
+{
+	U_VHDACC64HIST_31 VHDACC64HIST_31;
+	
+	VHDACC64HIST_31.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACC64HIST_31.u32));
+	VHDACC64HIST_31.bits.cnt64_hist31 = cnt64_hist31;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACC64HIST_31.u32),VHDACC64HIST_31.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetCnt64Hist32(HI_U32 cnt64_hist32)
+{
+	U_VHDACC64HIST_32 VHDACC64HIST_32;
+	
+	VHDACC64HIST_32.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACC64HIST_32.u32));
+	VHDACC64HIST_32.bits.cnt64_hist32 = cnt64_hist32;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACC64HIST_32.u32),VHDACC64HIST_32.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetCnt64Hist33(HI_U32 cnt64_hist33)
+{
+	U_VHDACC64HIST_33 VHDACC64HIST_33;
+	
+	VHDACC64HIST_33.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACC64HIST_33.u32));
+	VHDACC64HIST_33.bits.cnt64_hist33 = cnt64_hist33;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACC64HIST_33.u32),VHDACC64HIST_33.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetCnt64Hist34(HI_U32 cnt64_hist34)
+{
+	U_VHDACC64HIST_34 VHDACC64HIST_34;
+	
+	VHDACC64HIST_34.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACC64HIST_34.u32));
+	VHDACC64HIST_34.bits.cnt64_hist34 = cnt64_hist34;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACC64HIST_34.u32),VHDACC64HIST_34.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetCnt64Hist35(HI_U32 cnt64_hist35)
+{
+	U_VHDACC64HIST_35 VHDACC64HIST_35;
+	
+	VHDACC64HIST_35.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACC64HIST_35.u32));
+	VHDACC64HIST_35.bits.cnt64_hist35 = cnt64_hist35;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACC64HIST_35.u32),VHDACC64HIST_35.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetCnt64Hist36(HI_U32 cnt64_hist36)
+{
+	U_VHDACC64HIST_36 VHDACC64HIST_36;
+	
+	VHDACC64HIST_36.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACC64HIST_36.u32));
+	VHDACC64HIST_36.bits.cnt64_hist36 = cnt64_hist36;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACC64HIST_36.u32),VHDACC64HIST_36.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetCnt64Hist37(HI_U32 cnt64_hist37)
+{
+	U_VHDACC64HIST_37 VHDACC64HIST_37;
+	
+	VHDACC64HIST_37.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACC64HIST_37.u32));
+	VHDACC64HIST_37.bits.cnt64_hist37 = cnt64_hist37;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACC64HIST_37.u32),VHDACC64HIST_37.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetCnt64Hist38(HI_U32 cnt64_hist38)
+{
+	U_VHDACC64HIST_38 VHDACC64HIST_38;
+	
+	VHDACC64HIST_38.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACC64HIST_38.u32));
+	VHDACC64HIST_38.bits.cnt64_hist38 = cnt64_hist38;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACC64HIST_38.u32),VHDACC64HIST_38.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetCnt64Hist39(HI_U32 cnt64_hist39)
+{
+	U_VHDACC64HIST_39 VHDACC64HIST_39;
+	
+	VHDACC64HIST_39.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACC64HIST_39.u32));
+	VHDACC64HIST_39.bits.cnt64_hist39 = cnt64_hist39;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACC64HIST_39.u32),VHDACC64HIST_39.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetCnt64Hist40(HI_U32 cnt64_hist40)
+{
+	U_VHDACC64HIST_40 VHDACC64HIST_40;
+	
+	VHDACC64HIST_40.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACC64HIST_40.u32));
+	VHDACC64HIST_40.bits.cnt64_hist40 = cnt64_hist40;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACC64HIST_40.u32),VHDACC64HIST_40.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetCnt64Hist41(HI_U32 cnt64_hist41)
+{
+	U_VHDACC64HIST_41 VHDACC64HIST_41;
+	
+	VHDACC64HIST_41.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACC64HIST_41.u32));
+	VHDACC64HIST_41.bits.cnt64_hist41 = cnt64_hist41;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACC64HIST_41.u32),VHDACC64HIST_41.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetCnt64Hist42(HI_U32 cnt64_hist42)
+{
+	U_VHDACC64HIST_42 VHDACC64HIST_42;
+	
+	VHDACC64HIST_42.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACC64HIST_42.u32));
+	VHDACC64HIST_42.bits.cnt64_hist42 = cnt64_hist42;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACC64HIST_42.u32),VHDACC64HIST_42.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetCnt64Hist43(HI_U32 cnt64_hist43)
+{
+	U_VHDACC64HIST_43 VHDACC64HIST_43;
+	
+	VHDACC64HIST_43.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACC64HIST_43.u32));
+	VHDACC64HIST_43.bits.cnt64_hist43 = cnt64_hist43;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACC64HIST_43.u32),VHDACC64HIST_43.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetCnt64Hist44(HI_U32 cnt64_hist44)
+{
+	U_VHDACC64HIST_44 VHDACC64HIST_44;
+	
+	VHDACC64HIST_44.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACC64HIST_44.u32));
+	VHDACC64HIST_44.bits.cnt64_hist44 = cnt64_hist44;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACC64HIST_44.u32),VHDACC64HIST_44.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetCnt64Hist45(HI_U32 cnt64_hist45)
+{
+	U_VHDACC64HIST_45 VHDACC64HIST_45;
+	
+	VHDACC64HIST_45.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACC64HIST_45.u32));
+	VHDACC64HIST_45.bits.cnt64_hist45 = cnt64_hist45;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACC64HIST_45.u32),VHDACC64HIST_45.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetCnt64Hist46(HI_U32 cnt64_hist46)
+{
+	U_VHDACC64HIST_46 VHDACC64HIST_46;
+	
+	VHDACC64HIST_46.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACC64HIST_46.u32));
+	VHDACC64HIST_46.bits.cnt64_hist46 = cnt64_hist46;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACC64HIST_46.u32),VHDACC64HIST_46.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetCnt64Hist47(HI_U32 cnt64_hist47)
+{
+	U_VHDACC64HIST_47 VHDACC64HIST_47;
+	
+	VHDACC64HIST_47.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACC64HIST_47.u32));
+	VHDACC64HIST_47.bits.cnt64_hist47 = cnt64_hist47;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACC64HIST_47.u32),VHDACC64HIST_47.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetCnt64Hist48(HI_U32 cnt64_hist48)
+{
+	U_VHDACC64HIST_48 VHDACC64HIST_48;
+	
+	VHDACC64HIST_48.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACC64HIST_48.u32));
+	VHDACC64HIST_48.bits.cnt64_hist48 = cnt64_hist48;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACC64HIST_48.u32),VHDACC64HIST_48.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetCnt64Hist49(HI_U32 cnt64_hist49)
+{
+	U_VHDACC64HIST_49 VHDACC64HIST_49;
+	
+	VHDACC64HIST_49.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACC64HIST_49.u32));
+	VHDACC64HIST_49.bits.cnt64_hist49 = cnt64_hist49;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACC64HIST_49.u32),VHDACC64HIST_49.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetCnt64Hist50(HI_U32 cnt64_hist50)
+{
+	U_VHDACC64HIST_50 VHDACC64HIST_50;
+	
+	VHDACC64HIST_50.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACC64HIST_50.u32));
+	VHDACC64HIST_50.bits.cnt64_hist50 = cnt64_hist50;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACC64HIST_50.u32),VHDACC64HIST_50.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetCnt64Hist51(HI_U32 cnt64_hist51)
+{
+	U_VHDACC64HIST_51 VHDACC64HIST_51;
+	
+	VHDACC64HIST_51.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACC64HIST_51.u32));
+	VHDACC64HIST_51.bits.cnt64_hist51 = cnt64_hist51;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACC64HIST_51.u32),VHDACC64HIST_51.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetCnt64Hist52(HI_U32 cnt64_hist52)
+{
+	U_VHDACC64HIST_52 VHDACC64HIST_52;
+	
+	VHDACC64HIST_52.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACC64HIST_52.u32));
+	VHDACC64HIST_52.bits.cnt64_hist52 = cnt64_hist52;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACC64HIST_52.u32),VHDACC64HIST_52.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetCnt64Hist53(HI_U32 cnt64_hist53)
+{
+	U_VHDACC64HIST_53 VHDACC64HIST_53;
+	
+	VHDACC64HIST_53.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACC64HIST_53.u32));
+	VHDACC64HIST_53.bits.cnt64_hist53 = cnt64_hist53;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACC64HIST_53.u32),VHDACC64HIST_53.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetCnt64Hist54(HI_U32 cnt64_hist54)
+{
+	U_VHDACC64HIST_54 VHDACC64HIST_54;
+	
+	VHDACC64HIST_54.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACC64HIST_54.u32));
+	VHDACC64HIST_54.bits.cnt64_hist54 = cnt64_hist54;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACC64HIST_54.u32),VHDACC64HIST_54.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetCnt64Hist55(HI_U32 cnt64_hist55)
+{
+	U_VHDACC64HIST_55 VHDACC64HIST_55;
+	
+	VHDACC64HIST_55.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACC64HIST_55.u32));
+	VHDACC64HIST_55.bits.cnt64_hist55 = cnt64_hist55;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACC64HIST_55.u32),VHDACC64HIST_55.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetCnt64Hist56(HI_U32 cnt64_hist56)
+{
+	U_VHDACC64HIST_56 VHDACC64HIST_56;
+	
+	VHDACC64HIST_56.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACC64HIST_56.u32));
+	VHDACC64HIST_56.bits.cnt64_hist56 = cnt64_hist56;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACC64HIST_56.u32),VHDACC64HIST_56.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetCnt64Hist57(HI_U32 cnt64_hist57)
+{
+	U_VHDACC64HIST_57 VHDACC64HIST_57;
+	
+	VHDACC64HIST_57.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACC64HIST_57.u32));
+	VHDACC64HIST_57.bits.cnt64_hist57 = cnt64_hist57;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACC64HIST_57.u32),VHDACC64HIST_57.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetCnt64Hist58(HI_U32 cnt64_hist58)
+{
+	U_VHDACC64HIST_58 VHDACC64HIST_58;
+	
+	VHDACC64HIST_58.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACC64HIST_58.u32));
+	VHDACC64HIST_58.bits.cnt64_hist58 = cnt64_hist58;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACC64HIST_58.u32),VHDACC64HIST_58.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetCnt64Hist59(HI_U32 cnt64_hist59)
+{
+	U_VHDACC64HIST_59 VHDACC64HIST_59;
+	
+	VHDACC64HIST_59.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACC64HIST_59.u32));
+	VHDACC64HIST_59.bits.cnt64_hist59 = cnt64_hist59;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACC64HIST_59.u32),VHDACC64HIST_59.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetCnt64Hist60(HI_U32 cnt64_hist60)
+{
+	U_VHDACC64HIST_60 VHDACC64HIST_60;
+	
+	VHDACC64HIST_60.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACC64HIST_60.u32));
+	VHDACC64HIST_60.bits.cnt64_hist60 = cnt64_hist60;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACC64HIST_60.u32),VHDACC64HIST_60.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetCnt64Hist61(HI_U32 cnt64_hist61)
+{
+	U_VHDACC64HIST_61 VHDACC64HIST_61;
+	
+	VHDACC64HIST_61.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACC64HIST_61.u32));
+	VHDACC64HIST_61.bits.cnt64_hist61 = cnt64_hist61;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACC64HIST_61.u32),VHDACC64HIST_61.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetCnt64Hist62(HI_U32 cnt64_hist62)
+{
+	U_VHDACC64HIST_62 VHDACC64HIST_62;
+	
+	VHDACC64HIST_62.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACC64HIST_62.u32));
+	VHDACC64HIST_62.bits.cnt64_hist62 = cnt64_hist62;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACC64HIST_62.u32),VHDACC64HIST_62.u32);
+	
+	return ;
+}
+
+
+HI_VOID VDP_XDP_ACC_SetCnt64Hist63(HI_U32 cnt64_hist63)
+{
+	U_VHDACC64HIST_63 VHDACC64HIST_63;
+	
+	VHDACC64HIST_63.u32 = VDP_RegRead((HI_ULONG)&(pVdpReg->VHDACC64HIST_63.u32));
+	VHDACC64HIST_63.bits.cnt64_hist63 = cnt64_hist63;
+	VDP_RegWrite((HI_ULONG)&(pVdpReg->VHDACC64HIST_63.u32),VHDACC64HIST_63.u32);
+	
+	return ;
+}
+
+//layer_name  : VDP
+//module_name : xdp_acc
+
+
+
+
+

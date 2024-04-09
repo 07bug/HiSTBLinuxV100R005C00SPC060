@@ -1,0 +1,37 @@
+menu "Demux Config"
+    depends on !HI_NVR_SUPPORT
+
+config HI_DEMUX_SUPPORT
+    bool
+    default y
+
+config HI_DEMUX_POOLBUF_SIZE
+    hex "Poolbuf Size"
+    depends on HI_DEMUX_SUPPORT
+    default 0x200000
+    help
+        set buffer size of section, pes and post channel.
+
+config HI_DMX_TSBUF_MULTI_THREAD_SUPPORT
+    bool "Support multithread operate one ts buffer"
+    depends on HI_DEMUX_SUPPORT
+    default n
+    help
+        when enabled, HI_UNF_DMX_GetTSBuffer() and HI_UNF_DMX_PutTSBuffer() will be disabled
+        when enabled, HI_UNF_DMX_AcquireTSBuffer(), HI_UNF_DMX_PushTSBuffer() and HI_UNF_DMX_ReleaseTSBuffer() will be enabled.
+
+config HI_DEMUX_INVALID_PES_DROP_SUPPORT
+    bool "Support drop invalid audio pes package"
+    depends on HI_DEMUX_SUPPORT &&  ADVCA_IRDETO
+    default n
+    help
+       when enabled, invalid pes packages will be dropped
+
+config HI_DMX_DUP_PID_CHANNEL_SUPPORT
+    bool "Support pid copy"
+    depends on (HI_DEMUX_SUPPORT && (HI3796MV200 || HI3716MV450 || HI3798CV200 || HI3798MV200 || HI3798MV300 || HI3798MV300H || HI3798MV310))
+    default n if (HI3796MV200 || HI3716MV450 || HI3798MV200 || HI3798MV300 || HI3798MV300H || HI3798MV310)
+    default y if HI3798CV200
+    help
+        when enabled, Support pid copy
+endmenu

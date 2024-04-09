@@ -1,0 +1,38 @@
+#+++++++++++++++++++++++++++++++++++++++++++++++++++
+menuconfig HI_SND_MUTECTL_SUPPORT
+    bool "Snd Mute Control Support"
+    default n
+
+config HI_SND_MUTECTL_GPIO
+    hex  "Snd Mute Control Gpio"
+    depends on HI_SND_MUTECTL_SUPPORT
+    default 0x14
+    help
+        set specific GPIO to mute
+
+config HI_SND_MUTECTL_LEVEL
+    int "Snd Mute Control Level (0, 1)"
+    depends on HI_SND_MUTECTL_SUPPORT
+    range 0 1
+    default 0
+    help
+        use high level or low level of GPIO to mute, 1: mute by high level, 0: mute by low level
+
+choice
+    prompt "Audio Amplifier"
+    depends on (HI3798MV300 || HI3798MV300H || HI3798MV310)
+    default HI_AUDIO_EXTERNAL_AMP
+
+config HI_AUDIO_EXTERNAL_AMP
+    bool "External Amplifier"
+    help
+        use external amplifier
+
+config HI_AUDIO_INTERNAL_AMP
+    bool "Internal Amplifier"
+    help
+        use internal amplifier inside chipset
+
+endchoice
+
+#+++++++++++++++++++++++++++++++++++++++++++++++++++

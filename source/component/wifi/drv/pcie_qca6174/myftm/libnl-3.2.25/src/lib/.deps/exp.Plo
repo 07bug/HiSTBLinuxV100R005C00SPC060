@@ -1,0 +1,415 @@
+exp.lo: exp.c \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/stdc-predef.h \
+ ../../include/netlink/cli/utils.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/stdio.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/features.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/sys/cdefs.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/wordsize.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/gnu/stubs.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/gnu/stubs-soft.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/lib/gcc/arm-gcc49-linux-gnueabi/4.9.2/include/stddef.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/types.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/typesizes.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/libio.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/_G_config.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/wchar.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/lib/gcc/arm-gcc49-linux-gnueabi/4.9.2/include/stdarg.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/stdio_lim.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/sys_errlist.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/stdio.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/string.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/xlocale.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/string.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/string2.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/stdlib.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/waitflags.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/waitstatus.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/endian.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/endian.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/byteswap.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/byteswap-16.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/sys/types.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/time.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/sys/select.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/select.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/sigset.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/time.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/sys/sysmacros.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/pthreadtypes.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/alloca.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/stdlib-bsearch.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/stdlib-float.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/lib/gcc/arm-gcc49-linux-gnueabi/4.9.2/include-fixed/limits.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/lib/gcc/arm-gcc49-linux-gnueabi/4.9.2/include-fixed/syslimits.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/limits.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/posix1_lim.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/local_lim.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/linux/limits.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/posix2_lim.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/xopen_lim.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/inttypes.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/lib/gcc/arm-gcc49-linux-gnueabi/4.9.2/include/stdint.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/stdint.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/wchar.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/errno.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/errno.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/linux/errno.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/asm/errno.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/asm-generic/errno.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/asm-generic/errno-base.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/ctype.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/getopt.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/dlfcn.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/dlfcn.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/sys/socket.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/sys/uio.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/uio.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/socket.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/socket_type.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/sockaddr.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/asm/socket.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/asm-generic/socket.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/asm/sockios.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/asm-generic/sockios.h \
+ ../../include/netlink/netlink.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/sys/poll.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/poll.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/sys/time.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/netdb.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/netinet/in.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/in.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/rpc/netdb.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/siginfo.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/netdb.h \
+ ../../include/netlink/netlink-compat.h ../../include/linux/netlink.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/linux/socket.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/linux/types.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/asm/types.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/asm-generic/int-ll64.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/asm/bitsperlong.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/asm-generic/bitsperlong.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/linux/posix_types.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/linux/stddef.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/asm/posix_types.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/asm-generic/posix_types.h \
+ ../../include/linux/rtnetlink.h ../../include/linux/if_link.h \
+ ../../include/linux/if_addr.h ../../include/linux/neighbour.h \
+ ../../include/linux/genetlink.h \
+ ../../include/linux/netfilter/nfnetlink.h \
+ ../../include/linux/netfilter/nfnetlink_compat.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/netinet/tcp.h \
+ ../../include/netlink/version.h ../../include/netlink/errno.h \
+ ../../include/netlink/types.h ../../include/netlink/handlers.h \
+ ../../include/netlink/netlink-kernel.h ../../include/netlink/socket.h \
+ ../../include/netlink/object.h ../../include/netlink/utils.h \
+ ../../include/netlink/list.h ../../include/netlink/addr.h \
+ ../../include/netlink/route/rtnl.h ../../include/netlink/route/link.h \
+ ../../include/netlink/cache.h ../../include/netlink/msg.h \
+ ../../include/netlink/attr.h ../../include/netlink/data.h \
+ ../../include/linux/if.h ../../include/netlink/route/addr.h \
+ ../../include/netlink/route/neighbour.h \
+ ../../include/netlink/route/neightbl.h \
+ ../../include/netlink/route/route.h \
+ ../../include/netlink/route/nexthop.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/linux/in_route.h \
+ ../../include/netlink/route/rule.h ../../include/linux/fib_rules.h \
+ ../../include/netlink/route/qdisc.h ../../include/netlink/route/tc.h \
+ ../../include/linux/pkt_sched.h ../../include/linux/pkt_cls.h \
+ ../../include/netlink/route/class.h \
+ ../../include/netlink/route/classifier.h \
+ ../../include/netlink/route/cls/ematch.h \
+ ../../include/netlink/fib_lookup/lookup.h \
+ ../../include/netlink/fib_lookup/request.h \
+ ../../include/netlink/genl/genl.h ../../include/netlink/genl/ctrl.h \
+ ../../include/netlink/genl/mngt.h ../../include/netlink/netfilter/ct.h \
+ ../../include/netlink/cli/exp.h ../../include/netlink/netfilter/exp.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/linux/version.h \
+ ../../include/linux/netfilter/nf_conntrack_common.h
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/stdc-predef.h:
+
+../../include/netlink/cli/utils.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/stdio.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/features.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/sys/cdefs.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/wordsize.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/gnu/stubs.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/gnu/stubs-soft.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/lib/gcc/arm-gcc49-linux-gnueabi/4.9.2/include/stddef.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/types.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/typesizes.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/libio.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/_G_config.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/wchar.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/lib/gcc/arm-gcc49-linux-gnueabi/4.9.2/include/stdarg.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/stdio_lim.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/sys_errlist.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/stdio.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/string.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/xlocale.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/string.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/string2.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/stdlib.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/waitflags.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/waitstatus.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/endian.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/endian.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/byteswap.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/byteswap-16.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/sys/types.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/time.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/sys/select.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/select.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/sigset.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/time.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/sys/sysmacros.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/pthreadtypes.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/alloca.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/stdlib-bsearch.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/stdlib-float.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/lib/gcc/arm-gcc49-linux-gnueabi/4.9.2/include-fixed/limits.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/lib/gcc/arm-gcc49-linux-gnueabi/4.9.2/include-fixed/syslimits.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/limits.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/posix1_lim.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/local_lim.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/linux/limits.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/posix2_lim.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/xopen_lim.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/inttypes.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/lib/gcc/arm-gcc49-linux-gnueabi/4.9.2/include/stdint.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/stdint.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/wchar.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/errno.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/errno.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/linux/errno.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/asm/errno.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/asm-generic/errno.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/asm-generic/errno-base.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/ctype.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/getopt.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/dlfcn.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/dlfcn.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/sys/socket.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/sys/uio.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/uio.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/socket.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/socket_type.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/sockaddr.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/asm/socket.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/asm-generic/socket.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/asm/sockios.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/asm-generic/sockios.h:
+
+../../include/netlink/netlink.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/sys/poll.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/poll.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/sys/time.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/netdb.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/netinet/in.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/in.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/rpc/netdb.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/siginfo.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/netdb.h:
+
+../../include/netlink/netlink-compat.h:
+
+../../include/linux/netlink.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/linux/socket.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/linux/types.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/asm/types.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/asm-generic/int-ll64.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/asm/bitsperlong.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/asm-generic/bitsperlong.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/linux/posix_types.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/linux/stddef.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/asm/posix_types.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/asm-generic/posix_types.h:
+
+../../include/linux/rtnetlink.h:
+
+../../include/linux/if_link.h:
+
+../../include/linux/if_addr.h:
+
+../../include/linux/neighbour.h:
+
+../../include/linux/genetlink.h:
+
+../../include/linux/netfilter/nfnetlink.h:
+
+../../include/linux/netfilter/nfnetlink_compat.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/netinet/tcp.h:
+
+../../include/netlink/version.h:
+
+../../include/netlink/errno.h:
+
+../../include/netlink/types.h:
+
+../../include/netlink/handlers.h:
+
+../../include/netlink/netlink-kernel.h:
+
+../../include/netlink/socket.h:
+
+../../include/netlink/object.h:
+
+../../include/netlink/utils.h:
+
+../../include/netlink/list.h:
+
+../../include/netlink/addr.h:
+
+../../include/netlink/route/rtnl.h:
+
+../../include/netlink/route/link.h:
+
+../../include/netlink/cache.h:
+
+../../include/netlink/msg.h:
+
+../../include/netlink/attr.h:
+
+../../include/netlink/data.h:
+
+../../include/linux/if.h:
+
+../../include/netlink/route/addr.h:
+
+../../include/netlink/route/neighbour.h:
+
+../../include/netlink/route/neightbl.h:
+
+../../include/netlink/route/route.h:
+
+../../include/netlink/route/nexthop.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/linux/in_route.h:
+
+../../include/netlink/route/rule.h:
+
+../../include/linux/fib_rules.h:
+
+../../include/netlink/route/qdisc.h:
+
+../../include/netlink/route/tc.h:
+
+../../include/linux/pkt_sched.h:
+
+../../include/linux/pkt_cls.h:
+
+../../include/netlink/route/class.h:
+
+../../include/netlink/route/classifier.h:
+
+../../include/netlink/route/cls/ematch.h:
+
+../../include/netlink/fib_lookup/lookup.h:
+
+../../include/netlink/fib_lookup/request.h:
+
+../../include/netlink/genl/genl.h:
+
+../../include/netlink/genl/ctrl.h:
+
+../../include/netlink/genl/mngt.h:
+
+../../include/netlink/netfilter/ct.h:
+
+../../include/netlink/cli/exp.h:
+
+../../include/netlink/netfilter/exp.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/linux/version.h:
+
+../../include/linux/netfilter/nf_conntrack_common.h:

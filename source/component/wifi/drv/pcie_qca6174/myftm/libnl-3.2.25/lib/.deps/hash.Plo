@@ -1,0 +1,97 @@
+hash.lo: hash.c \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/stdc-predef.h \
+ ../include/netlink/hash.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/lib/gcc/arm-gcc49-linux-gnueabi/4.9.2/include/stdint.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/stdint.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/features.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/sys/cdefs.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/wordsize.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/gnu/stubs.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/gnu/stubs-soft.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/wchar.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/stdlib.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/lib/gcc/arm-gcc49-linux-gnueabi/4.9.2/include/stddef.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/waitflags.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/waitstatus.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/endian.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/endian.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/byteswap.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/types.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/typesizes.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/byteswap-16.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/xlocale.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/sys/types.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/time.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/sys/select.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/select.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/sigset.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/time.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/sys/sysmacros.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/pthreadtypes.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/alloca.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/stdlib-bsearch.h \
+ /opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/stdlib-float.h
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/stdc-predef.h:
+
+../include/netlink/hash.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/lib/gcc/arm-gcc49-linux-gnueabi/4.9.2/include/stdint.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/stdint.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/features.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/sys/cdefs.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/wordsize.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/gnu/stubs.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/gnu/stubs-soft.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/wchar.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/stdlib.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/lib/gcc/arm-gcc49-linux-gnueabi/4.9.2/include/stddef.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/waitflags.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/waitstatus.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/endian.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/endian.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/byteswap.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/types.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/typesizes.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/byteswap-16.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/xlocale.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/sys/types.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/time.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/sys/select.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/select.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/sigset.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/time.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/sys/sysmacros.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/pthreadtypes.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/alloca.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/stdlib-bsearch.h:
+
+/opt/hisi-linux/x86-arm/arm-histbv300-linux/target/usr/include/bits/stdlib-float.h:

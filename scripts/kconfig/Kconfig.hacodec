@@ -1,0 +1,79 @@
+menuconfig HI_HACODEC_SUPPORT
+    bool "Audio Codec Support"
+    default y
+
+config HI_HACODEC_MP3DECODE_SUPPORT
+    bool "MP3 Decoder Support"
+    depends on HI_HACODEC_SUPPORT
+    default n
+
+config HI_HACODEC_AACDECODE_SUPPORT
+    bool "AAC Decoder Support"
+    depends on HI_HACODEC_SUPPORT
+    default n
+
+config HI_HACODEC_AACENCODE_SUPPORT
+    bool "AAC Encode Support"
+    depends on HI_HACODEC_SUPPORT
+    default n
+
+config HI_HACODEC_AC3PASSTHROUGH_SUPPORT
+    bool "AC3 Passthrough Support"
+    depends on HI_HACODEC_SUPPORT
+    default n
+
+config HI_HACODEC_AMRNBCODEC_SUPPORT
+    bool "AMRNB Codec Support"
+    depends on HI_HACODEC_SUPPORT
+    default n
+
+config HI_HACODEC_AMRWBCODEC_SUPPORT
+    bool "AMRWB Codec Support"
+    depends on HI_HACODEC_SUPPORT
+    default n
+
+config HI_HACODEC_BLURAYLPCMDECODE_SUPPORT
+    bool "BLURAYLPCM Decoder Support"
+    depends on HI_HACODEC_SUPPORT
+    default n
+
+config HI_HACODEC_COOKDECODE_SUPPORT
+    bool "COOK Decoder Support"
+    depends on HI_HACODEC_SUPPORT
+    default n
+
+config HI_HACODEC_DRADECODE_SUPPORT
+    bool "DRA Decoder Support"
+    depends on HI_HACODEC_SUPPORT
+    default n
+
+config HI_HACODEC_DTSPASSTHROUGH_SUPPORT
+    bool "DTS Passthrough Support"
+    depends on HI_HACODEC_SUPPORT
+    default n
+
+config HI_HACODEC_G711CODEC_SUPPORT
+    bool "G711 Codec Support"
+    depends on HI_HACODEC_SUPPORT
+    default n
+
+config HI_HACODEC_G722CODEC_SUPPORT
+    bool "G722 Codec Support"
+    depends on HI_HACODEC_SUPPORT
+    default n
+
+config HI_HACODEC_PCMDECODE_SUPPORT
+    bool "PCM Decoder Support"
+    depends on HI_HACODEC_SUPPORT
+    default n
+
+config HI_HACODEC_TRUEHDPASSTHROUGH_SUPPORT
+    bool "TRUEHD Passthrough Support"
+    depends on HI_HACODEC_SUPPORT
+    default n
+
+config HI_HACODEC_DTSM6DECODE_SUPPORT
+    bool "DTSM6 Decoder Support"
+    depends on HI_HACODEC_SUPPORT && ANDROID_PRODUCT
+    default n
+

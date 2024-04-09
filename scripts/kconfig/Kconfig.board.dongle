@@ -1,0 +1,10 @@
+menu "Dongle Config"
+    depends on HI3798CV200 || HI3798MV200 || HI3798MV300 || HI3798MV300H || HI3798MV310
+
+config  HI_DONGLE_SUPPORT
+    bool "Dongle Board Support"
+    default n
+    help
+        when enabled, dongle board is supported, and bootargs_dongle.bin will be generated to images directory.
+
+endmenu

@@ -1,0 +1,10 @@
+#+++++++++++++++++++++++++++++++++++++++++++++++++++
+menu "Ethernet Config"
+config  HI_ETH_SUPPORT
+    bool "Ethernet Support"
+    default y
+    help
+        enable ethernet function in boot image
+
+endmenu
+#+++++++++++++++++++++++++++++++++++++++++++++++++++

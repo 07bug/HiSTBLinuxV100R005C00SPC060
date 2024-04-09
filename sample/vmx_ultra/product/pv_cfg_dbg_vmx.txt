@@ -1,0 +1,66 @@
+//fuse_name                 isBurn  isLock Len(Byte) Value(No space is allowed)
+//Key and CRC value;
+HDCP_RootKey                false   false   0x10    0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0
+CRC_HDCP_RootKey            false   false   0x1     0x0
+STB_TA_RootKey              false   false   0x10    0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0
+CRC_STB_TA_RootKey          false   false   0x1     0x0                                                                       
+stb_ta_kl_disable           false   false   0x1     0x0                                                                       
+STB_RootKey                 false   false   0x10    0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0           
+CRC_STB_RootKey             false   false   0x1     0x0                                                                       
+SW_RootKey                  false   false   0x10    0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0           
+CRC_SW_RootKey              false   false   0x1     0x0
+//Software klad control;0x0:enable;0x1:disable;                                                                    
+sw_kl_disable               false   false   0x1     0x0
+//MISD
+STB_Version_REF             false   false   0x4     0x0,0x0,0x0,0x0                                                           
+MSID                        false   false   0x4     0x0,0x0,0x0,0x0
+//ACPU MSID, STBM should get this from Hisilicon;
+ASC_MSID                    false   false   0x4     0x0,0x0,0x0,0x0                                                           
+//SOS MSID
+SOS_MSID                    false   false   0x4     0x0,0x0,0x0,0x0
+//TAx_SMID include tow parts, TA_ID[32Bit] + TA_SMID[32Bit], fox example, TA_ID=0x1234, TA_SIMD=0x12345678, the value should be 0x34,0x12,0x0,0x0,0x78,0x56,0x34,0x12
+TA1_SMID                    false   false   0x10    0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0           
+TA2_SMID                    false   false   0x10    0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0           
+TA3_SMID                    false   false   0x10    0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0           
+TA4_SMID                    false   false   0x10    0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0           
+TA5_SMID                    false   false   0x10    0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0           
+TA6_SMID                    false   false   0x10    0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0
+//TA certificate key and code version;                                                                                                         
+TA1_Cert_SecVersion_Ref     false   false   0x2     0x0,0x0                                                                   
+TA1_SecVersion_Ref          false   false   0x6     0x0,0x0,0x0,0x0,0x0,0x0                                                   
+TA2_Cert_SecVersion_Ref     false   false   0x2     0x0,0x0                                                                   
+TA2_SecVersion_Ref          false   false   0x6     0x0,0x0,0x0,0x0,0x0,0x0                                                   
+TA3_Cert_SecVersion_Ref     false   false   0x2     0x0,0x0                                                                   
+TA3_SecVersion_Ref          false   false   0x6     0x0,0x0,0x0,0x0,0x0,0x0                                                   
+TA4_Cert_SecVersion_Ref     false   false   0x2     0x0,0x0                                                                   
+TA4_SecVersion_Ref          false   false   0x6     0x0,0x0,0x0,0x0,0x0,0x0                                                   
+TA5_Cert_SecVersion_Ref     false   false   0x2     0x0,0x0                                                                   
+TA5_SecVersion_Ref          false   false   0x6     0x0,0x0,0x0,0x0,0x0,0x0                                                   
+TA6_Cert_SecVersion_Ref     false   false   0x2     0x0,0x0                                                                   
+TA6_SecVersion_Ref          false   false   0x6     0x0,0x0,0x0,0x0,0x0,0x0
+//Klad related function;0x0:enable;0x1:disable;
+sm1_disable                 false   false   0x1     0x0		                                                        
+sm2_disable                 false   false   0x1     0x0	                                                         
+sm3_disable                 false   false   0x1     0x0	                                                        
+r2r_sm4_disable             false   false   0x1     0x0	                                                                                                                                                                               
+ts_tdes_disable             false   false   0x1     0x0	                                                          
+ts_sm4_disable              false   false   0x1     0x0
+//Uart function;0x1:disable                                                                                                              
+hard_uart_disable           false   false   0x1     0x1                                                                       
+hard_uart_mcu_disable       false   false   0x1     0x1              
+//Chipset global JTAG interface protection level; 0x63:Password Protect; 0xff:Close;                                                                                                                   
+chip_jtag_prt_mode          false   false   0x1     0x63                                                                      
+//Flash selection for booting the system; 0x0:SPI Nor Flash; 0x1:NAND Flash; 0x2: NAND Flash; 0x3: eMMC; 0x4: SPI Nand Flash; 0x5: SPI Nand Flash(wrap) 0x6: Nand Flash; 0x7: emmc(external pullup)
+boot_mode_sel               false   false   0x1     0x0
+//Boot flash selection control;0x1:controled by OTP bits boot_mode_sel;
+bootsel_ctrl                false   false   0x1     0x1
+//Wakeup from DDR control; 0x0: support wake up; 0x1: don't support wake up;                                                   
+ddr_wakeup_disable          false   false   0x1     0x0
+//Runtime check control; 0x0: disable; 0x1: enable
+runtime_check_en            false   false   0x1     0x0
+//boot decryption control; 0x1: boot need decrpyt
+bload_dec_en                false   false   0x1     0x1
+//TEE enble; 0x42:disable TEE; 0xff:enable TEE
+soc_tee_enable              false   false   0x1     0xff
+//Secureboot activation;0xff:secure boot enable;                                                  
+SCS_activation              false   false   0x1     0xff

@@ -1,0 +1,117 @@
+#ifndef __VDP_HAL_IP_HIHDR_G_H__
+#define __VDP_HAL_IP_HIHDR_G_H__
+
+#include "vdp_define.h"
+
+
+HI_VOID VDP_HIHDR_G_SetTmpCoefAddr  (HI_U32 u32Addr);
+HI_VOID VDP_HIHDR_G_SetGmmCoefAddr  (HI_U32 u32Addr);
+HI_VOID VDP_HIHDR_G_SetTmpParaUpd (HI_U32 regup);
+HI_VOID VDP_HIHDR_G_SetGmmParaUpd (HI_U32 regup);
+HI_VOID VDP_HIHDR_G_SetGhdrDemoPos(HI_U32 ghdr_demo_pos);
+HI_VOID VDP_HIHDR_G_SetGhdrDemoMode(HI_U32 ghdr_demo_mode);
+HI_VOID VDP_HIHDR_G_SetGhdrDemoEn(HI_U32 ghdr_demo_en);
+HI_VOID VDP_HIHDR_G_SetGhdrCkGtEn(HI_U32 ghdr_ck_gt_en);
+HI_VOID VDP_HIHDR_G_SetGhdrDegmmEn(HI_U32 ghdr_degmm_en);
+HI_VOID VDP_HIHDR_G_SetGhdrEn(HI_U32 ghdr_en);
+HI_VOID VDP_HIHDR_G_SetGhdrGamutEn(HI_U32 ghdr_gamut_en);
+HI_VOID VDP_HIHDR_G_SetGhdrGamutCoef00(HI_U32 ghdr_gamut_coef00);
+HI_VOID VDP_HIHDR_G_SetGhdrGamutCoef01(HI_U32 ghdr_gamut_coef01);
+HI_VOID VDP_HIHDR_G_SetGhdrGamutCoef02(HI_U32 ghdr_gamut_coef02);
+HI_VOID VDP_HIHDR_G_SetGhdrGamutCoef10(HI_U32 ghdr_gamut_coef10);
+HI_VOID VDP_HIHDR_G_SetGhdrGamutCoef11(HI_U32 ghdr_gamut_coef11);
+HI_VOID VDP_HIHDR_G_SetGhdrGamutCoef12(HI_U32 ghdr_gamut_coef12);
+HI_VOID VDP_HIHDR_G_SetGhdrGamutCoef20(HI_U32 ghdr_gamut_coef20);
+HI_VOID VDP_HIHDR_G_SetGhdrGamutCoef21(HI_U32 ghdr_gamut_coef21);
+HI_VOID VDP_HIHDR_G_SetGhdrGamutCoef22(HI_U32 ghdr_gamut_coef22);
+HI_VOID VDP_HIHDR_G_SetGhdrGamutScale(HI_U32 ghdr_gamut_scale);
+HI_VOID VDP_HIHDR_G_SetGhdrGamutClipMin(HI_U32 ghdr_gamut_clip_min);
+HI_VOID VDP_HIHDR_G_SetGhdrGamutClipMax(HI_U32 ghdr_gamut_clip_max);
+HI_VOID VDP_HIHDR_G_SetGhdrTmapEn(HI_U32 ghdr_tmap_en);
+HI_VOID VDP_HIHDR_G_SetGhdrTmapRdEn(HI_U32 ghdr_tmap_rd_en);
+HI_VOID VDP_HIHDR_G_SetGhdrTmapParaData(HI_U32 ghdr_tmap_para_data);
+HI_VOID VDP_HIHDR_G_SetGTmapX4Step(HI_U32 g_tmap_x4_step);
+HI_VOID VDP_HIHDR_G_SetGTmapX3Step(HI_U32 g_tmap_x3_step);
+HI_VOID VDP_HIHDR_G_SetGTmapX2Step(HI_U32 g_tmap_x2_step);
+HI_VOID VDP_HIHDR_G_SetGTmapX1Step(HI_U32 g_tmap_x1_step);
+HI_VOID VDP_HIHDR_G_SetGTmapX1Pos(HI_U32 g_tmap_x1_pos);
+HI_VOID VDP_HIHDR_G_SetGTmapX2Pos(HI_U32 g_tmap_x2_pos);
+HI_VOID VDP_HIHDR_G_SetGTmapX3Pos(HI_U32 g_tmap_x3_pos);
+HI_VOID VDP_HIHDR_G_SetGTmapX4Pos(HI_U32 g_tmap_x4_pos);
+HI_VOID VDP_HIHDR_G_SetGTmapX4Num(HI_U32 g_tmap_x4_num);
+HI_VOID VDP_HIHDR_G_SetGTmapX3Num(HI_U32 g_tmap_x3_num);
+HI_VOID VDP_HIHDR_G_SetGTmapX2Num(HI_U32 g_tmap_x2_num);
+HI_VOID VDP_HIHDR_G_SetGTmapX1Num(HI_U32 g_tmap_x1_num);
+HI_VOID VDP_HIHDR_G_SetGhdrTmapLumaCoef0(HI_U32 ghdr_tmap_luma_coef0);
+HI_VOID VDP_HIHDR_G_SetGhdrTmapLumaCoef1(HI_U32 ghdr_tmap_luma_coef1);
+HI_VOID VDP_HIHDR_G_SetGhdrTmapLumaCoef2(HI_U32 ghdr_tmap_luma_coef2);
+HI_VOID VDP_HIHDR_G_SetGhdrTmapLumaScale(HI_U32 ghdr_tmap_luma_scale);
+HI_VOID VDP_HIHDR_G_SetGhdrTmapCoefScale(HI_U32 ghdr_tmap_coef_scale);
+HI_VOID VDP_HIHDR_G_SetGhdrTmapOutClipMin(HI_U32 ghdr_tmap_out_clip_min);
+HI_VOID VDP_HIHDR_G_SetGhdrTmapOutClipMax(HI_U32 ghdr_tmap_out_clip_max);
+HI_VOID VDP_HIHDR_G_SetGhdrGmmEn(HI_U32 ghdr_gmm_en);
+HI_VOID VDP_HIHDR_G_SetGhdrGammaRdEn(HI_U32 ghdr_gamma_rd_en);
+HI_VOID VDP_HIHDR_G_SetGhdrGammaParaData(HI_U32 ghdr_gamma_para_data);
+HI_VOID VDP_HIHDR_G_SetGGmmX4Step(HI_U32 g_gmm_x4_step);
+HI_VOID VDP_HIHDR_G_SetGGmmX3Step(HI_U32 g_gmm_x3_step);
+HI_VOID VDP_HIHDR_G_SetGGmmX2Step(HI_U32 g_gmm_x2_step);
+HI_VOID VDP_HIHDR_G_SetGGmmX1Step(HI_U32 g_gmm_x1_step);
+HI_VOID VDP_HIHDR_G_SetGGmmX8Step(HI_U32 g_gmm_x8_step);
+HI_VOID VDP_HIHDR_G_SetGGmmX7Step(HI_U32 g_gmm_x7_step);
+HI_VOID VDP_HIHDR_G_SetGGmmX6Step(HI_U32 g_gmm_x6_step);
+HI_VOID VDP_HIHDR_G_SetGGmmX5Step(HI_U32 g_gmm_x5_step);
+HI_VOID VDP_HIHDR_G_SetGGmmX2Pos(HI_U32 g_gmm_x2_pos);
+HI_VOID VDP_HIHDR_G_SetGGmmX1Pos(HI_U32 g_gmm_x1_pos);
+HI_VOID VDP_HIHDR_G_SetGGmmX4Pos(HI_U32 g_gmm_x4_pos);
+HI_VOID VDP_HIHDR_G_SetGGmmX3Pos(HI_U32 g_gmm_x3_pos);
+HI_VOID VDP_HIHDR_G_SetGGmmX6Pos(HI_U32 g_gmm_x6_pos);
+HI_VOID VDP_HIHDR_G_SetGGmmX5Pos(HI_U32 g_gmm_x5_pos);
+HI_VOID VDP_HIHDR_G_SetGGmmX8Pos(HI_U32 g_gmm_x8_pos);
+HI_VOID VDP_HIHDR_G_SetGGmmX7Pos(HI_U32 g_gmm_x7_pos);
+HI_VOID VDP_HIHDR_G_SetGGmmX4Num(HI_U32 g_gmm_x4_num);
+HI_VOID VDP_HIHDR_G_SetGGmmX3Num(HI_U32 g_gmm_x3_num);
+HI_VOID VDP_HIHDR_G_SetGGmmX2Num(HI_U32 g_gmm_x2_num);
+HI_VOID VDP_HIHDR_G_SetGGmmX1Num(HI_U32 g_gmm_x1_num);
+HI_VOID VDP_HIHDR_G_SetGGmmX8Num(HI_U32 g_gmm_x8_num);
+HI_VOID VDP_HIHDR_G_SetGGmmX7Num(HI_U32 g_gmm_x7_num);
+HI_VOID VDP_HIHDR_G_SetGGmmX6Num(HI_U32 g_gmm_x6_num);
+HI_VOID VDP_HIHDR_G_SetGGmmX5Num(HI_U32 g_gmm_x5_num);
+HI_VOID VDP_HIHDR_G_SetGhdrDitherRoundUnlim(HI_U32 ghdr_dither_round_unlim);
+HI_VOID VDP_HIHDR_G_SetGhdrDitherEn(HI_U32 ghdr_dither_en);
+HI_VOID VDP_HIHDR_G_SetGhdrDitherMode(HI_U32 ghdr_dither_mode);
+HI_VOID VDP_HIHDR_G_SetGhdrDitherRound(HI_U32 ghdr_dither_round);
+HI_VOID VDP_HIHDR_G_SetGhdrDitherDomainMode(HI_U32 ghdr_dither_domain_mode);
+HI_VOID VDP_HIHDR_G_SetGhdrDitherTapMode(HI_U32 ghdr_dither_tap_mode);
+HI_VOID VDP_HIHDR_G_SetGhdrDitherThrMax(HI_U32 ghdr_dither_thr_max);
+HI_VOID VDP_HIHDR_G_SetGhdrDitherThrMin(HI_U32 ghdr_dither_thr_min);
+HI_VOID VDP_HIHDR_G_SetGhdrDitherSedY0(HI_U32 ghdr_dither_sed_y0);
+HI_VOID VDP_HIHDR_G_SetGhdrDitherSedU0(HI_U32 ghdr_dither_sed_u0);
+HI_VOID VDP_HIHDR_G_SetGhdrDitherSedV0(HI_U32 ghdr_dither_sed_v0);
+HI_VOID VDP_HIHDR_G_SetGhdrDitherSedW0(HI_U32 ghdr_dither_sed_w0);
+HI_VOID VDP_HIHDR_G_SetGhdrDitherSedY1(HI_U32 ghdr_dither_sed_y1);
+HI_VOID VDP_HIHDR_G_SetGhdrDitherSedU1(HI_U32 ghdr_dither_sed_u1);
+HI_VOID VDP_HIHDR_G_SetGhdrDitherSedV1(HI_U32 ghdr_dither_sed_v1);
+HI_VOID VDP_HIHDR_G_SetGhdrDitherSedW1(HI_U32 ghdr_dither_sed_w1);
+HI_VOID VDP_HIHDR_G_SetHihdrR2yEn(HI_U32 hihdr_r2y_en);
+HI_VOID VDP_HIHDR_G_SetHihdrR2yCoef00(HI_U32 hihdr_r2y_coef00);
+HI_VOID VDP_HIHDR_G_SetHihdrR2yCoef01(HI_U32 hihdr_r2y_coef01);
+HI_VOID VDP_HIHDR_G_SetHihdrR2yCoef02(HI_U32 hihdr_r2y_coef02);
+HI_VOID VDP_HIHDR_G_SetHihdrR2yCoef10(HI_U32 hihdr_r2y_coef10);
+HI_VOID VDP_HIHDR_G_SetHihdrR2yCoef11(HI_U32 hihdr_r2y_coef11);
+HI_VOID VDP_HIHDR_G_SetHihdrR2yCoef12(HI_U32 hihdr_r2y_coef12);
+HI_VOID VDP_HIHDR_G_SetHihdrR2yCoef20(HI_U32 hihdr_r2y_coef20);
+HI_VOID VDP_HIHDR_G_SetHihdrR2yCoef21(HI_U32 hihdr_r2y_coef21);
+HI_VOID VDP_HIHDR_G_SetHihdrR2yCoef22(HI_U32 hihdr_r2y_coef22);
+HI_VOID VDP_HIHDR_G_SetHihdrR2yScale2p(HI_U32 hihdr_r2y_scale2p);
+HI_VOID VDP_HIHDR_G_SetHihdrR2yIdc0(HI_U32 hihdr_r2y_idc0);
+HI_VOID VDP_HIHDR_G_SetHihdrR2yIdc1(HI_U32 hihdr_r2y_idc1);
+HI_VOID VDP_HIHDR_G_SetHihdrR2yIdc2(HI_U32 hihdr_r2y_idc2);
+HI_VOID VDP_HIHDR_G_SetHihdrR2yOdc0(HI_U32 hihdr_r2y_odc0);
+HI_VOID VDP_HIHDR_G_SetHihdrR2yOdc1(HI_U32 hihdr_r2y_odc1);
+HI_VOID VDP_HIHDR_G_SetHihdrR2yOdc2(HI_U32 hihdr_r2y_odc2);
+HI_VOID VDP_HIHDR_G_SetHihdrR2yClipMin(HI_U32 hihdr_r2y_clip_min);
+HI_VOID VDP_HIHDR_G_SetHihdrR2yClipMax(HI_U32 hihdr_r2y_clip_max);
+
+#endif
+
+

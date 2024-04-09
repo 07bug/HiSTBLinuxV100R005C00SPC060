@@ -1,0 +1,14 @@
+ALWAYS_SUBDIRS =		\
+	hisi 		\
+	common			\
+	m4
+
+SUBDIRS = $(ALWAYS_SUBDIRS)
+
+DIST_SUBDIRS = $(ALWAYS_SUBDIRS)
+
+DISTCLEANFILES = _stdint.h
+
+noinst_HEADERS =
+
+ACLOCAL_AMFLAGS = -I m4 -I common/m4

@@ -1,0 +1,44 @@
+/** Huawei Secure C Library - README **/
+
+[Overview]
+To help mitigate the ever increasing security attacks, specifically the buffer overrun, Security Design Technology Department of 2012 develop this library.
+
+. Key feature of this library:
+- Guard against overflowing a buffer
+- Do not produce unterminated strings
+- Make failures obvious
+- Zero buffers, null strings
+- Support re-entrant code
+- Consistent naming scheme
+- Have a uniform pattern for the function parameters and return type
+- use errno as return value to indicate error
+- use SECUREC_STRING_MAX_LEN marco to limit the maxi string length
+
+[Header Files]
+Only need include "include/securec.h" in source code.
+
+[Building and testing the library]
+prompt$ cd src
+prompt$ make
+
+prompt$ cd ../test
+prompt$ make
+prompt$ ./maintest
+
+[Note]
+1. In securectype.h, SECUREC_STRING_MAX_LEN and SECUREC_MEM_MAX_LEN macro are defined to validate the input length. The function returns error if the copying length exceeds this limit. Users can modify the value of these macros to meet special needs.
+
+2.SECUREC_ERROR_INVALID_PARAMTER and SECUREC_ERROR_INVALID_RANGE macro in securecutil.h, are error handlers when input validation fails. Users can change the default error handler to meet their own needs.
+
+3. #define BUF_SIZE 3
+    
+   char buf[BUF_SIZE];
+   snprintf_s(buf, BUF_SIZE, 2,  "%s", "abc");  /* An string truncation occured, so the function return -1 not 2. */
+
+4. The destMax parameter in the function, means the number of elements in the destnation buffer, not the size of the buffer which calculated in bytes. The value of destMax should be sizeof(buffer)/sizeof(wchar_t) in an wchar_t buffer.
+
+5. The size of wchar_t type value is not always be 2. It is 4 bytes in Linux platforms.
+
+6. The occurrence of buffer overflow depends on the length of the input data. Can not know the buffer size on the basis of the pointer which point to it. Therefore, the function can not konw whether the buffer length is correct.
+
+7. Should place include "securec.h" in front of include <stdio.h> if the two file should both included in a C source file.

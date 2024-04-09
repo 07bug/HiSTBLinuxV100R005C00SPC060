@@ -1,0 +1,5 @@
+Attention:
+Dosfstools software is released by GPL V3.0 license.
+If customers need to use it, they can download the source package by themselves.
+We have tested the software version is dosfstools-3.0.25.
+After downloading dosfstools-3.0.25.tar.bz2 to $SDK_ROOT/third_party/open_source, customer can run command 'make' in this directory to compile.

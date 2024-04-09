@@ -1,7 +1,7 @@
 # Hi3798mv100 （Huawei ec6108v9 IPTV）Linux的编译 烧录 blog
 本文记录了为华为机顶盒EC6108v9c（海思Hi3798mv100芯片）编译内核、烧录uboot以及刷入Ubuntu 22.04 rootfs的过程。
 ## 基本环境
-目标板：IPTV退役的华为机顶盒EC6108v9（ hisilicon Hi3798mv100 2G 8G emmc）
+目标板：IPTV退役的华为机顶盒EC6108v9c（ hisilicon Hi3798mv100 1G 8G emmc）
 编译环境：Ubuntu 22.04
 海思linux内核：HiSTBLinux 适用于hi3798mv100 mv200 
 SDK: HiSTBLinuxV100R005C00SPC060

@@ -32,9 +32,11 @@ make build -j4 2>&1  | tee -a buildlog.txt
 ### 自定义linux内核
 ARM平台内核配置文件采用defconfig格式，正确使用和保存deconfig的流程如下：
 
-source/kernel/linux-3.18.y/arch/arm/configs/hi3798mv100_defconfig 
-cd source/kernel/linux-3.18.y/
-可以使用本git库提供的hi3798mv100_defconfig-0812
+先执行了上面的编译一次 才有 linux-4.4.y 文件夹
+
+source/kernel/linux-4.4.y/arch/arm/configs/hi3798mv100_defconfig 
+cd source/kernel/linux-4.4.y/
+
 1. 先备份hi3798mv100_defconfig
 2. make ARCH=arm hi3798mv100_defconfig #从defconfig生成标准linux内核配置.config文件
 3. make ARCH=arm menuconfig #修改内核配置，并保存

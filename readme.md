@@ -69,3 +69,7 @@ emmc_partitions.xml  刷机分区配置文件
 根目录下 hi3798mv100_defconfig 是我配置好的 hi3798mv100 芯片的 支持Docker 的配置 替换到 /source/kernel/linux-4.4.y.patch 编译即可!
 
 根目录下 bootargs_input.txt 是启动配置文件
+
+## 重新编译启动配置
+对于bootargs自定义，客户可以直接修改bootargs_xx.txt，然后使用命令“mkbootargs”生成bootargs。下面给出了一个演示：
+mkbootargs-s 128k-r bootargs.txt-o bootargs.bin

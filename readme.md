@@ -74,4 +74,4 @@ emmc_partitions.xml  刷机分区配置文件
 对于bootargs自定义，客户可以直接修改bootargs_xx.txt，然后使用命令“mkbootargs”生成bootargs。下面给出了一个演示：
 
 
-`mkbootargs-s 128k-r bootargs.txt-o bootargs.bin`
+`mkbootargs -s 64 -r bootargs.txt -o bootargs.bin`
